@@ -7111,9 +7111,7 @@ h6 {
   position: relative;
   z-index: 1;
   padding: 150px 0 150px 0;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+  background-color: var(--primary-color-1);
 }
 .breadcrumb__area::after {
   content: "";
