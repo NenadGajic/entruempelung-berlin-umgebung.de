@@ -1,7 +1,11 @@
 @extends('_layouts.main')
 
 @section('body')
-<div class="p-8">
-    <h1 class="text-3xl font-bold">Hello world!</h1>
-</div>
+    <x-banner-area />
+    <x-services-area />
+    <x-about-area />
+{{--    <x-portfolio-area />--}}
+    <x-process-area />
+
+    <x-footer-cta />
 @endsection
