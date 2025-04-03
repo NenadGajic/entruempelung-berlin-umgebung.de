@@ -15,7 +15,7 @@
 
         <link rel="canonical" href="{{ $page->getUrl() }}">
 
-        <link rel="stylesheet" href="{{ $page->baseUrl }}/assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
         <link rel="stylesheet" href="assets/css/fontawesome.css">
         <link rel="stylesheet" href="assets/font/flaticon_flexitype.css">
         <link rel="stylesheet" href="assets/css/animate.css">
