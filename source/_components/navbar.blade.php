@@ -42,7 +42,7 @@
                                         <li><a href="#">Transport</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="#">Kontakt</a></li>
+                                <li><a href="{{ $page->baseUrl }}/anfrage">Kontakt</a></li>
                             </ul>
                         </div>
                     </div>

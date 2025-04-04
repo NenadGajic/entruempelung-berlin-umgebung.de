@@ -5,7 +5,7 @@
     <div class="banner__one">
         <div class="banner swiper banner-slider">
             <div class="swiper-wrapper">
-                <div class="banner__one-image swiper-slide" style="background-image: url('assets/img/banner/banner-1.png');">
+                <div class="banner__one-image swiper-slide" style="background-image: url('assets/img/entruempelung.jpg');">
                     <div class="container">
                         <div class="row">
                             <div class="col-xl-12">
@@ -14,7 +14,7 @@
                                     <h1 data-animation="fadeInUp" data-delay=".6s">Unkomplizierte <span>Entrümpelung</span> in Berlin und Umgebung</h1>
                                     <p data-animation="fadeInUp" data-delay=".9s">Wir bieten Entrümpelungen von Wohnungen, Keller und  Häusern.</p>
                                     <div class="banner__one-content-button" data-animation="fadeInUp" data-delay="1.4s">
-                                        <a class="default_button" href="#">Kostenlose Besichtigung vereinbaren <i class="flaticon-right-up"></i></a>
+                                        <a class="default_button" href="{{ $page->baseUrl }}/anfrage">Kostenlose Besichtigung vereinbaren <i class="flaticon-right-up"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -22,7 +22,7 @@
                     </div>
                 </div>
 
-                <div class="banner__one-image swiper-slide" style="background-image: url('assets/img/banner/banner-1.png');">
+                <div class="banner__one-image swiper-slide" style="background-image: url('assets/img/entsorgung.jpg');">
                     <div class="container">
                         <div class="row">
                             <div class="col-xl-12">
@@ -31,7 +31,7 @@
                                     <h1 data-animation="fadeInUp" data-delay=".6s">Unkomplizierte <span>Entsorgung</span> in Berlin und Umgebung</h1>
                                     <p data-animation="fadeInUp" data-delay=".9s">Wir entsorgen Bauschutt, Möbel, Sperrmüll und viel mehr!</p>
                                     <div class="banner__one-content-button" data-animation="fadeInUp" data-delay="1.4s">
-                                        <a class="default_button" href="#">Kostenlose Besichtigung vereinbaren <i class="flaticon-right-up"></i></a>
+                                        <a class="default_button" href="{{ $page->baseUrl }}/anfrage">Kostenlose Besichtigung vereinbaren <i class="flaticon-right-up"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -39,7 +39,7 @@
                     </div>
                 </div>
 
-                <div class="banner__one-image swiper-slide" style="background-image: url('assets/img/banner/banner-1.png');">
+                <div class="banner__one-image swiper-slide" style="background-image: url('assets/img/bueroaufloesung.jpeg');">
                     <div class="container">
                         <div class="row">
                             <div class="col-xl-12">
@@ -48,7 +48,7 @@
                                     <h1 data-animation="fadeInUp" data-delay=".6s">Unkomplizierte <span>Auflösung</span> in Berlin und Umgebung</h1>
                                     <p data-animation="fadeInUp" data-delay=".9s">Privat und Gewerbekunden! Haushaltsauflösung, Wohnungsauflösung, Kellerauflösung, Lagerauflösung, Gewerbeauflösung, Werkstattauflösung, Büroauflösung</p>
                                     <div class="banner__one-content-button" data-animation="fadeInUp" data-delay="1.4s">
-                                        <a class="default_button" href="#">Kostenlose Besichtigung vereinbaren <i class="flaticon-right-up"></i></a>
+                                        <a class="default_button" href="{{ $page->baseUrl }}/anfrage">Kostenlose Besichtigung vereinbaren <i class="flaticon-right-up"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -81,7 +81,9 @@
                 <div class="col-lg-6  mt-25">
                     <div class="services__one-item">
                         <div class="services__one-item-icon">
-                            <i class="flaticon-idea-1"></i>
+                            <i>
+                                <img src="assets/img/icon/entruempelung.png" alt="Entrümpelung in Berlin und Umgebung">
+                            </i>
                         </div>
                         <div class="services__one-item-content">
                             <h4><a href="#">Entrümpelung</a></h4>
@@ -93,7 +95,9 @@
                 <div class="col-lg-6  mt-25">
                     <div class="services__one-item">
                         <div class="services__one-item-icon">
-                            <i class="flaticon-strategy"></i>
+                            <i>
+                                <img src="assets/img/icon/aufloesung.png" alt="Haushaltsauflösung und Büroauflösung in Berlin und Umgebung">
+                            </i>
                         </div>
                         <div class="services__one-item-content">
                             <h4><a href="#">Haushalts- und Gewerbeauflösung</a></h4>
@@ -105,7 +109,9 @@
                 <div class="col-lg-6  mt-25">
                     <div class="services__one-item">
                         <div class="services__one-item-icon">
-                            <i class="flaticon-sales"></i>
+                            <i>
+                                <img src="assets/img/icon/umzug.png" alt="Umzug in Berlin und Umgebung">
+                            </i>
                         </div>
                         <div class="services__one-item-content">
                             <h4><a href="#">Umzug</a></h4>
@@ -117,7 +123,9 @@
                 <div class="col-lg-6  mt-25">
                     <div class="services__one-item">
                         <div class="services__one-item-icon">
-                            <i class="flaticon-project-management"></i>
+                            <i>
+                                <img src="assets/img/icon/transport.png" alt="Kleintransporte in Berlin und Umgebung">
+                            </i>
                         </div>
                         <div class="services__one-item-content">
                             <h4><a href="#">Kleintransporte</a></h4>
@@ -137,9 +145,9 @@
             <div class="row al-center">
                 <div class="col-lg-6 lg-mb-25">
                     <div class="about__one-left mr-30 lg-mr-0 lg-pr-25">
-                        <img  src="assets/img/about/about-1.png" alt="image">
+                        <img  src="assets/img/entruempelung-1.jpg" alt="image">
                         <div class="two">
-                            <img class="bounce_y" src="assets/img/about/about-2.jpg" alt="image">
+                            <img class="bounce_y" src="assets/img/berlin-brandenburg.jpg" alt="image">
                         </div>
                     </div>
                 </div>
@@ -171,7 +179,7 @@
                             </div>
                         </div>
                         <div class="item_bounce mt-45">
-                            <a class="default_button" href="#">Besichtigung vereinbaren<i class="flaticon-right-up"></i></a>
+                            <a class="default_button" href="{{ $page->baseUrl }}/anfrage">Besichtigung vereinbaren<i class="flaticon-right-up"></i></a>
                         </div>
                     </div>
                 </div>
@@ -200,7 +208,9 @@
                         <div class="process__area-item ">
                             <span>01</span>
                             <div class="process__area-item-area">
-                                <i class="flaticon-analyst"></i>
+                                <i>
+                                    <img src="assets/img/icon/beratung.png">
+                                </i>
                                 <h5>Beratung, Terminabspache und Besichtigung</h5>
                                 <p>Wir beraten Sie gerne vorab telefonisch und vereinbaren einen Termin. Im Anschluss besichtigen wir Ihr Objekt direkt vor Ort. Die Anfahrt und die Besichtigung sind kostenlos.</p>
                             </div>
@@ -208,7 +218,9 @@
                         <div class="process__area-item ">
                             <span>02</span>
                             <div class="process__area-item-area">
-                                <i class="flaticon-influencer"></i>
+                                <i>
+                                    <img src="assets/img/icon/auftrag.png">
+                                </i>
                                 <h5>Angebot, Auftragserteilung und Räumungstermin</h5>
                                 <p>Nach Besichtigung des Objekts erstellen wir ein Angebot mit Festpreisgarantie inklusive Wertanrechnung. Nach Ihrer Auftragserteilung vereinbaren wir einen fixen Termin zur Räumung Ihres Objekts.</p>
                             </div>
@@ -216,7 +228,9 @@
                         <div class="process__area-item">
                             <span>03</span>
                             <div class="process__area-item-area">
-                                <i class="flaticon-select"></i>
+                                <i>
+                                    <img src="assets/img/icon/erledigung.png">
+                                </i>
                                 <h5>Räumung, Entsorgung, Übergabe</h5>
                                 <p>Wir räumen Ihr Objekt zum vereinbarten Termin, mit anschließender fachgerechter Entsorgung. Auf Wunsch erfolgen Zusatzarbeiten. Zum Abschluss erfolgt die besenreine Übergabe.</p>
                             </div>

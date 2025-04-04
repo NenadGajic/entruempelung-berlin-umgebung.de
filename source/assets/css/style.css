@@ -5140,6 +5140,7 @@ h6 {
   margin-top: 38px;
 }
 .process__area-item-area i {
+  width: 50px;
   margin-bottom: 30px;
   display: inline-block;
   font-size: 50px;
@@ -6625,6 +6626,7 @@ h6 {
   background: var(--color-3);
 }
 .services__one-item-icon i {
+  width: 45px;
   color: var(--primary-color-1);
   font-size: 45px;
   transition: 0.4s;
