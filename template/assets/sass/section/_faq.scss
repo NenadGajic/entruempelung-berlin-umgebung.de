@@ -1,0 +1,122 @@
+/*==========================================================================
+* Faq CSS
+==========================================================================*/
+.faq__one {
+    background: var(--color-3);
+    position: relative;
+    z-index: 1;
+    &-left {
+        position: relative;
+        z-index: 1;
+        .one {
+            height: 160px;
+            object-fit: cover;
+            object-position: top center;
+            border-radius: 15px;
+            width: 100%;
+        }
+        .two {
+            height: 270px;
+            object-fit: cover;
+            border-radius: 15px;
+            width: 100%;
+        }
+        .three {
+            height: 580px;
+            width: 100%;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+        &-years {
+            position: absolute;
+            left: 20%;
+            bottom: 30px;
+            background: var(--primary-color-2);
+            padding: 30px;
+            min-width: 305px;
+            border-radius: 15px;
+            span,
+            h3 {
+                color: var(--text-white);
+            }
+        }
+    }
+    .faq-item .icon::after {
+        color: var(--primary-color-2);
+        background: var(--bg-white);
+    }
+    .faq-item .icon:not(.collapsed)::after {
+        background: var(--secondary-color);
+        color: var(--color-1);
+    }
+    &-right-title {
+        .subtitle {
+            background: var(--bg-white);
+        }
+    }
+}
+.faq {
+    &-item {
+        margin-bottom: 20px;
+        border: 1px solid var(--color-8);
+        border-radius: 15px;
+        &:last-child {
+            margin: 0;
+        }
+        h6 {
+            cursor: pointer;
+            padding: 14px 25px;
+        }
+        .icon {
+            position: relative;
+            border-radius: 10px 10px 0 0;
+            &::after {
+                content: "\2b";
+                font-family: 'Font Awesome 6 Pro';
+                font-weight: 300;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                color: var(--primary-color-1);
+                right: 20px;
+                font-size: 14px;
+                transition: 0.4s;
+                background: var(--color-3);
+                width: 22px;
+                height: 22px;
+                border-radius: 50%;
+                line-height: 22px;
+                text-align: center;
+            }
+            &:not(.collapsed) {
+                &::after {
+                    content: "\f068";
+                    background: var(--primary-color-1);
+                    color: var(--text-white);
+                }
+            }
+        }    
+        &-body {
+            p {
+                padding: 0px 30px 25px 30px;
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+.faq__page {
+    .faq__one-left-years {
+        background: var(--primary-color-1);
+    }
+}
+@media (max-width: 480px) {
+    .faq__one-left-years {
+        left: 10px;
+        min-width: initial;
+    }
+    .choose__us-left-success {
+        padding: 25px;
+        max-width: 250px;
+    }
+}

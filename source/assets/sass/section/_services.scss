@@ -1,0 +1,237 @@
+/*==========================================================================
+* Services One CSS
+==========================================================================*/
+.services__one {
+    background: var(--color-3);
+    position: relative;
+    z-index: 1;
+    &-title {
+        max-width: 600px;
+        margin: 0 auto;
+        .subtitle {
+            background: var(--bg-white);
+        }
+    }
+    &-item {
+        padding: 40px;
+        border-radius: 15px;
+        background: var(--bg-white);
+        display: flex;
+        gap: 25px;
+        &-icon {
+            position: relative;
+            display: inline-flex;
+            border-radius: 50%;
+            transition: 0.4s;
+            width: 80px;
+            height: 80px;
+            min-width: 80px;
+            align-items: center;
+            justify-content: center;
+            background: var(--color-3);
+            i {
+                color: var(--primary-color-1);
+                font-size: 45px;
+                transition: 0.4s;
+                line-height: 0;
+            }
+        }
+        &-content {
+            h4 {
+                font-size: 24px;
+                line-height: 34px;
+            }
+            p {
+                margin: 12px 0px 25px 0px;
+            }
+        }
+        &:hover {
+            .services__one-item-icon {
+                background: var(--secondary-color);
+                i {
+                    color: var(--color-1);
+                }
+            }
+        }
+    }
+}
+/*==========================================================================
+* Services Two CSS
+==========================================================================*/
+.services__two {
+    &-title {
+        p {
+            max-width: 480px;
+        }
+    }
+    &-right {
+        &-item {
+            border: 1px solid var(--border-color-1);
+            border-radius: 15px;
+            padding: 0px 40px 40px 40px;
+            transition: 0.4s;
+            margin-top: 65px;
+            &-icon {
+                position: relative;
+                display: inline-flex;
+                border-radius: 50%;
+                transition: 0.4s;
+                width: 80px;
+                height: 80px;
+                min-width: 80px;
+                align-items: center;
+                justify-content: center;
+                background: var(--primary-color-2);
+                margin-top: -40px;
+                border: 1px solid var(--primary-color-2);
+                i {
+                    color: var(--text-white);
+                    font-size: 45px;
+                    transition: 0.4s;
+                    line-height: 0;
+                }
+            }
+            &-content {
+                margin-top: 20px;
+                h4 {
+                    font-size: 24px;
+                    line-height: 34px;
+                }
+                p {
+                    margin: 12px 0px 25px 0px;
+                    transition: 0.4s;
+                }
+            }
+            &:hover {
+                background: var(--primary-color-2);
+                .services__two-right-item {
+                    &-icon {
+                        background: var(--bg-white);
+                        i {
+                            color: var(--primary-color-2);
+                        }
+                    }
+                    &-content {
+                        .more_btn,
+                        p,
+                        h4 a {
+                            color: var(--text-white);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/*==========================================================================
+* Services Three CSS
+==========================================================================*/
+.services__three {
+    background: var(--color-3);
+    position: relative;
+    z-index: 1;
+    &-title .subtitle {
+        background: var(--bg-white);
+    }
+    .default_button {
+        background: var(--primary-color-1);
+        color: var(--text-white);
+        &:hover {
+            background: var(--secondary-color);
+            color: var(--color-1);
+        }
+    }
+    &-item {
+        &-image img {
+            width: 100%;
+            height: 270px;
+            object-fit: cover;
+            border-radius: 15px 15px 0 0;
+        }
+        &-content {
+            padding: 25px 30px 30px 30px;
+            box-shadow: 0px 6px 0px 1px rgba(0, 0, 0, 0.04);
+            border-radius: 0 0 15px 15px;
+            background: var(--bg-white);
+            position: relative;
+            >span {
+                font-size: 50px;
+                line-height: 30px;
+                font-weight: 500;
+                opacity: 0.07;
+                position: absolute;
+                right: 40px;
+                top: 40px;
+            }
+            >i {
+                background: var(--color-3);
+                color: var(--text-heading-color);
+                width: 65px;
+                height: 65px;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 20px;
+                border-radius: 10px;
+                font-size: 40px;
+                transition: 0.4s;
+            }
+            h5 {
+                font-size: 24px;
+                line-height: 34px;
+                a:hover {
+                    color: var(--primary-color-3);
+                }
+            }
+            p {
+                margin: 12px 0px 25px 0px;
+            }
+            .more_btn:hover {
+                color: var(--primary-color-3);
+            }
+        }
+        &:hover {
+            .services__three-item-content >i {
+                background: var(--secondary-color);
+                color: var(--color-1);
+            }
+        }
+    }
+}
+/*==========================================================================
+* Services Details CSS
+==========================================================================*/
+.services__details {
+    &-area {
+        img {
+            border-radius: 15px;
+        }
+        .services__three-item {
+            &-content {
+                padding: 30px;
+                border-radius: 15px;
+                border: 1px solid var(--border-color-1);
+                box-shadow: 0 0 70px rgba(0, 0, 0, 0.05);
+                p {
+                    margin-bottom: 0;
+                }
+                > i {
+                    background: var(--color-3);
+                }
+            }
+            &:hover .services__three-item-content > i {
+                background: var(--secondary-color);
+                color: var(--color-1);
+            }
+        }
+    }
+}
+@media (max-width: 470px) {
+    .services__one-item {
+        display: grid;
+        padding: 30px 25px;
+    }
+    .services__two-right-item {
+        padding: 0px 25px 30px 25px;
+    }
+}

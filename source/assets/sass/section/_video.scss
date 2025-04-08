@@ -1,0 +1,22 @@
+/*==========================================================================
+* Video CSS
+==========================================================================*/
+.video__area {
+    position: relative;
+    z-index: 1;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 300px 0;
+    .video a {
+        width: 100px;
+        height: 100px;
+        font-size: 26px;
+        
+    }
+    &.page {
+        .video a {
+            background: var(--primary-color-1);
+        }
+    }
+}

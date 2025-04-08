@@ -1,0 +1,100 @@
+/*==========================================================================
+* TopBar One CSS
+==========================================================================*/
+.top__bar-two,
+.top__bar {
+    background: var(--color-3);
+    padding: 10px 0;
+    &-left {
+        ul {
+            padding: 0;
+            margin: 0;
+            li {
+                display: inline-block;
+                list-style: none;
+                margin-right: 25px;
+                a {
+                    i {
+                        margin-right: 10px;
+                        color: var(--text-heading-color);
+                    }
+                }
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+    &-right {
+        ul {
+            padding: 0;
+            margin: 0;
+            display: inline-flex;
+            align-items: center;
+            gap: 20px;
+            li {
+                list-style: none;
+                color: var(--text-heading-color);
+            }
+        }
+    }
+}
+/*==========================================================================
+* TopBar Two CSS
+==========================================================================*/
+.top__bar-two {
+    background: transparent;
+    .top__bar {
+        &-left ul li {
+            color: var(--text-heading-color);
+            i {
+                color: var(--primary-color-2);
+            }
+            a:hover {
+                color: var(--primary-color-2);
+            }
+        }
+        &-right {
+            margin-left: 25px;
+            padding-left: 25px;
+            border-left: 1px solid var(--color-8);
+            ul li a i {
+                color: var(--text-heading-color);
+                &:hover {
+                    color: var(--primary-color-2);
+                }
+            }
+        }
+    }
+}
+/*==========================================================================
+* TopBar Three CSS
+==========================================================================*/
+.top__bar-three {
+    background: var(--primary-color-1);
+    padding: 10px 0;
+    margin-bottom: 21px;
+    .top__bar {
+        &-left ul li {
+            color: var(--text-white);
+            i {
+                color: var(--text-white);
+            }
+        }
+        &-right ul li a i {
+            color: var(--text-white);
+        }
+    }
+}
+
+@media (max-width: 470px) {
+    .top__bar-two .top__bar-right {
+        margin-left: 0;
+        padding-left: 0;
+        border-left: 0;
+    }
+    .top__bar-right {
+        width: 100%;
+        text-align: center;
+    }
+}

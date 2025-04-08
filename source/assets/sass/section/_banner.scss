@@ -1,0 +1,321 @@
+/*==========================================================================
+* Banner One CSS
+==========================================================================*/
+.banner__one {
+    position: relative;
+    z-index: 1;
+    &-image {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+        z-index: 1;
+        &::before {
+            content: '';
+            position: absolute;
+            background-color: transparent;
+            background-image: linear-gradient(270deg, #FFFFFF00 48%, var(--primary-color-1) 0%);
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            z-index: -1;
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            background-image: url('../../assets/img/shape/shape-3.png');
+            left: 0;
+            top: 0;
+            z-index: -1;
+            width: 100%;
+            height: 100%;
+            opacity: 0.8;
+            background-repeat: no-repeat;
+            background-position: bottom left;
+        }
+    }
+    &-content {
+        visibility: hidden;
+        padding: 140px 0px 160px 0px;
+        .subtitle {
+            border-color: rgba(var(--border-color-2), 0.1);
+            color: var(--text-white);
+            background: #1a58587a;
+            &::before {
+                background: var(--text-white);
+            }
+        }
+        h1 {
+            font-size: 80px;
+            line-height: 92px;
+            max-width: 580px;
+            margin: 0px 0px 20px 0px;
+            color: var(--text-white);
+            span {
+                color: var(--secondary-color);
+            }
+        }
+        p {
+            max-width: 480px;
+            color: var(--text-white);
+            margin: 0px 0px 40px 0px;
+        }
+        .default_button:hover {
+            background: var(--color-5);
+        }
+    }
+    .swiper-slide-active {
+        .banner__one-content {
+            visibility: visible;
+        }
+    }
+    &-dots {
+        position: absolute;
+        bottom: 80px;
+        .swiper-pagination-bullet {
+            border-radius: 50%;
+            width: 15px;
+            height: 15px;
+            transition: all 0.4s ease-out 0s;
+            opacity: 1;
+            margin: 0 15px !important;
+            position: relative;
+            z-index: 9;
+            background: #ffffff42;
+            &::after {
+                position: absolute;
+                content: '';
+                width: 30px;
+                height: 30px;
+                border: 1px solid var(--secondary-color);
+                top: 50%;
+                border-radius: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                opacity: 0;
+            }
+            &-active {
+                background: var(--secondary-color);
+                &::after {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+/*==========================================================================
+* Banner Two CSS
+==========================================================================*/
+.banner__two {
+    background: var(--color-3);
+    position: relative;
+    z-index: 1;
+    padding-bottom: 70px;
+    &-content {
+        padding: 120px 0 60px 0;
+        max-width: 1000px;
+        margin: 0 auto;
+        .subtitle {
+            background: var(--bg-white);
+        }
+        h1 {
+            margin-bottom: 24px;
+        }
+        p {
+            max-width: 650px;
+            margin: 0 auto;            
+            font-size: 20px;
+            line-height: 32px;
+        }
+        &-button {
+            margin-top: 45px;
+        }
+    }
+    img {
+        border-radius: 15px;
+    }
+}
+/*==========================================================================
+* Banner One CSS
+==========================================================================*/
+.banner__three {
+    position: relative;
+    z-index: 1;
+    &-image {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+        z-index: 1;
+        &::before {
+            content: '';
+            position: absolute;
+            background-color: transparent;
+            background: linear-gradient(47deg, #063231D6 0%, #E6626200 100%);
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            z-index: -1;
+        }
+    }
+    &-content {
+        visibility: hidden;
+        padding: 330px 0px 190px 0px;
+        .subtitle {
+            margin-bottom: 35px;
+            border-color: rgba(var(--border-color-2), 0.1);
+            color: var(--text-white);
+            background: #1a58587a;
+            &::before {
+                background: var(--text-white);
+            }
+        }
+        h1 {
+            font-size: 86px;
+            line-height: 100px;
+            max-width: 960px;
+            color: var(--text-white);
+        }
+        &-button {
+            margin-top: 40px;
+            display: flex;
+            gap: 30px;
+            align-items: center;
+            flex-wrap: wrap;
+            &-tel {
+                display: flex;
+                align-items: center;
+                gap: 20px;
+                justify-content: end;
+                &-icon i {
+                    position: relative;
+                    z-index: 1;
+                    width: 58px;
+                    height: 58px;
+                    border-radius: 50%;
+                    background: var(--primary-color-1);
+                    font-size: 30px;                    
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: var(--secondary-color);
+                }
+                &-info {
+                    span {
+                        display: block;
+                        color: var(--text-white);
+                    }
+                    h6 {
+                        font-size: 20px;
+                        line-height: 28px;
+                        color: var(--text-white);
+                        a:hover {
+                            color: var(--secondary-color);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .swiper-slide-active {
+        .banner__three-content {
+            visibility: visible;
+        }
+    }
+    &-arrow {
+        position: absolute;
+        max-width: 1345px;
+        margin: 0 auto;
+        padding: 0 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+        right: 0;
+        z-index: 3;
+        display: grid;
+        justify-content: end;
+        width: 100%;
+        gap: 20px;
+        &-next,
+        &-prev {		
+            display: inline-block;
+            i {
+                font-size: 22px;
+                width: 58px;
+                height: 58px;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+                background: #E6E6E63B;
+                color: var(--text-white);
+                transition: 0.4s;
+                &:hover {
+                    opacity: 1;
+                    background: var(--primary-color-3);
+                }  
+            } 
+        }
+    }
+}
+
+@media (max-width: 1199px) {
+    .banner__two-content h1 {
+        font-size: 46px;
+        line-height: 56px;
+    }
+}
+@media (max-width: 1000px) {
+    .banner__one-image::before {
+        background-image: linear-gradient(270deg, #FFFFFF00 -10%, var(--primary-color-1) 35%);
+    }
+}
+@media (max-width: 991px) {
+    .banner__three-content h1 {
+        font-size: 60px;
+        line-height: 70px;
+    }
+}
+@media (max-width: 620px) {
+    .banner__one-content h1 {
+        font-size: 60px;
+        line-height: 70px;
+    }
+    .banner__three-content h1 {
+        font-size: 40px;
+        line-height: 50px;
+    }
+    .banner__two-content p {
+        font-size: 16px;
+        line-height: 28px;
+    }
+}
+@media (max-width: 480px) {
+    .banner__one-content h1 {
+        font-size: 45px;
+        line-height: 55px;
+    }
+    .banner__two-content h1 {
+        font-size: 34px;
+        line-height: 44px;
+    }
+    .banner__three-arrow {
+        display: flex;
+        top: inherit;
+        transform: translateY(-0%);
+        justify-content: center;
+        bottom: 8%;
+    }
+}
+@media (max-width: 359px) {
+    .banner__one-content h1 {
+        font-size: 42px;
+        line-height: 52px;
+    }
+    .banner__two-content h1 {
+        font-size: 40px;
+        line-height: 50px;
+    }
+}

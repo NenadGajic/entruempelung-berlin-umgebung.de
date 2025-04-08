@@ -1,0 +1,365 @@
+/*==========================================================================
+* Portfolio One Css
+==========================================================================*/
+.portfolio__one {
+    background: var(--primary-color-1);
+    position: relative;
+    z-index: 1;
+    .bg_shape {
+        opacity: 0.02;
+    }
+    &-left {
+        .subtitle {
+            border-color: rgba(var(--border-color-2), 0.1);
+            color: var(--text-white);
+            background: #1a58587a;
+            &::before {
+                background: var(--text-white);
+            }
+        }
+        h2 {
+            color: var(--text-white);
+        }
+        .default_button {
+            background: var(--color-3);
+            color: var(--text-heading-color);
+            i {
+                background: var(--color-1);
+                color: var(--text-white);
+            }
+            &:hover {
+                background: var(--secondary-color);
+                i {
+                    background: var(--bg-white);
+                    color: var(--text-heading-color);
+                }                
+            }
+        }
+    }
+    &-item {
+        img {
+            border-radius: 15px;
+        }
+        &-content {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: 0.4s;
+            width: 100%;
+            span {
+                color: var(--color-7);
+                display: block;
+            }
+            h4 {
+                color: var(--text-white);
+                font-size: 24px;
+                line-height: 34px;
+                a:hover {
+                    color: var(--secondary-color);
+                }
+            }
+            > a i {
+                background: var(--secondary-color);
+                width: 75px;
+                height: 75px;
+                color: var(--color-1);
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+                font-size: 40px;
+                transition: 0.4s;
+                margin-bottom: 30px;
+                &:hover {
+                    transform: rotate(45deg);
+                    background: var(--color-1);
+                    color: var(--text-white);
+                }
+            }
+        }
+        &:hover {
+            img {
+                filter: brightness(0.5);
+            }
+            .portfolio__one-item-content {
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+    }
+}
+/*==========================================================================
+* Portfolio Two Css
+==========================================================================*/
+.portfolio__two {
+    background: var(--primary-color-1);
+    position: relative;
+    z-index: 1;
+    .bg_shape {
+        opacity: 0.02;
+    }
+    &-title {
+        .subtitle {
+            border-color: rgba(var(--border-color-2), 0.1);
+            color: var(--text-white);
+            background: #1a58587a;
+            &::before {
+                background: var(--text-white);
+            }
+        }
+        h2 {
+            color: var(--text-white);
+        }
+    }
+    &-item {
+        height: 520px;
+        position: relative;
+        img {
+            border-radius: 15px;
+            height: 100%;
+            object-fit: cover;
+        }
+        &-content {
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 0;
+            visibility: hidden;
+            transition: 0.4s;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 40px;
+            transform: translateY(15px);
+            span {
+                color: var(--color-7);
+                display: block;
+            }
+            h4 {
+                color: var(--text-white);
+                font-size: 24px;
+                line-height: 34px;
+                a:hover {
+                    color: var(--secondary-color);
+                }
+            }
+            > a i {
+                background: var(--secondary-color);
+                width: 70px;
+                height: 70px;
+                color: var(--color-1);
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+                font-size: 40px;
+                transition: 0.4s;
+                margin-bottom: 30px;
+                &:hover {
+                    transform: rotate(45deg);
+                }
+            }
+        }
+        &:hover {
+            img {
+                filter: brightness(0.5);
+            }
+            .portfolio__two-item-content {
+                visibility: visible;
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    }
+}
+/*==========================================================================
+* Portfolio Three CSS
+==========================================================================*/
+.portfolio__three {
+    background: var(--color-3);
+    position: relative;
+    z-index: 1;
+    &-title .subtitle {
+        background: var(--bg-white);
+    }
+    &-arrow {
+        &-next,
+        &-prev {		
+            display: inline-block;
+            i {
+                font-size: 22px;
+                width: 58px;
+                height: 58px;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+                background: var(--bg-white);
+                color: var(--text-heading-color);
+                transition: 0.4s;
+                &:hover {
+                    color: var(--text-white);
+                    background: var(--primary-color-3);
+                }  
+            } 
+        }        
+    }
+    &-item {
+        position: relative;
+        height: 520px;
+        img {
+            border-radius: 15px;
+            height: 100%;
+            object-fit: cover;
+        }
+        &-content {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            opacity: 0;
+            visibility: hidden;
+            transition: 0.4s;
+            padding: 30px;
+            transform: translateY(-15px);
+            background: var(--secondary-color);
+            margin: 30px;
+            border-radius: 15px;
+            span {
+                color: var(--color-1);
+                display: block;
+            }
+            h4 {
+                color: var(--color-1);
+                font-size: 24px;
+                line-height: 34px;
+            }
+            .more_btn {
+                color: var(--color-1);
+                margin-top: 10px;
+            }
+        }
+        &:hover {
+            img {
+                filter: brightness(0.8);
+            }
+            .portfolio__three-item-content {
+                visibility: visible;
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    }
+}
+/*==========================================================================
+* Gallery CSS
+==========================================================================*/
+.gallery__area {
+    &-button button {
+        font-weight: 500;
+        background: var(--bg-white);
+        color: var(--text-heading-color);
+        box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.05);
+        border: 1px solid var(--border-color-1);
+        padding: 14px 30px;
+        margin: 3px 3px 3px 3px;
+        border-radius: 50px;
+        &.active {
+            color: var(--text-white);
+            background: var(--primary-color-1);
+            border-color: var(--primary-color-1);
+        }
+    }
+}
+.portfolio__grid {
+    .portfolio__two-item {
+        height: 400px;
+        &-content {
+            padding: 30px;
+            h5 {
+                color: var(--text-white);
+            }
+        }
+    }
+}
+.two__columns {
+    .portfolio__one-item {
+        position: relative;
+    }
+}
+/*==========================================================================
+* Portfolio CSS
+==========================================================================*/
+.portfolio__details {
+    &-image img {
+        border-radius: 15px;
+    }
+    &-box {
+        padding: 30px;
+        background: var(--color-3);
+        border-radius: 15px;
+        span {
+            font-size: 18px;
+            font-style: italic;
+            line-height: 30px;
+        }
+    }
+    &-summary {
+        padding: 35px;
+        border: 1px solid var(--border-color-1);
+        border-radius: 15px;
+        ul {
+            padding: 0;
+            margin: 0;
+            li {
+                list-style: none;
+                border-top: 1px solid var(--border-color-1);
+                margin-top: 15px;
+                padding-top: 15px;
+                span {
+                    font-size: 18px;
+                    font-weight: 600;
+                    line-height: 28px;
+                    font-family: var(--heading-font);
+                    color: var(--text-heading-color);
+                    margin-right: 20px;
+                }
+                .social {
+                    display: inline-flex;
+                    gap: 10px;
+                    a i {
+                        color: var(--text-heading-color);
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 50%;
+                        background: var(--color-3);
+                        font-size: 14px;
+                        display: inline-flex;
+                        align-items: center;
+                        justify-content: center;
+                        transition: 0.4s;
+                        &:hover {
+                            background: var(--secondary-color);
+                            color: var(--color-1);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 470px) {
+    .portfolio__one-item img {
+        height: 350px;
+        object-fit: cover;
+    }
+    .portfolio__details-summary {
+        padding: 35px 30px;
+    }
+}

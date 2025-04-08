@@ -1,0 +1,139 @@
+/*==========================================================================
+* Dark CSS
+==========================================================================*/
+.light-n {
+    display: none;
+}
+.light {
+	display: none;
+}
+.dark-mode {
+    background: #0e3434;
+    --body-color: #CDD6D6;
+    --bg-white: #0e3434;
+    --color-3: #143a3a;
+    --color-4: #063231;
+    --color-6: #063231;
+    --text-heading-color: #ffffff;
+    --border-color-1: #FFFFFF1A;
+    --color-8: #FFFFFF1A;
+    .light-n {
+        display: inline-block;
+    }
+    .dark-n {
+        display: none;
+    }
+    .services__three-item-content {
+        box-shadow: 0px 6px 0px 1px var(--border-color-1);
+    }
+    .blog__three-right-item {
+        box-shadow: 2px 3px 0px 4px rgb(255 255 255 / 5%);
+    }
+    .features__area-btn-item {
+        box-shadow: 0px 3px 0px 4px rgb(18 57 57);
+    }
+    .chooses__two-left .two {
+        border-color: #062E2D;
+    }
+    .blog__one-item,
+    .blog__two .blog__one-item-content,
+    .process__area-item,
+    .top__bar-two .top__bar-right,
+    .header__area.two .header__area-menubar-right .button,
+    .achievements__area-image-item,
+    .all__sidebar-item > h5,
+    .blog__grid .blog__one-item-content,
+    .process__area-item-area {
+        border-color: var(--border-color-1);
+    }
+    .team__two-item-content,
+    .company__history-area-item-inner-content {
+        background: #062E2D;
+    }
+    .features__area-btn-item,
+    .client__success-right,
+    .header__area-menubar-center-menu ul li .sub-menu,
+    .client__success-left-content {
+        background: #0E3131;
+    }
+    .features__area-btn-item.active {
+        background: var(--secondary-color);
+        box-shadow: 0px 2px 0px 3px rgb(230, 195, 101);
+    }
+    .our__benefits-left .default_button:hover,
+    .footer__cta-area-right .default_button:hover,
+    .portfolio__one-left .default_button:hover {
+        color: var(--color-1);
+    }
+    .about__one-right-list ul li i,
+    .team__one-item-content span,
+    .chooses__two-right-list-item i,
+    .faq__one .faq-item .icon::after,
+    .blog__one-item-content a:hover,
+    .blog__three .blog__one-item-content-meta ul li a i,
+    .blog__three-right-item-content a:hover,
+    .blog__two .blog__one-item-content a:hover,
+    .blog__two .blog__one-item-content-meta ul li a i,
+    .services__one-item-content a:hover,
+    .pricing__plan-item ul li i,
+    .top__bar-two .top__bar-left ul li a:hover,
+    .about__three-right-list-item i,
+    .testimonial__one-item-reviews i,
+    .contact__info-item i,
+    .process__area-item-area i,
+    .faq-item .icon::after,
+    .top__bar-two .top__bar-left ul li i,
+    .services__one-item-icon i {
+        color: var(--secondary-color);
+    }
+    .faq-item .icon:not(.collapsed)::after,
+    .services__two-right-item:hover .services__two-right-item-icon {
+        background: var(--secondary-color);
+    }
+    .services__one-item-icon{
+        background: #ECF8F814;
+    }
+    .cursor #cursor-ball {
+        background: #ffff;
+        color: var(--color-4);
+    }
+    .services__one-item:hover .services__one-item-icon i,
+    .faq-item .icon:not(.collapsed)::after,
+    .cursor #cursor-text {
+        color: #063231;
+    }
+    .header__area.two .header__area-menubar {
+        background: #0D3635;
+    }
+    .team__one-brand-area img {
+        filter: invert(0.6);
+    }
+    .chooses__two-right-skill .skill__area-item-bar {
+        background: var(--primary-color-3);
+    }
+
+    .bg_shape {
+        opacity: 0.02;
+    }
+    .subtitle {
+        border-color: rgba(var(--border-color-2), 0.1);
+        color: var(--text-white);
+        background: #1a58587a;
+        &::before {
+            background: var(--text-white);
+        }
+    }
+    .our__benefits-left .skill__area-item-inner .skill__area-item-bar::after {
+        display: none;
+    }
+    .pricing__plan-item.active h2 span, .pricing__plan-item.active p {
+        color: #666;
+    }
+    .footer-widget-menu ul li a,
+    .all__sidebar-item-download ul li a span,
+    .copyright__area p,
+    .footer__one-widget.contact .contact-item-info span,
+    .footer__one-widget p {
+        color: #e6e7e1;
+    }
+}
