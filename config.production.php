@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Str;
+
 return [
     'production' => true,
 //    'baseUrl' => 'https://www.entruempelung-berlin-umgebung.de',
