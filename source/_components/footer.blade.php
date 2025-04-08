@@ -1,10 +1,10 @@
 <div class="footer__one">
-    <div class="bg_shape" style="background-image: url('assets/img/shape/footer.png');"></div>
+    <div class="bg_shape" style="background-image: url('/assets/img/shape/footer.png');"></div>
     <div class="container">
         <div class="row">
             <div class="col-lg-4 col-sm-6">
                 <div class="footer__one-widget">
-                    <a class="logo" href="/"><img src="assets/img/logo-w.png" alt="logo"></a>
+                    <a class="logo" href="/"><img src="/assets/img/logo-w.png" alt="logo"></a>
                     <p>Wir stehen Ihnen seit Jahren als erfahrener und vertrauenswürdiger Partner zur Seite, wenn es um eine schnelle, professionelle und kostengünstige Entrümpelung sowie Entsorgung im Großraum Berlin geht.</p>
                 </div>
             </div>
