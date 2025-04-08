@@ -26,7 +26,7 @@
     <body>
         <x-mobile-menu />
         <div class="menu__bar-popup-overlay"></div>
-        <x-navbar />
+        @include('_components.navbar')
 
         @yield('body')
 

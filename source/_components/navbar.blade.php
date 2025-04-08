@@ -14,7 +14,7 @@
                     <div class="header__area-menubar-center">
                         <div class="header__area-menubar-center-menu">
                             <ul id="mobilemenu">
-                                <li><a href="/entruempelung">Entrümpelung</a></li>
+                                <li><a href="/entruempelung" class="{{ $page->active('entruempelung') }}">Entrümpelung</a></li>
 {{--                                <li class="menu-item-has-children"><a href="#">Entrümpelung</a>--}}
 {{--                                    <ul class="sub-menu">--}}
 {{--                                        <li><a href="#">Entrümpelungen in Berlin</a></li>--}}
@@ -23,7 +23,7 @@
 {{--                                        <li><a href="#">Kellerentrümpelung</a></li>--}}
 {{--                                    </ul>--}}
 {{--                                </li>--}}
-                                <li><a href="/entsorgung">Entsorgung</a></li>
+                                <li><a href="/entsorgung" class="{{ $page->active('entsorgung') }}">Entsorgung</a></li>
 
 {{--                                <li class="menu-item-has-children"><a href="#">Entsorgung</a>--}}
 {{--                                    <ul class="sub-menu">--}}
@@ -33,7 +33,7 @@
 {{--                                        <li><a href="#">Sperrmüllentsorgung</a></li>--}}
 {{--                                    </ul>--}}
 {{--                                </li>--}}
-                                <li><a href="/aufloesung">Auflösungen</a></li>
+                                <li><a href="/aufloesung" class="{{ $page->active('aufloesung') }}">Auflösungen</a></li>
 
 {{--                                <li class="menu-item-has-children"><a href="#">Auflösungen</a>--}}
 {{--                                    <ul class="sub-menu">--}}
@@ -43,11 +43,11 @@
 {{--                                </li>--}}
                                 <li class="menu-item-has-children"><a href="">Sonstiges</a>
                                     <ul class="sub-menu">
-                                        <li><a href="/umzug">Umzug</a></li>
-                                        <li><a href="/transport">Transport</a></li>
+                                        <li><a href="/umzug" class="{{ $page->active('umzug') }}">Umzug</a></li>
+                                        <li><a href="/transport" class="{{ $page->active('transport') }}">Transport</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="/anfrage">Kontakt</a></li>
+                                <li><a href="/anfrage"  class="{{ $page->active('anfrage') }}">Kontakt</a></li>
                             </ul>
                         </div>
                     </div>
