@@ -1,5 +1,6 @@
 @php
     $title = "Professioneller Umzug in Berlin und Umgebung";
+    $description = "Sobald Sie Ihre neue Wohnung gefunden haben und einen Umzugsservice benötigen, zögern Sie nicht und kontaktieren Sie uns noch heute. Unser Unternehmen passt sich optimal Ihren Anforderungen an."
 @endphp
 
 @extends('_layouts.main')

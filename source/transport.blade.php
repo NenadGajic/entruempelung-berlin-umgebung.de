@@ -1,5 +1,6 @@
 @php
     $title = "Kleintransport bis 3,5t in Berlin und Umgebung";
+    $description = "Wir sind mit den eigenen Fuhrpark Ihr optimaler Partner für Lieferungen und der vertrauenswürdigste Lieferdienst in Berlin und Deutschland."
 @endphp
 
 @extends('_layouts.main')
@@ -29,7 +30,7 @@
                         <img src="/assets/img/services/services-1.jpg" alt="image">
                         <h3 class="mt-25 mb-20">Kleintransporte in Berlin und Umgebung</h3>
                         <p class="mb-20">Die pünktliche Lieferung ist eine Aufgabe, die nur von Fachleuten bewältigt werden kann. Sie haben Gegenstände, die von einem Ort zum anderen geliefert werden müssen, und suchen einen zuverlässigen Lieferanten?</p>
-                        <p class="mb-20">Wir sind mit den eigenen Fuhrpark Ihr optimaler Partner für Lieferungen und der vertrauenswürdigste Lieferdienst in Wien und Österreich.</p>
+                        <p class="mb-20">Wir sind mit den eigenen Fuhrpark Ihr optimaler Partner für Lieferungen und der vertrauenswürdigste Lieferdienst in Berlin und Deutschland.</p>
                         <p class="mb-20">Wir bieten Ihnen auch den passenden Lastwagen für Ihre Bedürfnisse. Mit unseren Lastwagen, inklusive Ladebordwand, transportieren wir gerne Ihre Paletten oder andere Güter von A nach B.</p>
                         <p class="mb-20">Egal, um welche Art von Lieferung es sich handelt, wir erledigen die Aufgabe schnell, zuverlässig und zu äußerst günstigen Konditionen.</p>
                         <p class="mb-20">Haben Sie Möbel von einem Geschäft oder anderswo gekauft, aber Ihr eigenes Fahrzeug ist nicht für den Transport geeignet? Dann sind wir die beste und kostengünstigste Lösung für Sie.</p>

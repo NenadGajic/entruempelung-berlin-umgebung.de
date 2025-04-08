@@ -1,5 +1,6 @@
 @php
     $title = "Professionelle Entrümpelung | " . $page->title;
+    $description = "Unsere Dienstleistungen erstrecken sich auf Entrümpelungen verschiedenster Art und Größe, darunter Wohnungen, (Hoch-)Häuser, Wohngemeinschaften und auch sogenannte Messi-Wohnungen."
 @endphp
 
 @extends('_layouts.main')

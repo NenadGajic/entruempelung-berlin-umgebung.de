@@ -5,7 +5,7 @@
 
         <title>{{ isset($title) ? $title : $page->title }}</title>
         <meta name="description" content="{{ isset($description) ? $description : $page->description }}">
-        <meta name="keywords" content="Entrümpelung, Entsorgung, Berlin, Umgebung, Kleintransporte, Umzug"/>
+        <meta name="keywords" content="Entrümpelung, Entsorgung, Sperrmüllentsorgung, Büroauflösung, Wohnungsauflösung, Berlin, Umgebung, Kleintransporte, Umzug"/>
 
         <link rel="icon" type="image/png" href="/assets/img/favicon.png">
 

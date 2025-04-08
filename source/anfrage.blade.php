@@ -1,5 +1,6 @@
 @php
 $title = "Kostenlose Anfrage Senden | " . $page->title;
+$description = "Senden Sie uns eine Anfrage zur kostenloser Besichtigung und starten Sie den Prozess von unkomplizierten Entrümpelung oder Entsorgung im Großraum Berlin."
 @endphp
 
 @extends('_layouts.main')

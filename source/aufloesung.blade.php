@@ -1,5 +1,6 @@
 @php
     $title = "Haushalts- und Gewerbeauflösung | " . $page->title;
+    $description = "Wir kümmern uns um die professionelle und effiziente Auflösung von Haushalten, unabhängig davon, ob es sich um einen Privathaushalt oder einen Gewerbebetrieb handelt."
 @endphp
 
 @extends('_layouts.main')
