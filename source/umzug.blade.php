@@ -1,5 +1,5 @@
 @php
-    $title = "Professioneller Umzug | " . $page->title;
+    $title = "Professioneller Umzug in Berlin und Umgebung";
 @endphp
 
 @extends('_layouts.main')

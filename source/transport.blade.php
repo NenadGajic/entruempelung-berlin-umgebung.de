@@ -1,5 +1,5 @@
 @php
-    $title = "Kleintransport bis 3,5t | " . $page->title;
+    $title = "Kleintransport bis 3,5t in Berlin und Umgebung";
 @endphp
 
 @extends('_layouts.main')
