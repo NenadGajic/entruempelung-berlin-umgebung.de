@@ -11,7 +11,7 @@
                         </div>
                         <div class="col-xl-6 col-lg-5">
                             <div class="footer__cta-area-right d-flex al-center flex-wrap jc-end lg-jc-center gap-25">
-                                <a class="default_button" href="{{ $page->baseUrl }}/anfrage">Termin vereinbaren<i class="flaticon-right-up"></i></a>
+                                <a class="default_button" href="/anfrage">Termin vereinbaren<i class="flaticon-right-up"></i></a>
                                 <div class="footer__cta-area-right-tel">
                                     <div class="footer__cta-area-right-tel-icon">
                                         <i class="flaticon-phone-call"></i>
