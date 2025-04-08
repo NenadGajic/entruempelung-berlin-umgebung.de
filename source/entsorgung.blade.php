@@ -47,7 +47,7 @@
                 </div>
                 <div class="col-lg-8">
                     <div class="services__details-area">
-                        <img src="/assets/img/services/services-1.jpg" alt="image">
+                        <img src="/assets/img/entsorgung.jpg" alt="Sperrmüllentsorgung in Berlin und Umgebung">
                         <h3 class="mt-25 mb-20">Professionelle Entsorgung in Berlin</h3>
                         <p class="mb-20">Wenn Sie in Berlin und Umgebung nach einer professionellen Entsorgung suchen, stehen wir bereit, um Sie bei jedem Schritt zu unterstützen. Egal ob Sie alte Möbel loswerden, Bauschutt abtransportieren oder Elektroschrott fachgerecht entsorgen möchten: Wir bieten Ihnen eine schnelle, saubere und unkomplizierte Lösung. Kurz gesagt: Wir sind Ihr zuverlässiger Partner, wenn es darum geht, Platz zu schaffen und Ordnung in Ihrem Zuhause, Büro oder auf Ihrer Baustelle wiederherzustellen.</p>
                         <p class="mb-20">Wir wissen aus langjähriger Erfahrung in der Entsorgung, dass ein zuverlässiger Ansprechpartner Gold wert ist. Genau darum kümmern wir uns mit Herzblut um jedes Detail, von A wie Abholung bis Z wie Zwischenlagerung (falls es bei Spezialmüll oder größeren Aufträgen erforderlich ist). In Berlin sind wir an Ihrer Seite, um Ihnen Zeit, Nerven und oft auch einiges an Kosten zu ersparen. Keine Sorge, wir gehen das locker an, aber immer mit Professionalität und Blick fürs Wesentliche.</p>

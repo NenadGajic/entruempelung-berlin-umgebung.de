@@ -27,7 +27,7 @@
             <div class="row justify-content-center">
                 <div class="col-lg-8">
                     <div class="services__details-area">
-                        <img src="/assets/img/services/services-1.jpg" alt="image">
+                        <img src="/assets/img/umzug.jpg" alt="Professioneller Umzug Berlin und Umgebung">
 
                         <h3 class="mt-25 mb-20">Umzug in Berlin und Umgebung</h3>
                         <p class="mb-20">Einen gut organisierten und durchgeplanten Umzug beginnen wir mit einer kompetenten Beratung und einem professionellen Team.</p>
