@@ -13,17 +13,18 @@
                     <h5>Leistungen</h5>
                     <div class="footer-widget-menu">
                         <ul>
-                            <li><a href="#">Entrümpelung</a></li>
-                            <li><a href="#">Gewerbe- und Haushaltsauflösung</a></li>
-                            <li><a href="#">Transport</a></li>
-                            <li><a href="#">Umzug</a></li>
+                            <li><a href="/entruempelung">Entrümpelung</a></li>
+                            <li><a href="/entsorgung">Entsorgung</a></li>
+                            <li><a href="/aufloesung">Gewerbe- und Haushaltsauflösung</a></li>
+                            <li><a href="/transport">Transport</a></li>
+                            <li><a href="/umzug">Umzug</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
             <div class="col-lg-4 col-sm-6 lg-mt-30">
                 <div class="footer__one-widget contact ml-40 xl-ml-0">
-                    <h5>Contact</h5>
+                    <h5>Kontakt</h5>
                     <div class="contact-item">
                         <div class="contact-item-icon">
                             <i class="flaticon-email"></i>
