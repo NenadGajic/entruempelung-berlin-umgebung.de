@@ -1,11 +1,6 @@
 (function ($) {
     "use strict";
 
-    ///=============  * Theme Loader  =============\\\
-    function themeLoader() {
-        $('.theme-loader').hide();
-    }
-
     ///=============  * Mobile Menu  =============\\\
     document.addEventListener("DOMContentLoaded", function() {
         var mobileMenu = document.getElementById("mobilemenu");
@@ -36,25 +31,6 @@
         });
     }
 
-    ///=============  * Search Icon Popup  =============\\\
-    function searchIconPopup() {
-        $(".header__area-menubar-center-search-icon.open, .header__area-menubar-right-search-icon.open").on("click", function () {
-            $(".header__area-menubar-center-search-box, .header__area-menubar-right-search-box")
-                .fadeIn()
-                .addClass("active");
-        });
-
-        $(".header__area-menubar-center-search-box-icon, .header__area-menubar-right-search-box-icon").on("click", function () {
-            $(this).fadeIn().removeClass("active");
-        });
-
-        $(".header__area-menubar-center-search-box-icon i, .header__area-menubar-right-search-box-icon i").on("click", function () {
-            $(".header__area-menubar-center-search-box, .header__area-menubar-right-search-box")
-                .fadeOut()
-                .removeClass("active");
-        });
-    }
-
     ///=============  * Sidebar Popup  =============\\\
     function sidebarPopup() {
         $(document).on("click", ".header__area-menubar-right-sidebar-icon", function () {
@@ -65,35 +41,6 @@
         $(document).on("click", ".header__area-menubar-right-sidebar-popup .sidebar-close-btn", function () {
             $('.header__area-menubar-right-sidebar-popup').removeClass('active');
             $('.sidebar-overlay').removeClass('show');
-        });
-    }
-
-    ///=============  * CounterUp  =============\\\
-    function counterUp() {
-        var counter = $('.counter');
-        counter.counterUp({
-            time: 2500,
-            delay: 100
-        });
-    }
-
-    ///============= * Skill Bar  =============\\\
-    function skillBar() {
-        if($('.skill__area-item-bar').length) {
-            $('.skill__area-item-bar').appear(function() {
-                var el = $(this);
-                var percent = el.data('width');
-                $(el).css('width', percent + '%');
-            }, {
-                accY: 0
-            });
-        }
-    }
-
-    ///=============  * Video Popup  =============\\\
-    function videoPopup() {
-        $('.video-popup').magnificPopup({
-            type: 'iframe'
         });
     }
 
@@ -144,38 +91,6 @@
         animated_swiper(sliderActive1, sliderInit1);
     }
 
-    ///=============  * Blog Slider  =============\\\
-    function blogSlider() {
-        var swiper = new Swiper(".blog_slider", {
-            loop: true,
-            spaceBetween: 25,
-            speed: 800,
-            autoplay: {
-                delay: 4000,
-                reverseDirection: false,
-                disableOnInteraction: false,
-            },
-            pagination: {
-                el: ".blog-pagination",
-                clickable: true,
-            },
-            breakpoints: {
-                0: {
-                    slidesPerView: 1,
-                },
-                768: {
-                    slidesPerView: 2,
-                },
-                1025: {
-                    slidesPerView: 3,
-                },
-                1600: {
-                    slidesPerView: 3,
-                },
-            },
-        });
-    }
-
     ///=============  * Portfolio Slider  =============\\\
     function portfolioTwoSlider() {
         var swiper = new Swiper(".portfolio_two_slider", {
@@ -209,87 +124,6 @@
         });
     }
 
-    ///=============  * Pricing Plan  =============\\\
-    function pricingPlan() {
-        $(document).ready(function(){
-            $('.pricing__plan-btn-item, .features__area-btn-item').on("click", function(){
-                $('.pricing__plan-btn-item, .features__area-btn-item').removeClass('active');
-                $(this).addClass('active');
-                var tabId = $(this).data('tag');
-                $('.pricing__plan-content-item, .features__area-content-item').removeClass('active').addClass('d-none');
-                $('#'+tabId).addClass('active').removeClass('d-none');
-            });
-        });
-    }
-
-    ///=============  * Achievements  =============\\\
-    function achievements() {
-        $(document).ready(function () {
-            $('.award_item').mouseenter(function() {
-                $('.award_item').removeClass('active');
-                $(this).addClass('active');
-            });
-        });
-    }
-
-    ///=============  * Testimonial Slider  =============\\\
-    function testimonialSlider() {
-        var swiper = new Swiper(".testimonial_slide", {
-            spaceBetween: 25,
-            centeredSlides: true,
-            speed: 1000,
-            loop: true,
-            autoplay: {
-                delay: 4000,
-                reverseDirection: false,
-                disableOnInteraction: false,
-            },
-            navigation: {
-                nextEl: '.testimonial_next',
-                prevEl: '.testimonial_prev',
-            },
-            breakpoints: {
-                0: {
-                    slidesPerView: 1,
-                },
-                768: {
-                    slidesPerView: 1.4,
-                },
-                1025: {
-                    slidesPerView: 2.4,
-                },
-                1600: {
-                    slidesPerView: 2.5,
-                },
-            },
-        });
-    }
-
-    ///=============  * Team Slider  =============\\\
-    function teamSlider() {
-        var swiper = new Swiper(".team_slider", {
-            loop: true,
-            spaceBetween: 25,
-            speed: 800,
-            autoplay: {
-                delay: 4000,
-                reverseDirection: false,
-                disableOnInteraction: false,
-            },
-            breakpoints: {
-                0: {
-                    slidesPerView: 1,
-                },
-                700: {
-                    slidesPerView: 2,
-                },
-                992: {
-                    slidesPerView: 3,
-                },
-            },
-        });
-    }
-
     ///=============  * Portfolio Filter  =============\\\
     function portfolioFilter() {
         $(window).on('load', function(){
@@ -304,102 +138,6 @@
                 $(this).siblings('.active').removeClass('active');
                 $(this).addClass('active');
             });
-        });
-    }
-
-    ///=============  * Dark & Light Switch  =============\\\
-    function darkLightSwitch() {
-        $('.switch__tab-open').on('click', function () {
-            $(this).hide();
-            $('.switch__tab-close').show();
-            $('.switch__tab-icon').css('right', '260px');
-            $('.switch__tab-area').css({
-                'right': '0',
-            });
-        });
-        $('.switch__tab-close').on('click', function () {
-            $(this).hide();
-            $('.switch__tab-open').show();
-            $('.switch__tab-icon').css('right', '0');
-            $('.switch__tab-area').css({
-                'right': '-260px',
-            });
-        });
-        $('.type-dark-mode button').on('click', function (e) {
-            $(this).addClass('active').siblings().removeClass('active');
-            var themeDark = $('.type-dark-mode button.active').attr('data-mode');
-            if (themeDark == 'dark-mode') {
-                $('body').addClass('dark-mode');
-            } else {
-                $('body').removeClass('dark-mode');
-            }
-        });
-    }
-
-    ///=============  * Custom Cursor  =============\\\
-    function customCursor() {
-        var ball = document.getElementById("cursor-ball");
-        var cursorText = document.getElementById("cursor-text");
-        var hoverAreas = document.querySelectorAll('.data_cursor');
-        var lastHoveredElement = null;
-        var mouseX = 0, mouseY = 0;
-        var ballX = 0, ballY = 0;
-        var speed = 0.1;
-        function updateCursor() {
-            ballX += (mouseX - ballX) * speed;
-            ballY += (mouseY - ballY) * speed;
-            ball.style.left = ballX + "px";
-            ball.style.top = ballY + "px";
-            cursorText.style.left = ballX + "px";
-            cursorText.style.top = ballY + "px";
-            if (lastHoveredElement === null) {
-                ball.style.display = 'block';
-                ball.style.height = "12px";
-                ball.style.width = "12px";
-                cursorText.style.opacity = '0';
-            }
-            requestAnimationFrame(updateCursor);
-        }
-        function handleMouseMove(e) {
-            var scrollX = window.pageXOffset || document.documentElement.scrollLeft;
-            var scrollY = window.pageYOffset || document.documentElement.scrollTop;
-            mouseX = e.clientX + scrollX;
-            mouseY = e.clientY + scrollY;
-        }
-        function handleHoverEnter(e) {
-            cursorText.innerHTML = e.target.getAttribute('data-cursor-text');
-            cursorText.style.opacity = '1';
-            ball.style.height = "90px";
-            ball.style.width = "90px";
-            lastHoveredElement = e.target;
-        }
-        function handleHoverLeave(e) {
-            cursorText.style.opacity = '0';
-            ball.style.display = 'block';
-            lastHoveredElement = null;
-        }
-        document.addEventListener('mousemove', handleMouseMove);
-        hoverAreas.forEach(function (elem) {
-            elem.addEventListener('mouseenter', handleHoverEnter);
-            elem.addEventListener('mouseleave', handleHoverLeave);
-        });
-        updateCursor();
-        $(document).ready(function () {
-            toggleCursor($('#cursor_style button.active').data('cursor'));
-            $('#cursor_style button').on('click', function () {
-                $('#cursor_style button').removeClass('active');
-                $(this).addClass('active');
-                toggleCursor($(this).data('cursor'));
-            });
-            function toggleCursor(value) {
-                if (value == 2) {
-                    $('.hide').fadeOut();
-                    $('.cursor').removeClass('yes').addClass('no');
-                } else {
-                    $('.hide').fadeIn();
-                    $('.cursor').removeClass('no').addClass('yes');
-                }
-            }
         });
     }
 
@@ -439,23 +177,11 @@
     }
     
     $(document).ready(function () {
-        themeLoader();
         menuBarPopup();
-        searchIconPopup();
         sidebarPopup();
-        counterUp();
-        skillBar();
-        videoPopup();
         bannerSlider();
-        blogSlider();
         portfolioTwoSlider();
-        pricingPlan();
-        achievements();
-        teamSlider();
-        testimonialSlider();
         portfolioFilter();
-        darkLightSwitch();
-        customCursor();
         scrollToTop();
     });
 })(jQuery);
