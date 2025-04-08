@@ -5,9 +5,9 @@ mix.disableSuccessNotifications();
 mix.setPublicPath('source/assets/build');
 
 mix.jigsaw()
-    .js('source/_assets/js/main.js', 'js')
-    .sass('source/_assets/css/style.scss', 'css')
-    .options({
-        processCssUrls: false,
-    })
+    // .js('source/_assets/js/main.js', 'js')
+    // .sass('source/_assets/css/style.scss', 'css')
+    // .options({
+    //     processCssUrls: false,
+    // })
     .version();
