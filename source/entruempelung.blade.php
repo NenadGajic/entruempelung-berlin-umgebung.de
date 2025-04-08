@@ -33,7 +33,7 @@
                         </div>
                     </div>
                     <div class="all__sidebar-item-help mb-25">
-                        <a href="/"><img src="assets/img/logo-w.png" alt=""></a>
+                        <a href="/"><img src="/assets/img/logo-w.png" alt=""></a>
                         <span>Können wir Ihnen helfen?</span>
                         <h4><a href="tel(415)755-7890">(415) 755-7890</a></h4>
                         <a class="default_button" href="/anfrage">Termin vereinbaren<i class="flaticon-right-up"></i></a>
@@ -42,7 +42,7 @@
             </div>
             <div class="col-lg-8">
                 <div class="services__details-area">
-                    <img src="assets/img/services/services-1.jpg" alt="image">
+                    <img src="/assets/img/services/services-1.jpg" alt="image">
                     <h3 class="mt-25 mb-20">Professionelle Entrümpelung in Berlin</h3>
                     <p class="mb-20">Unsere Dienstleistungen erstrecken sich auf Entrümpelungen verschiedenster Art und Größe, darunter Wohnungen, (Hoch-)Häuser, Wohngemeinschaften und auch sogenannte Messi-Wohnungen. Nachdem unser Experte die Räumlichkeiten inspiziert und einen Plan erstellt hat, rücken wir mit der geeigneten Ausrüstung und Fahrzeug an, um mit der Entrümpelung zu beginnen. Da nur erfahrene Fachleute bei uns tätig sind, wird die Arbeit besonders effizient erledigt. Nach Abschluss entsorgen wir den Abfall ordnungsgemäß, reinigen die Räumlichkeiten gründlich und übergeben Ihnen die Schlüssel zurück. Falls Sie spezielle Anforderungen oder Wünsche haben, stehen wir Ihnen gerne zur Verfügung und werden unser Bestes tun, um diese zu erfüllen.</p>
 

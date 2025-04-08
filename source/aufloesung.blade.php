@@ -34,7 +34,7 @@
                             </div>
                         </div>
                         <div class="all__sidebar-item-help mb-25">
-                            <a href="/"><img src="assets/img/logo-w.png" alt=""></a>
+                            <a href="/"><img src="/assets/img/logo-w.png" alt=""></a>
                             <span>Können wir Ihnen helfen?</span>
                             <h4><a href="tel(415)755-7890">(415) 755-7890</a></h4>
                             <a class="default_button" href="/anfrage">Termin vereinbaren<i class="flaticon-right-up"></i></a>
@@ -43,7 +43,7 @@
                 </div>
                 <div class="col-lg-8">
                     <div class="services__details-area">
-                        <img src="assets/img/services/services-1.jpg" alt="image">
+                        <img src="/assets/img/services/services-1.jpg" alt="image">
                         <h3 class="mt-25 mb-20">Haushalts- und Gewerbeauflösung in Berlin</h3>
                         <p class="mb-20">Wir kümmern uns um die professionelle und effiziente Auflösung von Haushalten, unabhängig davon, ob es sich um einen Privathaushalt oder einen Gewerbebetrieb handelt. Unsere Dienstleistung umfasst das Räumen und Entrümpeln sämtlicher Räumlichkeiten.</p>
                         <p class="mb-20">Wir bieten Ihnen für die Haushaltsauflösung eine kostenlose Besichtigung, einen transparenten Festpreis ohne versteckte Kosten und eine zügige sowie gründliche Durchführung. Bei Haushaltsauflösungen gibt es häufig wertvolle Gegenstände, die wir beim Gesamtpreis berücksichtigen, um Ihnen einen vorteilhaften Preis für die Haushaltsauflösung zu ermöglichen.</p>

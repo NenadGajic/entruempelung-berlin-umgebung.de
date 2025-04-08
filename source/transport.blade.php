@@ -22,7 +22,7 @@
             <div class="row justify-content-center">
                 <div class="col-lg-8">
                     <div class="services__details-area">
-                        <img src="assets/img/services/services-1.jpg" alt="image">
+                        <img src="/assets/img/services/services-1.jpg" alt="image">
                         <h3 class="mt-25 mb-20">Kleintransporte in Berlin und Umgebung</h3>
                         <p class="mb-20">Die pünktliche Lieferung ist eine Aufgabe, die nur von Fachleuten bewältigt werden kann. Sie haben Gegenstände, die von einem Ort zum anderen geliefert werden müssen, und suchen einen zuverlässigen Lieferanten?</p>
                         <p class="mb-20">Wir sind mit den eigenen Fuhrpark Ihr optimaler Partner für Lieferungen und der vertrauenswürdigste Lieferdienst in Wien und Österreich.</p>

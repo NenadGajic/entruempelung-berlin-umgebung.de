@@ -22,7 +22,8 @@
             <div class="row justify-content-center">
                 <div class="col-lg-8">
                     <div class="services__details-area">
-                        <img src="assets/img/services/services-1.jpg" alt="image">
+                        <img src="/assets/img/services/services-1.jpg" alt="image">
+
                         <h3 class="mt-25 mb-20">Umzug in Berlin und Umgebung</h3>
                         <p class="mb-20">Einen gut organisierten und durchgeplanten Umzug beginnen wir mit einer kompetenten Beratung und einem professionellen Team.</p>
                         <p class="mb-20">Wir zeichnen uns durch hochqualifizierte Spezialisten mit langjähriger Erfahrung aus. Wir planen Ihren Umzug und Ihre Übersiedlung bis ins kleinste Detail und führen unsere Arbeiten mit minimalem Risiko und maximalem Qualitäts- und Serviceanspruch durch.</p>
