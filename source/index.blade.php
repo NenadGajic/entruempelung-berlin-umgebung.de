@@ -88,7 +88,7 @@
                         <div class="services__one-item-content">
                             <h4><a href="#">Entrümpelung</a></h4>
                             <p>Wir entrümpeln alles! Vom Dachboden bis zum Keller! Auch außerhalb des Hauses, wie Scheunen, Garagen und Gärten. Von Kleinentsorgungen bis zu Komplettentrümpelung.</p>
-                            <a class="more_btn" href="#">Mehr erfahren<i class="flaticon-right-up"></i></a>
+                            <a class="more_btn" href="/entruempelung">Mehr erfahren<i class="flaticon-right-up"></i></a>
                         </div>
                     </div>
                 </div>
@@ -102,7 +102,7 @@
                         <div class="services__one-item-content">
                             <h4><a href="#">Haushalts- und Gewerbeauflösung</a></h4>
                             <p>Egal ob Privat oder Gewerbe - wir sorgen für eine fachgerechte Auflösung ihrer Wohn- oder Gewerbeflächen und Objekte.</p>
-                            <a class="more_btn" href="#">Mehr erfahren<i class="flaticon-right-up"></i></a>
+                            <a class="more_btn" href="/aufloesung">Mehr erfahren<i class="flaticon-right-up"></i></a>
                         </div>
                     </div>
                 </div>
@@ -116,7 +116,7 @@
                         <div class="services__one-item-content">
                             <h4><a href="#">Umzug</a></h4>
                             <p>Sicher ins neue Heim! Wir bieten neben dem Umzug auch Kartons an. Von kleinen Möbelumzügen bis zu großen Haushalten.</p>
-                            <a class="more_btn" href="#">Mehr erfahren<i class="flaticon-right-up"></i></a>
+                            <a class="more_btn" href="/umzug">Mehr erfahren<i class="flaticon-right-up"></i></a>
                         </div>
                     </div>
                 </div>
@@ -130,7 +130,7 @@
                         <div class="services__one-item-content">
                             <h4><a href="#">Kleintransporte</a></h4>
                             <p>Kleintransporte bis 3,5t, Eil- und Kurierfahrten in Großraum Berlin. Wir transportieren Ihr Gut schnell und zuverlässig. Sei es einmalig oder fest für eine lange Zeit.</p>
-                            <a class="more_btn" href="#">Mehr erfahren<i class="flaticon-right-up"></i></a>
+                            <a class="more_btn" href="/transport">Mehr erfahren<i class="flaticon-right-up"></i></a>
                         </div>
                     </div>
                 </div>
@@ -197,7 +197,7 @@
             <div class="row">
                 <div class="col-xl-12">
                     <div class="process__area-title t-center">
-                        <span class="subtitle ">3 Schritte</span>
+                        <span class="subtitle">3 Schritte</span>
                         <h2>Komplizierte Prozesse einfach erledigen</h2>
                     </div>
                 </div>
