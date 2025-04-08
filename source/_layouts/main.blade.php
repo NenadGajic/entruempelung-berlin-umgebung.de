@@ -7,7 +7,7 @@
         <meta name="description" content="{{ isset($description) ? $description : $page->description }}">
         <meta name="keywords" content="Entrümpelung, Entsorgung, Berlin, Umgebung, Kleintransporte, Umzug"/>
 
-        <link rel="icon" type="image/png" href="assets/img/favicon.png">
+        <link rel="icon" type="image/png" href="{{ $page->baseUrl }}/assets/img/favicon.png">
 
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="index, follow">
@@ -15,13 +15,13 @@
 
         <link rel="canonical" href="{{ $page->getUrl() }}">
 
-        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-        <link rel="stylesheet" href="assets/css/fontawesome.css">
-        <link rel="stylesheet" href="assets/font/flaticon_flexitype.css">
-        <link rel="stylesheet" href="assets/css/animate.css">
-        <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
-        <link rel="stylesheet" href="assets/css/magnific-popup.css">
-        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="{{ $page->baseUrl }}/assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{{ $page->baseUrl }}/assets/css/fontawesome.css">
+        <link rel="stylesheet" href="{{ $page->baseUrl }}/assets/font/flaticon_flexitype.css">
+        <link rel="stylesheet" href="{{ $page->baseUrl }}/assets/css/animate.css">
+        <link rel="stylesheet" href="{{ $page->baseUrl }}/assets/css/swiper-bundle.min.css">
+        <link rel="stylesheet" href="{{ $page->baseUrl }}/assets/css/magnific-popup.css">
+        <link rel="stylesheet" href="{{ $page->baseUrl }}/assets/css/style.css">
     </head>
     <body>
         <x-mobile-menu />
@@ -32,15 +32,15 @@
 
         <x-footer />
 
-        <script src="assets/js/jquery-3.7.1.min.js"></script>
-        <script src="assets/js/bootstrap.min.js"></script>
-        <script src="assets/js/jquery.counterup.min.js"></script>
-        <script src="assets/js/popper.min.js"></script>
-        <script src="assets/js/progressbar.min.js"></script>
-        <script src="assets/js/jquery.magnific-popup.min.js"></script>
-        <script src="assets/js/swiper-bundle.min.js"></script>
-        <script src="assets/js/jquery.waypoints.min.js"></script>
-        <script src="assets/js/isotope.pkgd.min.js"></script>
-        <script src="assets/js/custom.js"></script>
+        <script src="{{ $page->baseUrl }}/assets/js/jquery-3.7.1.min.js"></script>
+        <script src="{{ $page->baseUrl }}/assets/js/bootstrap.min.js"></script>
+        <script src="{{ $page->baseUrl }}/assets/js/jquery.counterup.min.js"></script>
+        <script src="{{ $page->baseUrl }}/assets/js/popper.min.js"></script>
+        <script src="{{ $page->baseUrl }}/assets/js/progressbar.min.js"></script>
+        <script src="{{ $page->baseUrl }}/assets/js/jquery.magnific-popup.min.js"></script>
+        <script src="{{ $page->baseUrl }}/assets/js/swiper-bundle.min.js"></script>
+        <script src="{{ $page->baseUrl }}/assets/js/jquery.waypoints.min.js"></script>
+        <script src="{{ $page->baseUrl }}/assets/js/isotope.pkgd.min.js"></script>
+        <script src="{{ $page->baseUrl }}/assets/js/custom.js"></script>
     </body>
 </html>
