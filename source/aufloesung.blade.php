@@ -1,3 +1,7 @@
+@php
+    $title = "Haushalts- und Gewerbeauflösung | " . $page->title;
+@endphp
+
 @extends('_layouts.main')
 
 @section('body')

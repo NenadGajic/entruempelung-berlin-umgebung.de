@@ -1,3 +1,7 @@
+@php
+$title = "Kostenlose Anfrage Senden | " . $page->title;
+@endphp
+
 @extends('_layouts.main')
 
 @section('body')

@@ -1,3 +1,7 @@
+@php
+    $title = "Professioneller Umzug | " . $page->title;
+@endphp
+
 @extends('_layouts.main')
 
 @section('body')

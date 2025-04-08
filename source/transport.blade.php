@@ -1,3 +1,7 @@
+@php
+    $title = "Kleintransport bis 3,5t | " . $page->title;
+@endphp
+
 @extends('_layouts.main')
 
 @section('body')

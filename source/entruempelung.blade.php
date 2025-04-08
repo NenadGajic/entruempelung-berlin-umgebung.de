@@ -1,3 +1,7 @@
+@php
+    $title = "Professionelle Entrümpelung | " . $page->title;
+@endphp
+
 @extends('_layouts.main')
 
 @section('body')
