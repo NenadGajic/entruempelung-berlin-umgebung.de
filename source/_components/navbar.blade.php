@@ -14,32 +14,37 @@
                     <div class="header__area-menubar-center">
                         <div class="header__area-menubar-center-menu">
                             <ul id="mobilemenu">
-                                <li class="menu-item-has-children"><a href="#">Entrümpelung</a>
+                                <li><a href="/entruempelung">Entrümpelung</a></li>
+{{--                                <li class="menu-item-has-children"><a href="#">Entrümpelung</a>--}}
+{{--                                    <ul class="sub-menu">--}}
+{{--                                        <li><a href="#">Entrümpelungen in Berlin</a></li>--}}
+{{--                                        <li><a href="#">Wohnungsentrümpelung</a></li>--}}
+{{--                                        <li><a href="#">Hausentrümpelung</a></li>--}}
+{{--                                        <li><a href="#">Kellerentrümpelung</a></li>--}}
+{{--                                    </ul>--}}
+{{--                                </li>--}}
+                                <li><a href="/entsorgung">Entsorgung</a></li>
+
+{{--                                <li class="menu-item-has-children"><a href="#">Entsorgung</a>--}}
+{{--                                    <ul class="sub-menu">--}}
+{{--                                        <li><a href="#">Entsorgung in Berlin</a></li>--}}
+{{--                                        <li><a href="#">Bauschutt-Entsorgung</a></li>--}}
+{{--                                        <li><a href="#">Möbelentsorgung</a></li>--}}
+{{--                                        <li><a href="#">Sperrmüllentsorgung</a></li>--}}
+{{--                                    </ul>--}}
+{{--                                </li>--}}
+                                <li><a href="/aufloesung">Auflösungen</a></li>
+
+{{--                                <li class="menu-item-has-children"><a href="#">Auflösungen</a>--}}
+{{--                                    <ul class="sub-menu">--}}
+{{--                                        <li><a href="#">Haushalt- und Wohnungsauflösung</a></li>--}}
+{{--                                        <li><a href="#">Gewerbeauflösung</a></li>--}}
+{{--                                    </ul>--}}
+{{--                                </li>--}}
+                                <li class="menu-item-has-children"><a href="">Sonstiges</a>
                                     <ul class="sub-menu">
-                                        <li><a href="#">Entrümpelungen in Berlin</a></li>
-                                        <li><a href="#">Wohnungsentrümpelung</a></li>
-                                        <li><a href="#">Hausentrümpelung</a></li>
-                                        <li><a href="#">Kellerentrümpelung</a></li>
-                                    </ul>
-                                </li>
-                                <li class="menu-item-has-children"><a href="#">Entsorgung</a>
-                                    <ul class="sub-menu">
-                                        <li><a href="#">Entsorgung in Berlin</a></li>
-                                        <li><a href="#">Bauschutt-Entsorgung</a></li>
-                                        <li><a href="#">Möbelentsorgung</a></li>
-                                        <li><a href="#">Sperrmüllentsorgung</a></li>
-                                    </ul>
-                                </li>
-                                <li class="menu-item-has-children"><a href="#">Auflösungen</a>
-                                    <ul class="sub-menu">
-                                        <li><a href="#">Haushalt- und Wohnungsauflösung</a></li>
-                                        <li><a href="#">Gewerbeauflösung</a></li>
-                                    </ul>
-                                </li>
-                                <li class="menu-item-has-children"><a href="#">Sonstiges</a>
-                                    <ul class="sub-menu">
-                                        <li><a href="#">Umzug</a></li>
-                                        <li><a href="#">Transport</a></li>
+                                        <li><a href="/umzug">Umzug</a></li>
+                                        <li><a href="/transport">Transport</a></li>
                                     </ul>
                                 </li>
                                 <li><a href="/anfrage">Kontakt</a></li>
