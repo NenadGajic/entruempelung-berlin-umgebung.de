@@ -21,6 +21,7 @@
         <link rel="stylesheet" href="/assets/css/animate.css">
         <link rel="stylesheet" href="/assets/css/swiper-bundle.min.css">
         <link rel="stylesheet" href="/assets/css/magnific-popup.css">
+        <link rel="stylesheet" href="/assets/css/utilities.css">
         <link rel="stylesheet" href="/assets/css/style.css">
     </head>
     <body>
