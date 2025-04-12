@@ -5,7 +5,8 @@
 
     <span>Können wir Ihnen helfen?</span>
 
-    <h4><a href="tel(415)755-7890">(415) 755-7890</a></h4>
+    <h4><a href="tel:+49 177 3975560">+49 177 3975560</a></h4>
+
     <a class="default_button" href="/anfrage">
         Termin vereinbaren<i class="flaticon-right-up"></i>
     </a>

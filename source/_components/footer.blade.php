@@ -41,7 +41,7 @@
                         </div>
                         <div class="contact-item-info">
                             <span>Tel:</span>
-                            <h6><a href="tel:(415)755-7890">+49 123 456 789</a></h6>
+                            <h6><a href="tel:+49 177 3975560">+49 177 3975560</a></h6>
                         </div>
                     </div>
                 </div>

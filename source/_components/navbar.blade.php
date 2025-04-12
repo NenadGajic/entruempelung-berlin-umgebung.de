@@ -24,7 +24,6 @@
 {{--                                    </ul>--}}
 {{--                                </li>--}}
                                 <li><a href="/entsorgung" class="{{ $page->active('entsorgung') }}">Entsorgung</a></li>
-
 {{--                                <li class="menu-item-has-children"><a href="#">Entsorgung</a>--}}
 {{--                                    <ul class="sub-menu">--}}
 {{--                                        <li><a href="#">Entsorgung in Berlin</a></li>--}}
@@ -34,7 +33,6 @@
 {{--                                    </ul>--}}
 {{--                                </li>--}}
                                 <li><a href="/aufloesung" class="{{ $page->active('aufloesung') }}">Auflösungen</a></li>
-
 {{--                                <li class="menu-item-has-children"><a href="#">Auflösungen</a>--}}
 {{--                                    <ul class="sub-menu">--}}
 {{--                                        <li><a href="#">Haushalt- und Wohnungsauflösung</a></li>--}}
@@ -51,6 +49,7 @@
                             </ul>
                         </div>
                     </div>
+
                     <div class="header__area-menubar-right">
                         <div class="header__area-menubar-right-tel lg-display-n">
                             <div class="header__area-menubar-right-tel-icon">
@@ -58,7 +57,7 @@
                             </div>
                             <div class="header__area-menubar-right-tel-info">
                                 <span>Rufe uns an</span>
-                                <h6><a href="tel:(415)755-7890">+49 123 456 789</a></h6>
+                                <h6><a href="tel:+49 177 3975560">+49 177 3975560</a></h6>
                             </div>
                         </div>
                         <div class="header__area-menubar-right-responsive-menu menu__bar">
