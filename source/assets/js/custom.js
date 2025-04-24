@@ -175,8 +175,24 @@
             return false;
         });
     }
-    
+
+    ///=============  Toggle contact fields based on selected service  =============\\\
+    function updateServiceDependentFields() {
+        let selectedService = $('#service').val();
+
+        $('.conditional-group').hide();
+
+        $('.conditional-group').each(function() {
+            let services = $(this).data('service').split(',').map(s => s.trim());
+
+            services.includes(selectedService) ? $(this).show() : $(this).hide();
+        });
+    }
+
     $(document).ready(function () {
+        $('select#service').on('change', updateServiceDependentFields);
+        updateServiceDependentFields();
+
         menuBarPopup();
         sidebarPopup();
         bannerSlider();
