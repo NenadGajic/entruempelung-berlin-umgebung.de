@@ -24,7 +24,7 @@
 
     <div class="request__quote section-padding-three">
         <div class="container">
-            <form name="contact" method="POST" data-netlify="true">
+            <form name="contact" method="POST" data-netlify-recaptcha="true" data-netlify="true">
                 <section class="contact-group">
                     <h5>Ihre Kontaktdaten</h5>
 
@@ -225,6 +225,12 @@
                         </div>
                     </div>
                 </section>
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div data-netlify-recaptcha="true"></div>
+                    </div>
+                </div>
 
                 <div class="row">
                     <div class="col-lg-12">
