@@ -24,7 +24,7 @@
 
     <div class="request__quote section-padding-three">
         <div class="container">
-            <form name="contact" method="POST" data-netlify-recaptcha="true" data-netlify="true">
+            <form name="contact" id="contact-form" method="POST" data-netlify-recaptcha="true" data-netlify="true">
                 <section class="contact-group">
                     <h5>Ihre Kontaktdaten</h5>
 
@@ -63,9 +63,9 @@
                                 <label>Welche Dienstleisung benötigen Sie? </label>
                                 <select id="service" name="service">
                                     <option selected>-- bitte auswählen --</option>
-                                    <option value="entruempelung">Entrümpelung</option>
+                                    <option value="entrümpelung">Entrümpelung</option>
                                     <option value="entsorgung">Entsorgung</option>
-                                    <option value="aufloesung">Auflösung</option>
+                                    <option value="auflösung">Auflösung</option>
                                     <option value="umzug">Umzug</option>
                                     <option value="transport">Transport</option>
                                 </select>
@@ -79,7 +79,7 @@
                             <div class="col-md-6 mt-25">
                                 <div class="request__quote-item">
                                     <label>Postleitzahl und Ortschaft</label>
-                                    <input type="text" name="plz" placeholder="z.B.: 10115 Berlin">
+                                    <input type="text" name="objekt-plz" placeholder="z.B.: 10115 Berlin">
                                 </div>
                             </div>
 
@@ -226,7 +226,7 @@
                     </div>
                 </section>
 
-                <div class="row">
+                <div class="row mt-25">
                     <div class="col-lg-12">
                         <div data-netlify-recaptcha="true"></div>
                     </div>
