@@ -207,7 +207,7 @@
           body: cleanedFormData
         })
           .then(() => {
-            form.style.display = 'none';           // Hide the form
+            myForm.style.display = 'none';           // Hide the form
             document.getElementById('form-success').style.display = 'block'; // Show success message
           })
           .catch(error => alert(error));
