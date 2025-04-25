@@ -63,9 +63,9 @@
                                 <label>Welche Dienstleisung benötigen Sie? </label>
                                 <select id="service" name="service">
                                     <option selected>-- bitte auswählen --</option>
-                                    <option value="entrümpelung">Entrümpelung</option>
+                                    <option value="entruempelung">Entrümpelung</option>
                                     <option value="entsorgung">Entsorgung</option>
-                                    <option value="auflösung">Auflösung</option>
+                                    <option value="aufloesung">Auflösung</option>
                                     <option value="umzug">Umzug</option>
                                     <option value="transport">Transport</option>
                                 </select>
@@ -79,7 +79,7 @@
                             <div class="col-md-6 mt-25">
                                 <div class="request__quote-item">
                                     <label>Postleitzahl und Ortschaft</label>
-                                    <input type="text" name="objekt-plz" placeholder="z.B.: 10115 Berlin">
+                                    <input type="text" name="plz" placeholder="z.B.: 10115 Berlin">
                                 </div>
                             </div>
 
@@ -143,7 +143,7 @@
                             <div class="col-md-12 mt-25">
                                 <div class="request__quote-item">
                                     <label>Was möchten Sie entsorgen?</label>
-                                    <textarea name="entsorgungs-beschreibung"
+                                    <textarea name="entsorgungs_beschreibung"
                                               placeholder="Beschreiben Sie was genau entsorgt werden muss. Je mehr Infos, desto besser."></textarea>
                                 </div>
                             </div>
@@ -155,14 +155,14 @@
                             <div class="col-md-6 mt-25">
                                 <div class="request__quote-item">
                                     <label>Abholungsadresse: PLZ und Ortschaft</label>
-                                    <input type="text" name="abhol-plz" placeholder="z.B.: 10115 Berlin">
+                                    <input type="text" name="abhol_plz" placeholder="z.B.: 10115 Berlin">
                                 </div>
                             </div>
 
                             <div class="col-md-6 mt-25">
                                 <div class="request__quote-item">
                                     <label>Abholungsadresse: Straße und Hausnummer</label>
-                                    <input type="text" name="abhol-adresse" placeholder="Musterstraße 1/20">
+                                    <input type="text" name="abhol_adresse" placeholder="Musterstraße 1/20">
                                 </div>
                             </div>
                         </div>
@@ -171,14 +171,14 @@
                             <div class="col-md-6 mt-25">
                                 <div class="request__quote-item">
                                     <label>Zustelladresse: PLZ und Ortschaft</label>
-                                    <input type="text" name="zustell-plz" placeholder="z.B.: 10115 Berlin">
+                                    <input type="text" name="zustell_plz" placeholder="z.B.: 10115 Berlin">
                                 </div>
                             </div>
 
                             <div class="col-md-6 mt-25">
                                 <div class="request__quote-item">
                                     <label>Zustelladresse: Straße und Hausnummer</label>
-                                    <input type="text" name="zustell-adresse" placeholder="Musterstraße 1/20">
+                                    <input type="text" name="zustell_adresse" placeholder="Musterstraße 1/20">
                                 </div>
                             </div>
                         </div>
