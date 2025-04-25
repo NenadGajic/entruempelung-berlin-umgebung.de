@@ -190,55 +190,12 @@
     }
 
 
-  function handleContactFormSubmit(event) {
-        event.preventDefault();
-      
-        const formData = new FormData(this);
-        const cleanedData = {};
-
-        const fieldMappings = {
-          name: "Absender Name",
-          email: "Absender E-Mail",
-          nummer: "Absender Telefonnummer",
-
-          service: "Benötigte Leistung",
-        //   entruempelung: "Entrümpelung",
-        //   entsorgung: "Entsorgung",
-        //   aufloesung: "Auflösung",
-        //   umzug: "Umzug",
-        //   transport: "Transport",
-
-          plz: "PLZ und Ortschaft",
-          strasse: "Straße und Hausnummer",
-          etage: "Etage",
-          objekt: "Objektart zu Entrümpeln / Auflösen",
-          flaeche: "Fläche",
-          entsorgung_beschreibung: "Beschreibung der Entsorgung",
-
-          abhol_plz: "Abholung: PLZ und Ortschaft",
-          abhol_adresse: "Abholung: Straße und Hausnummer",
-          zustell_plz: "Zustellung: PLZ und Ortschaft",
-          zustell_adresse: "Zustellung: Straße und Hausnummer",
-          gewicht: "Gewicht",
-          ware: "Ware",
-
-          wunschdatum: "Wunschdatum",
-          details: "Details und Zusatzinfos",
-        };
-      
-        for (let [key, value] of formData.entries()) {
-          if (value.trim() !== "" && fieldMappings[key]) {
-            cleanedData[fieldMappings[key]] = value.trim();
-          }
-        }
-      
-        fetch("/", {
-          method: "POST",
-          headers: { "Content-Type": "application/x-www-form-urlencoded" },
-          body: new URLSearchParams(formData).toString()
-        })
-            .then(() => console.log("Form successfully submitted"))
-            .catch(error => alert(error));
+    function handleContactFormSubmit(event) {
+        this.querySelectorAll('input:not([type=hidden]), textarea, select').forEach((input) => {
+            if (!input.value.trim()) {
+                input.disabled = true; // Disable empty fields so browser doesn't send them
+            }
+        });
     }
 
     $(document).ready(function () {
