@@ -241,6 +241,11 @@
                     </div>
                 </div>
             </form>
+
+            <div id="form-success" style="display: none;">
+                <h2>Thank you! 🎉</h2>
+                <p>Your message has been sent successfully. We will contact you soon.</p>
+              </div>
         </div>
     </div>
 @endsection

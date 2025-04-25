@@ -191,11 +191,26 @@
 
 
     function handleContactFormSubmit(event) {
-        this.querySelectorAll('input:not([type=hidden]), textarea, select').forEach((input) => {
-            if (!input.value.trim()) {
-                input.disabled = true; // Disable empty fields so browser doesn't send them
-            }
-        });
+        event.preventDefault();
+
+        const myForm = event.target;
+        const formData = new FormData(myForm);
+
+        const filteredEntries = Array.from(formData.entries())
+        .filter(([_, value]) => value.trim() !== ""); // only keep filled fields
+    
+        const cleanedFormData = new URLSearchParams(filteredEntries).toString();
+      
+        fetch("/", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: cleanedFormData
+        })
+          .then(() => {
+            form.style.display = 'none';           // Hide the form
+            document.getElementById('form-success').style.display = 'block'; // Show success message
+          })
+          .catch(error => alert(error));
     }
 
     $(document).ready(function () {
