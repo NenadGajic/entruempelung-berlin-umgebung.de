@@ -53,7 +53,7 @@
                     <div class="row al-center">
                         <div class="col-md-12">
                             <div class="copyright__area-content md-t-center md-mb-10">
-                                <p>Copyright 2025 – Alle Rechte vorbehalten.</p>
+                                <p>Copyright {{ date('Y') }} – Alle Rechte vorbehalten.</p>
                             </div>
                         </div>
                     </div>
