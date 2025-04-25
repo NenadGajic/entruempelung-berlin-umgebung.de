@@ -24,7 +24,7 @@
 
     <div class="request__quote section-padding-three">
         <div class="container">
-            <form action="#">
+            <form name="contact" method="POST" data-netlify="true">
                 <section class="contact-group">
                     <h5>Ihre Kontaktdaten</h5>
 
