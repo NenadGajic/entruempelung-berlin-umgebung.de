@@ -42,7 +42,6 @@
         @if(isset($needsSwiper) && $needsSwiper)
             <link rel="stylesheet" href="/assets/css/swiper-bundle.min.css">
         @endif
-        <link rel="stylesheet" href="/assets/css/utilities.css">
         <link rel="stylesheet" href="/assets/css/style.css">
     </head>
     <body>
