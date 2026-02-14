@@ -16,6 +16,10 @@ const pages = [
   'build_production/transport/index.html',
 ];
 
+const breadcrumbRequiredPages = new Set(
+  pages.filter((page) => page !== 'build_production/index.html')
+);
+
 const activeTemplateGlobs = [
   'source/*.blade.php',
   'source/_components/*.blade.php',
@@ -198,11 +202,123 @@ function checkSemantics() {
   }
 }
 
+function extractJsonLdBlocks(html) {
+  const blocks = [];
+  const jsonLdPattern = /<script\s+type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/gi;
+  let match;
+
+  while ((match = jsonLdPattern.exec(html)) !== null) {
+    blocks.push(match[1].trim());
+  }
+
+  return blocks;
+}
+
+function collectRootTypes(parsed, types) {
+  if (Array.isArray(parsed)) {
+    parsed.forEach((item) => collectRootTypes(item, types));
+    return;
+  }
+
+  if (!parsed || typeof parsed !== 'object') {
+    return;
+  }
+
+  const type = parsed['@type'];
+  if (typeof type === 'string') {
+    types.add(type);
+  } else if (Array.isArray(type)) {
+    type.forEach((value) => {
+      if (typeof value === 'string') {
+        types.add(value);
+      }
+    });
+  }
+
+  if (Array.isArray(parsed['@graph'])) {
+    parsed['@graph'].forEach((entry) => collectRootTypes(entry, types));
+  }
+}
+
+function checkSeo() {
+  let hasFailure = false;
+
+  for (const page of pages) {
+    const abs = path.join(root, page);
+    if (!fs.existsSync(abs)) {
+      fail(`Missing built page: ${page}`);
+      hasFailure = true;
+      continue;
+    }
+
+    const html = read(page);
+
+    const titleMatch = html.match(/<title>([\s\S]*?)<\/title>/i);
+    const titleValue = titleMatch ? titleMatch[1].trim() : '';
+    if (!titleValue) {
+      fail(`Missing or empty <title> in ${page}`);
+      hasFailure = true;
+    }
+
+    const descriptionMatch = html.match(/<meta\s+name=["']description["']\s+content=["']([^"']*)["'][^>]*>/i);
+    const descriptionValue = descriptionMatch ? descriptionMatch[1].trim() : '';
+    if (!descriptionValue) {
+      fail(`Missing or empty meta description in ${page}`);
+      hasFailure = true;
+    }
+
+    const canonicalMatch = html.match(/<link\s+rel=["']canonical["']\s+href=["']([^"']+)["'][^>]*>/i);
+    const canonicalValue = canonicalMatch ? canonicalMatch[1].trim() : '';
+    if (!canonicalValue) {
+      fail(`Missing canonical link in ${page}`);
+      hasFailure = true;
+    }
+
+    const jsonLdBlocks = extractJsonLdBlocks(html);
+    if (!jsonLdBlocks.length) {
+      fail(`No JSON-LD blocks found in ${page}`);
+      hasFailure = true;
+      continue;
+    }
+
+    const detectedTypes = new Set();
+    jsonLdBlocks.forEach((block, index) => {
+      try {
+        const parsed = JSON.parse(block);
+        collectRootTypes(parsed, detectedTypes);
+      } catch (error) {
+        fail(`Invalid JSON-LD block #${index + 1} in ${page}: ${error.message}`);
+        hasFailure = true;
+      }
+    });
+
+    if (!detectedTypes.has('WebSite')) {
+      fail(`Missing WebSite JSON-LD in ${page}`);
+      hasFailure = true;
+    }
+
+    if (!detectedTypes.has('LocalBusiness')) {
+      fail(`Missing LocalBusiness JSON-LD in ${page}`);
+      hasFailure = true;
+    }
+
+    if (breadcrumbRequiredPages.has(page) && !detectedTypes.has('BreadcrumbList')) {
+      fail(`Missing BreadcrumbList JSON-LD in ${page}`);
+      hasFailure = true;
+    }
+  }
+
+  if (!hasFailure) {
+    pass('SEO checks passed (meta tags, canonical, and JSON-LD)');
+  }
+}
+
 function runAll() {
   checkH1();
   checkLinks();
   checkAssets();
   checkSemantics();
+  checkSeo();
 }
 
 if (!mode || mode === 'all') {
@@ -215,8 +331,10 @@ if (!mode || mode === 'all') {
   checkAssets();
 } else if (mode === 'semantics') {
   checkSemantics();
+} else if (mode === 'seo') {
+  checkSeo();
 } else {
-  fail(`Unknown mode: ${mode}. Use one of: all, h1, links, assets, semantics`);
+  fail(`Unknown mode: ${mode}. Use one of: all, h1, links, assets, semantics, seo`);
 }
 
 if (process.exitCode) {
