@@ -11,7 +11,8 @@
         "validate:assets": "node scripts/validate-site.js assets",
         "validate:semantics": "node scripts/validate-site.js semantics",
         "validate:seo": "node scripts/validate-site.js seo",
-        "check": "npm run validate:site && npm run validate:h1 && npm run validate:links && npm run validate:assets && npm run validate:semantics && npm run validate:seo"
+        "validate:content": "node scripts/validate-site.js content",
+        "check": "npm run validate:site && npm run validate:h1 && npm run validate:links && npm run validate:assets && npm run validate:semantics && npm run validate:seo && npm run validate:content"
     },
     "devDependencies": {
         "laravel-mix": "^6.0.39",

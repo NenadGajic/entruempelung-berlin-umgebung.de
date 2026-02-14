@@ -35,9 +35,10 @@ This is the canonical working guide for agents in this repository. `CLAUDE.md` m
 - Local build: `npm run dev` (outputs to `build_local/`)
 - Watch mode: `npm run watch`
 - Production build: `npm run prod` (outputs to `build_production/`)
-- Validation checks: `npm run check` (runs build + structural checks)
+- Validation checks: `npm run check` (runs build + structural + semantic + SEO + content checks)
 - Semantic validation only: `npm run validate:semantics`
 - SEO validation only: `npm run validate:seo`
+- Content validation only: `npm run validate:content`
 - Netlify build: `npm run prod`, publish directory: `build_production`
 
 ## Editing Rules
@@ -54,16 +55,19 @@ This is the canonical working guide for agents in this repository. `CLAUDE.md` m
   - `data-netlify="true"`
   - recaptcha attributes/nodes
   - `id="contact-form"` and `id="form-success"` (used by JS)
+  - `id="form-submit-button"`, `id="form-status"`, and `id="form-error"` (used by JS feedback flow)
 - `source/assets/js/custom.js` currently handles:
   - mobile menu cloning
   - header menu popup behavior
   - homepage banner slider behavior
   - conditional contact fields (`#service`, `.conditional-group`)
   - form submit flow to `/` using URL-encoded payload
+  - inline submit state (`Wird gesendet...`) and inline error/success feedback
 
 ## Removed Legacy JS Behaviors
 - The current templates do not render sidebar-popup, portfolio-two slider, gallery filter, or scroll-up UI blocks.
 - Corresponding legacy initializers were removed from `source/assets/js/custom.js` to keep runtime behavior aligned with active markup.
+- Unused legacy vendor assets were removed from `source/assets/js/` and `source/assets/css/` (isotope, magnific-popup, waypoints, progressbar).
 
 ## CSS/Sass Workflow Notes
 - Active stylesheet loaded by layout: `source/assets/css/style.css`
@@ -94,10 +98,12 @@ This is the canonical working guide for agents in this repository. `CLAUDE.md` m
 - Run `npm run check` before commit (mandatory).
 - Ensure `npm run validate:semantics` passes when editing templates/forms/navigation.
 - Ensure `npm run validate:seo` passes when editing metadata/schema/layout.
+- Ensure `npm run validate:content` passes when editing copy, alt text, service query links, or metadata uniqueness.
 - Run `npm run dev` after changes when iterating locally.
 - Verify output pages in `build_local/` exist and render with valid asset links.
 - Spot-check:
   - nav active states
   - meta title/description/canonical tags
   - contact form behavior and conditional sections
+  - contact form inline status/error/success states
   - `build_local/sitemap.xml` generation

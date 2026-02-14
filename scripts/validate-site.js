@@ -26,6 +26,14 @@ const activeTemplateGlobs = [
   'source/_layouts/*.blade.php',
 ];
 
+const allowedServiceValues = new Set([
+  'entruempelung',
+  'entsorgung',
+  'aufloesung',
+  'umzug',
+  'transport',
+]);
+
 function read(filePath) {
   return fs.readFileSync(path.join(root, filePath), 'utf8');
 }
@@ -313,12 +321,111 @@ function checkSeo() {
   }
 }
 
+function parsePageTitle(html) {
+  const match = html.match(/<title>([\s\S]*?)<\/title>/i);
+  return match ? match[1].trim() : '';
+}
+
+function parsePageDescription(html) {
+  const match = html.match(/<meta\s+name=["']description["']\s+content=["']([^"']*)["'][^>]*>/i);
+  return match ? match[1].trim() : '';
+}
+
+function checkContent() {
+  let hasFailure = false;
+  const files = getTemplateFiles();
+  const genericLogoAltPattern = /\balt\s*=\s*["']\s*logo\s*["']/gi;
+  const hrefPattern = /href\s*=\s*["']([^"']+)["']/gi;
+
+  for (const file of files) {
+    const content = stripBladeComments(read(file));
+
+    if (genericLogoAltPattern.test(content)) {
+      fail(`Generic logo alt text found in ${file}. Use descriptive alt text instead of "Logo".`);
+      hasFailure = true;
+    }
+    genericLogoAltPattern.lastIndex = 0;
+
+    let hrefMatch;
+    while ((hrefMatch = hrefPattern.exec(content)) !== null) {
+      const hrefValue = hrefMatch[1];
+      if (!hrefValue.includes('/anfrage?')) {
+        continue;
+      }
+
+      const queryIndex = hrefValue.indexOf('?');
+      if (queryIndex === -1) {
+        continue;
+      }
+
+      const searchParams = new URLSearchParams(hrefValue.slice(queryIndex + 1));
+      const service = searchParams.get('service');
+      if (!service) {
+        continue;
+      }
+
+      if (!allowedServiceValues.has(service)) {
+        fail(`Unknown service query value "${service}" in ${file} (href="${hrefValue}")`);
+        hasFailure = true;
+      }
+    }
+    hrefPattern.lastIndex = 0;
+  }
+
+  const titleUsage = new Map();
+  const descriptionUsage = new Map();
+
+  for (const page of pages) {
+    const abs = path.join(root, page);
+    if (!fs.existsSync(abs)) {
+      fail(`Missing built page: ${page}`);
+      hasFailure = true;
+      continue;
+    }
+
+    const html = read(page);
+    const title = parsePageTitle(html);
+    const description = parsePageDescription(html);
+
+    if (title) {
+      const pageList = titleUsage.get(title) || [];
+      pageList.push(page);
+      titleUsage.set(title, pageList);
+    }
+
+    if (description) {
+      const pageList = descriptionUsage.get(description) || [];
+      pageList.push(page);
+      descriptionUsage.set(description, pageList);
+    }
+  }
+
+  for (const [title, matchedPages] of titleUsage.entries()) {
+    if (matchedPages.length > 1) {
+      fail(`Duplicate <title> found across pages: "${title}" -> ${matchedPages.join(', ')}`);
+      hasFailure = true;
+    }
+  }
+
+  for (const [description, matchedPages] of descriptionUsage.entries()) {
+    if (matchedPages.length > 1) {
+      fail(`Duplicate meta description found across pages: "${description}" -> ${matchedPages.join(', ')}`);
+      hasFailure = true;
+    }
+  }
+
+  if (!hasFailure) {
+    pass('Content checks passed (alt text, service query values, and metadata uniqueness)');
+  }
+}
+
 function runAll() {
   checkH1();
   checkLinks();
   checkAssets();
   checkSemantics();
   checkSeo();
+  checkContent();
 }
 
 if (!mode || mode === 'all') {
@@ -333,8 +440,10 @@ if (!mode || mode === 'all') {
   checkSemantics();
 } else if (mode === 'seo') {
   checkSeo();
+} else if (mode === 'content') {
+  checkContent();
 } else {
-  fail(`Unknown mode: ${mode}. Use one of: all, h1, links, assets, semantics, seo`);
+  fail(`Unknown mode: ${mode}. Use one of: all, h1, links, assets, semantics, seo, content`);
 }
 
 if (process.exitCode) {
