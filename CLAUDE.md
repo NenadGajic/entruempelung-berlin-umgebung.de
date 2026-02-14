@@ -35,10 +35,7 @@ This file mirrors `AGENTS.md` so agent guidance stays consistent across tools.
 - Local build: `npm run dev` (outputs to `build_local/`)
 - Watch mode: `npm run watch`
 - Production build: `npm run prod` (outputs to `build_production/`)
-- Validation checks: `npm run check` (runs build + structural + semantic + SEO + content checks)
-- Semantic validation only: `npm run validate:semantics`
-- SEO validation only: `npm run validate:seo`
-- Content validation only: `npm run validate:content`
+- Validation checks: `npm run check` (alias for production build)
 - Netlify build: `npm run prod`, publish directory: `build_production`
 
 ## Editing Rules
@@ -93,13 +90,11 @@ This file mirrors `AGENTS.md` so agent guidance stays consistent across tools.
 
 ## Deferred Compliance Scope
 - Legal pages (`/impressum`, `/datenschutz`) are intentionally deferred to a dedicated sprint.
-- `npm run check` currently excludes legal-page validation rules.
+- Automated legal-page validation rules are deferred with the legal sprint.
 
 ## Validation Checklist
 - Run `npm run check` before commit (mandatory).
-- Ensure `npm run validate:semantics` passes when editing templates/forms/navigation.
-- Ensure `npm run validate:seo` passes when editing metadata/schema/layout.
-- Ensure `npm run validate:content` passes when editing copy, alt text, service query links, metadata uniqueness, or JS/template script references.
+- `scripts/validate-site.js` has been decommissioned to keep repository QA lightweight.
 - Run `npm run dev` after changes when iterating locally.
 - Verify output pages in `build_local/` exist and render with valid asset links.
 - Spot-check:
