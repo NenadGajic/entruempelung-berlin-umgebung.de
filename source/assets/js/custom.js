@@ -16,6 +16,7 @@
     };
 
     const SLIDE_DURATION_MS = 300;
+    const FORM_REQUEST_TIMEOUT_MS = 15000;
     const ALLOWED_SERVICES = ['entruempelung', 'entsorgung', 'aufloesung', 'umzug', 'transport'];
     const slideTimers = new WeakMap();
 
@@ -409,6 +410,61 @@
         button.innerHTML = defaultHtml;
     }
 
+    function getFieldDisplayName(field, form) {
+        if (!field) {
+            return '';
+        }
+
+        if (field.id && form) {
+            const label = form.querySelector('label[for="' + field.id + '"]');
+            if (label) {
+                return label.textContent.trim();
+            }
+        }
+
+        return field.getAttribute('name') || '';
+    }
+
+    function getMissingRequiredFieldLabels(form) {
+        const requiredFields = form.querySelectorAll('[required][name]');
+        const missingLabels = [];
+
+        requiredFields.forEach(function (field) {
+            const value = field.value;
+            const isMissing = typeof value === 'string' ? value.trim() === '' : !value;
+
+            if (!isMissing) {
+                return;
+            }
+
+            const label = getFieldDisplayName(field, form);
+            if (label && !missingLabels.includes(label)) {
+                missingLabels.push(label);
+            }
+        });
+
+        return missingLabels;
+    }
+
+    function fetchWithTimeout(url, options, timeoutMs) {
+        if (typeof window.AbortController !== 'function') {
+            return window.fetch(url, options);
+        }
+
+        const controller = new window.AbortController();
+        const timeoutId = window.setTimeout(function () {
+            controller.abort();
+        }, timeoutMs);
+
+        const requestOptions = Object.assign({}, options, {
+            signal: controller.signal,
+        });
+
+        return window.fetch(url, requestOptions).finally(function () {
+            window.clearTimeout(timeoutId);
+        });
+    }
+
     function buildEncodedFormPayload(form) {
         const formData = new FormData(form);
 
@@ -448,9 +504,32 @@
         const formSuccess = document.getElementById('form-success');
         const submitButtonHtml = submitButton ? submitButton.innerHTML : '';
 
+        if (submitButton && submitButton.disabled) {
+            return;
+        }
+
         setMessage(formError, '');
         if (formSuccess) {
             formSuccess.style.display = 'none';
+        }
+
+        if (!form.checkValidity()) {
+            const missingRequiredFields = getMissingRequiredFieldLabels(form);
+            const messageBase = 'Bitte füllen Sie alle Pflichtfelder aus.';
+            const message = missingRequiredFields.length
+                ? messageBase + ' Fehlend: ' + missingRequiredFields.join(', ') + '.'
+                : messageBase;
+
+            setMessage(formStatus, '');
+            setMessage(formError, message);
+
+            const firstInvalid = form.querySelector(':invalid');
+            if (firstInvalid && typeof firstInvalid.focus === 'function') {
+                firstInvalid.focus();
+            }
+
+            form.reportValidity();
+            return;
         }
 
         setMessage(formStatus, 'Ihre Anfrage wird gesendet...');
@@ -458,11 +537,11 @@
 
         const payload = buildEncodedFormPayload(form);
 
-        window.fetch('/', {
+        fetchWithTimeout('/', {
             method: 'POST',
             headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
             body: payload,
-        })
+        }, FORM_REQUEST_TIMEOUT_MS)
             .then(function (response) {
                 if (!response.ok) {
                     throw new Error('Request failed');
@@ -475,9 +554,12 @@
                     formSuccess.style.display = 'block';
                 }
             })
-            .catch(function () {
+            .catch(function (error) {
                 setMessage(formStatus, '');
-                setMessage(formError, 'Beim Senden Ihrer Anfrage ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.');
+                const message = error && error.name === 'AbortError'
+                    ? 'Die Anfrage hat zu lange gedauert. Bitte versuchen Sie es erneut.'
+                    : 'Beim Senden Ihrer Anfrage ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.';
+                setMessage(formError, message);
                 setSubmitButtonLoadingState(submitButton, false, submitButtonHtml);
             });
     }

@@ -403,6 +403,24 @@ function checkContent() {
     rule.regex.lastIndex = 0;
   }
 
+  const contactFormFile = 'source/anfrage.blade.php';
+  const contactFormContent = stripBladeComments(read(contactFormFile));
+  const formControlPattern = /<(input|select|textarea)\b[^>]*\bname\s*=\s*["']([^"']+)["'][^>]*>/gi;
+  const requiredContactFieldNames = ['form-name', 'name', 'email', 'nummer', 'service'];
+  const presentFieldNames = new Set();
+  let formControlMatch;
+
+  while ((formControlMatch = formControlPattern.exec(contactFormContent)) !== null) {
+    presentFieldNames.add(formControlMatch[2]);
+  }
+
+  for (const fieldName of requiredContactFieldNames) {
+    if (!presentFieldNames.has(fieldName)) {
+      fail(`Missing required contact form field name "${fieldName}" in ${contactFormFile}`);
+      hasFailure = true;
+    }
+  }
+
   const titleUsage = new Map();
   const descriptionUsage = new Map();
 
@@ -446,7 +464,7 @@ function checkContent() {
   }
 
   if (!hasFailure) {
-    pass('Content checks passed (alt text, service query values, and metadata uniqueness)');
+    pass('Content checks passed (alt text, service query values, metadata uniqueness, and form field contract)');
   }
 }
 
