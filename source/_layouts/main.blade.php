@@ -54,11 +54,13 @@
 
         <x-footer />
 
-        <script src="/assets/js/bootstrap.min.js" defer></script>
-        <script src="/assets/js/popper.min.js" defer></script>
+        <script src="/assets/js/vendor/bootstrap.min.js" defer></script>
+        <script src="/assets/js/vendor/popper.min.js" defer></script>
         @if(isset($needsSwiper) && $needsSwiper)
-            <script src="/assets/js/swiper-bundle.min.js" defer></script>
+            <script src="/assets/js/vendor/swiper-bundle.min.js" defer></script>
         @endif
-        <script src="/assets/js/custom.js" defer></script>
+        <script src="/assets/js/menu.js" defer></script>
+        <script src="/assets/js/slider.js" defer></script>
+        <script src="/assets/js/form.js" defer></script>
     </body>
 </html>
