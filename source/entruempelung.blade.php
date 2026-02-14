@@ -31,9 +31,9 @@
                         <h5>Entrümpelung in Berlin und Umgebung</h5>
                         <div class="all__sidebar-item-category">
                             <ul>
-                                <li><a href="#">Wohnungsentrümpelung<i class="flaticon-right-up"></i></a></li>
-                                <li><a href="#">Hausentrümpelung<i class="flaticon-right-up"></i></a></li>
-                                <li><a href="#">Kellerentrümpelung<i class="flaticon-right-up"></i></a></li>
+                                <li><a href="/anfrage?service=entruempelung">Wohnungsentrümpelung<i class="flaticon-right-up"></i></a></li>
+                                <li><a href="/anfrage?service=entruempelung">Hausentrümpelung<i class="flaticon-right-up"></i></a></li>
+                                <li><a href="/anfrage?service=entruempelung">Kellerentrümpelung<i class="flaticon-right-up"></i></a></li>
                             </ul>
                         </div>
                     </div>

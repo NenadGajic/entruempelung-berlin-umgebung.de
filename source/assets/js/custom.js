@@ -5,7 +5,11 @@
     document.addEventListener("DOMContentLoaded", function() {
         var mobileMenu = document.getElementById("mobilemenu");
         var mainMenu = document.querySelector(".vertical_menu");
+        if (!mobileMenu || !mainMenu || mainMenu.children.length) {
+            return;
+        }
         var clonedMenu = mobileMenu.cloneNode(true);
+        clonedMenu.removeAttribute("id");
         mainMenu.appendChild(clonedMenu);
     });
     jQuery(document).ready(function($) {
@@ -47,6 +51,10 @@
     ///=============  * Banner Slider  =============\\\
     function bannerSlider() {
         let sliderActive1 = '.banner-slider';
+        if (!document.querySelector(sliderActive1)) {
+            return;
+        }
+
         let sliderInit1 = new Swiper(sliderActive1, {
             loop: true,
             slidesPerView: 1,
@@ -93,6 +101,10 @@
 
     ///=============  * Portfolio Slider  =============\\\
     function portfolioTwoSlider() {
+        if (!document.querySelector(".portfolio_two_slider")) {
+            return;
+        }
+
         var swiper = new Swiper(".portfolio_two_slider", {
             loop: true,
             spaceBetween: 25,
@@ -126,6 +138,10 @@
 
     ///=============  * Portfolio Filter  =============\\\
     function portfolioFilter() {
+        if (!$.fn.isotope || !$('.gallery__area-active').length) {
+            return;
+        }
+
         $(window).on('load', function(){
             var $grid = $('.gallery__area-active').isotope();
             $('.gallery__area-button').on('click', 'button', function () {
@@ -144,6 +160,10 @@
     ///=============  * Scroll To Top  =============\\\
     function scrollToTop() {
         var scrollPath = document.querySelector('.scroll-up path');
+        if (!scrollPath) {
+            return;
+        }
+
         var pathLength = scrollPath.getTotalLength();
         scrollPath.style.transition = scrollPath.style.WebkitTransition = 'none';
         scrollPath.style.strokeDasharray = pathLength + ' ' + pathLength;
@@ -178,26 +198,67 @@
 
     ///=============  Toggle contact fields based on selected service  =============\\\
     function updateServiceDependentFields() {
-        let selectedService = $('#service').val();
+        let serviceField = $('#service');
+        if (!serviceField.length) {
+            return;
+        }
+
+        let selectedService = serviceField.val();
 
         $('.conditional-group').hide();
 
         $('.conditional-group').each(function() {
-            let services = $(this).data('service').split(',').map(s => s.trim());
+            let servicesRaw = $(this).data('service');
+            if (!servicesRaw) {
+                return;
+            }
+
+            let services = servicesRaw.split(',').map(s => s.trim());
 
             services.includes(selectedService) ? $(this).show() : $(this).hide();
         });
     }
 
+    function preselectServiceFromQuery() {
+        let serviceField = document.getElementById('service');
+        if (!serviceField) {
+            return;
+        }
+
+        let selectedService = new URLSearchParams(window.location.search).get('service');
+        let allowedServices = ['entruempelung', 'entsorgung', 'aufloesung', 'umzug', 'transport'];
+
+        if (selectedService && allowedServices.includes(selectedService)) {
+            serviceField.value = selectedService;
+        }
+    }
+
 
     function handleContactFormSubmit(event) {
+        if (typeof window.fetch !== 'function') {
+            return;
+        }
+
         event.preventDefault();
 
         const myForm = event.target;
         const formData = new FormData(myForm);
+        if (!formData.get('form-name')) {
+            formData.set('form-name', myForm.getAttribute('name') || 'contact');
+        }
 
         const filteredEntries = Array.from(formData.entries())
-        .filter(([_, value]) => value.trim() !== ""); // only keep filled fields
+        .filter(([key, value]) => {
+            if (key === 'form-name') {
+                return true;
+            }
+
+            if (typeof value !== 'string') {
+                return true;
+            }
+
+            return value.trim() !== "";
+        }); // only keep filled fields
     
         const cleanedFormData = new URLSearchParams(filteredEntries).toString();
       
@@ -210,10 +271,11 @@
             myForm.style.display = 'none';           // Hide the form
             document.getElementById('form-success').style.display = 'block'; // Show success message
           })
-          .catch(error => alert(error));
+          .catch(() => alert('Beim Senden Ihrer Anfrage ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.'));
     }
 
     $(document).ready(function () {
+        preselectServiceFromQuery();
         $('select#service').on('change', updateServiceDependentFields);
         updateServiceDependentFields();
 

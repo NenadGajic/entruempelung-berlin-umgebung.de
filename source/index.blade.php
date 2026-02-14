@@ -5,7 +5,7 @@
     <div class="banner__one">
         <div class="banner swiper banner-slider">
             <div class="swiper-wrapper">
-                <div class="banner__one-image swiper-slide" style="background-image: url('assets/img/entruempelung.jpg');">
+                <div class="banner__one-image swiper-slide" style="background-image: url('/assets/img/entruempelung.jpg');">
                     <div class="container">
                         <div class="row">
                             <div class="col-xl-12">

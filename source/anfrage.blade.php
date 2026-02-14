@@ -24,7 +24,11 @@
 
     <div class="request__quote section-padding-three">
         <div class="container">
-            <form name="contact" id="contact-form" method="POST" data-netlify-recaptcha="true" data-netlify="true">
+            <form name="contact" id="contact-form" method="POST" data-netlify-recaptcha="true" data-netlify="true" data-netlify-honeypot="bot-field">
+                <input type="hidden" name="form-name" value="contact">
+                <p class="display-none">
+                    <label>Bitte dieses Feld leer lassen: <input name="bot-field"></label>
+                </p>
                 <section class="contact-group">
                     <h5>Ihre Kontaktdaten</h5>
 
@@ -243,8 +247,8 @@
             </form>
 
             <div id="form-success" style="display: none;">
-                <h2>Thank you! 🎉</h2>
-                <p>Your message has been sent successfully. We will contact you soon.</p>
+                <h2>Vielen Dank!</h2>
+                <p>Ihre Anfrage wurde erfolgreich gesendet. Wir melden uns so schnell wie möglich bei Ihnen.</p>
               </div>
         </div>
     </div>

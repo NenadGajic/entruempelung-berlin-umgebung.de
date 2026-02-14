@@ -31,10 +31,10 @@
                             <h5>Haushalts- und Gewerbeauflösung in Berlin und Umgebung</h5>
                             <div class="all__sidebar-item-category">
                                 <ul>
-                                    <li><a href="#">Haushalt- und Wohnungsauflösung<i class="flaticon-right-up"></i></a></li>
-                                    <li><a href="#">Gewerbeauflösung<i class="flaticon-right-up"></i></a></li>
-                                    <li><a href="#">Werkstattauflösung<i class="flaticon-right-up"></i></a></li>
-                                    <li><a href="#">Lagerauflösung<i class="flaticon-right-up"></i></a></li>
+                                    <li><a href="/anfrage?service=aufloesung">Haushalt- und Wohnungsauflösung<i class="flaticon-right-up"></i></a></li>
+                                    <li><a href="/anfrage?service=aufloesung">Gewerbeauflösung<i class="flaticon-right-up"></i></a></li>
+                                    <li><a href="/anfrage?service=aufloesung">Werkstattauflösung<i class="flaticon-right-up"></i></a></li>
+                                    <li><a href="/anfrage?service=aufloesung">Lagerauflösung<i class="flaticon-right-up"></i></a></li>
                                 </ul>
                             </div>
                         </div>

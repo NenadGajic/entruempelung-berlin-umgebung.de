@@ -31,9 +31,9 @@
                             <h5>Entsorgung in Berlin und Umgebung</h5>
                             <div class="all__sidebar-item-category">
                                 <ul>
-                                    <li><a href="#">Bauschuttentsorgung<i class="flaticon-right-up"></i></a></li>
-                                    <li><a href="#">Möbelentsorgung<i class="flaticon-right-up"></i></a></li>
-                                    <li><a href="#">Sperrmüllentsorgung<i class="flaticon-right-up"></i></a></li>
+                                    <li><a href="/anfrage?service=entsorgung">Bauschuttentsorgung<i class="flaticon-right-up"></i></a></li>
+                                    <li><a href="/anfrage?service=entsorgung">Möbelentsorgung<i class="flaticon-right-up"></i></a></li>
+                                    <li><a href="/anfrage?service=entsorgung">Sperrmüllentsorgung<i class="flaticon-right-up"></i></a></li>
                                 </ul>
                             </div>
                         </div>
