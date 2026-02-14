@@ -2,8 +2,8 @@
 
 return [
     'entruempelung' => [
-        'meta_title' => 'Professionelle Entrümpelung',
-        'meta_description' => 'Unsere Dienstleistungen erstrecken sich auf Entrümpelungen verschiedenster Art und Größe, darunter Wohnungen, (Hoch-)Häuser, Wohngemeinschaften und auch sogenannte Messi-Wohnungen.',
+        'meta_title' => 'Entrümpelung in Berlin und Umgebung',
+        'meta_description' => 'Professionelle Entrümpelung für Wohnungen, Häuser, Keller und Gewerbeflächen in Berlin und Umgebung mit kostenloser Besichtigung und transparenter Preisgestaltung.',
         'og_image' => '/assets/img/entruempelung.jpg',
         'breadcrumbs' => [
             ['name' => 'Home', 'url' => '/'],
@@ -38,8 +38,8 @@ return [
         ],
     ],
     'entsorgung' => [
-        'meta_title' => 'Professionelle Entsorgung',
-        'meta_description' => 'Wenn Sie in Berlin und Umgebung nach einer professionellen Entsorgung von Bauschutt, Möbeln, Sperrmüll und mehr suchen, stehen wir Ihnen bei jedem Schritt zur Seite.',
+        'meta_title' => 'Entsorgung in Berlin und Umgebung',
+        'meta_description' => 'Fachgerechte Entsorgung von Sperrmüll, Möbeln, Bauschutt und Elektroschrott in Berlin und Umgebung mit schneller Abholung und sauberer Durchführung.',
         'og_image' => '/assets/img/entsorgung.jpg',
         'breadcrumbs' => [
             ['name' => 'Home', 'url' => '/'],
@@ -77,8 +77,8 @@ return [
         ],
     ],
     'aufloesung' => [
-        'meta_title' => 'Haushalts- und Gewerbeauflösung',
-        'meta_description' => 'Wir kümmern uns um die professionelle und effiziente Auflösung von Haushalten, unabhängig davon, ob es sich um einen Privathaushalt oder einen Gewerbebetrieb handelt.',
+        'meta_title' => 'Haushalts- und Gewerbeauflösung in Berlin',
+        'meta_description' => 'Zuverlässige Haushalts- und Gewerbeauflösung in Berlin und Umgebung inklusive Besichtigung, Festpreisangebot und besenreiner Übergabe.',
         'og_image' => '/assets/img/bueroaufloesung.jpeg',
         'breadcrumbs' => [
             ['name' => 'Home', 'url' => '/'],
@@ -114,8 +114,8 @@ return [
         ],
     ],
     'umzug' => [
-        'meta_title' => 'Professioneller Umzug in Berlin und Umgebung',
-        'meta_description' => 'Sobald Sie Ihre neue Wohnung gefunden haben und einen Umzugsservice benötigen, zögern Sie nicht und kontaktieren Sie uns noch heute. Unser Unternehmen passt sich optimal Ihren Anforderungen an.',
+        'meta_title' => 'Umzug in Berlin und Umgebung',
+        'meta_description' => 'Professioneller Umzugsservice in Berlin und Umgebung mit Planung, Transport und erfahrenem Team für private und gewerbliche Umzüge.',
         'og_image' => '/assets/img/umzug.jpg',
         'breadcrumbs' => [
             ['name' => 'Home', 'url' => '/'],
@@ -140,8 +140,8 @@ return [
         ],
     ],
     'transport' => [
-        'meta_title' => 'Kleintransporte bis 3,5t in Berlin und Umgebung',
-        'meta_description' => 'Mit unserem eigenen Fuhrpark sind wir Ihr zuverlässiger Partner für Kleintransporte und Lieferungen in Berlin und deutschlandweit.',
+        'meta_title' => 'Kleintransporte in Berlin und Umgebung',
+        'meta_description' => 'Kleintransporte bis 3,5t in Berlin und Umgebung mit eigenem Fuhrpark, zuverlässiger Terminabstimmung und sicherem Transport Ihrer Waren.',
         'og_image' => '/assets/img/transport.jpg',
         'breadcrumbs' => [
             ['name' => 'Home', 'url' => '/'],
