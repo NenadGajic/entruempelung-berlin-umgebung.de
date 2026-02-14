@@ -36,7 +36,7 @@
         @include('_components.structured-data')
 
         <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
-        <link rel="stylesheet" href="/assets/css/fontawesome.css">
+        <link rel="stylesheet" href="/assets/css/fontawesome-subset.css">
         <link rel="stylesheet" href="/assets/font/flaticon_flexitype.css">
         <link rel="stylesheet" href="/assets/css/animate.css">
         <link rel="stylesheet" href="/assets/css/swiper-bundle.min.css">

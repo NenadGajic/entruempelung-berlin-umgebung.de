@@ -1,6 +1,7 @@
 @font-face {
   font-family: "flaticon_flexitype";
-  src: url("./flaticon_flexitype.woff2?715b2035b3226a13cac3517c64e5fd34") format("woff2"), url("./flaticon_flexitype.woff?715b2035b3226a13cac3517c64e5fd34") format("woff"), url("./flaticon_flexitype.eot?715b2035b3226a13cac3517c64e5fd34#iefix") format("embedded-opentype"), url("./flaticon_flexitype.ttf?715b2035b3226a13cac3517c64e5fd34") format("truetype"), url("./flaticon_flexitype.svg?715b2035b3226a13cac3517c64e5fd34#flaticon_flexitype") format("svg");
+  src: url("./flaticon_flexitype.woff2?715b2035b3226a13cac3517c64e5fd34") format("woff2"),
+       url("./flaticon_flexitype.woff?715b2035b3226a13cac3517c64e5fd34") format("woff");
 }
 i[class^=flaticon-]:before, i[class*=" flaticon-"]:before {
   font-family: flaticon_flexitype !important;
