@@ -39,7 +39,9 @@
         <link rel="stylesheet" href="/assets/css/fontawesome-subset.css">
         <link rel="stylesheet" href="/assets/font/flaticon_flexitype.css">
         <link rel="stylesheet" href="/assets/css/animate.css">
-        <link rel="stylesheet" href="/assets/css/swiper-bundle.min.css">
+        @if(isset($needsSwiper) && $needsSwiper)
+            <link rel="stylesheet" href="/assets/css/swiper-bundle.min.css">
+        @endif
         <link rel="stylesheet" href="/assets/css/utilities.css">
         <link rel="stylesheet" href="/assets/css/style.css">
     </head>
@@ -52,9 +54,11 @@
 
         <x-footer />
 
-        <script src="/assets/js/bootstrap.min.js"></script>
-        <script src="/assets/js/popper.min.js"></script>
-        <script src="/assets/js/swiper-bundle.min.js"></script>
-        <script src="/assets/js/custom.js"></script>
+        <script src="/assets/js/bootstrap.min.js" defer></script>
+        <script src="/assets/js/popper.min.js" defer></script>
+        @if(isset($needsSwiper) && $needsSwiper)
+            <script src="/assets/js/swiper-bundle.min.js" defer></script>
+        @endif
+        <script src="/assets/js/custom.js" defer></script>
     </body>
 </html>
