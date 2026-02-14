@@ -6,13 +6,13 @@
                     <div class="row al-center">
                         <div class="col-xl-6 col-lg-7 lg-mb-40">
                             <div class="footer__cta-area-left lg-t-center">
-                                <h2>Jetzt kostenloses und unverbindliches Angebot anfordern</h2>
+                                <h2>Jetzt kostenlose Besichtigung anfragen</h2>
                             </div>
                         </div>
                         <div class="col-xl-6 col-lg-5">
                             <div class="footer__cta-area-right d-flex al-center flex-wrap jc-end lg-jc-center gap-25">
                                 <a class="default_button" href="/anfrage">
-                                    Termin vereinbaren <i class="flaticon-right-up"></i>
+                                    Kostenlose Besichtigung anfragen <i class="flaticon-right-up"></i>
                                 </a>
                                 <div class="footer__cta-area-right-tel">
                                     <div class="footer__cta-area-right-tel-icon">

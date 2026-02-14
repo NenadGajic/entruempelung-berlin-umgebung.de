@@ -24,7 +24,7 @@ return [
         ],
         'heading' => 'Professionelle Entrümpelung in Berlin',
         'intro_paragraphs' => [
-            'Unsere Dienstleistungen erstrecken sich auf Entrümpelungen verschiedenster Art und Größe, darunter Wohnungen, (Hoch-)Häuser, Wohngemeinschaften und auch sogenannte Messi-Wohnungen. Nachdem unser Experte die Räumlichkeiten inspiziert und einen Plan erstellt hat, rücken wir mit der geeigneten Ausrüstung und Fahrzeug an, um mit der Entrümpelung zu beginnen. Da nur erfahrene Fachleute bei uns tätig sind, wird die Arbeit besonders effizient erledigt. Nach Abschluss entsorgen wir den Abfall ordnungsgemäß, reinigen die Räumlichkeiten gründlich und übergeben Ihnen die Schlüssel zurück. Falls Sie spezielle Anforderungen oder Wünsche haben, stehen wir Ihnen gerne zur Verfügung und werden unser Bestes tun, um diese zu erfüllen.',
+            'Unsere Dienstleistungen erstrecken sich auf Entrümpelungen verschiedenster Art und Größe, darunter Wohnungen, (Hoch-)Häuser, Wohngemeinschaften und auch sogenannte Messi-Wohnungen. Nachdem unser Experte die Räumlichkeiten inspiziert und einen Plan erstellt hat, rücken wir mit der geeigneten Ausrüstung und Fahrzeugen an, um mit der Entrümpelung zu beginnen. Da nur erfahrene Fachleute bei uns tätig sind, wird die Arbeit besonders effizient erledigt. Nach Abschluss entsorgen wir den Abfall ordnungsgemäß, reinigen die Räumlichkeiten gründlich und übergeben Ihnen die Schlüssel zurück. Falls Sie spezielle Anforderungen oder Wünsche haben, stehen wir Ihnen gerne zur Verfügung und werden unser Bestes tun, um diese zu erfüllen.',
         ],
         'detail_heading' => 'Ablauf einer professionellen Entrümpelung',
         'detail_paragraphs' => [
@@ -88,7 +88,7 @@ return [
         'sidebar' => [
             'title' => 'Haushalts- und Gewerbeauflösung in Berlin und Umgebung',
             'items' => [
-                ['label' => 'Haushalt- und Wohnungsauflösung', 'url' => '/anfrage?service=aufloesung'],
+                ['label' => 'Haushalts- und Wohnungsauflösung', 'url' => '/anfrage?service=aufloesung'],
                 ['label' => 'Gewerbeauflösung', 'url' => '/anfrage?service=aufloesung'],
                 ['label' => 'Werkstattauflösung', 'url' => '/anfrage?service=aufloesung'],
                 ['label' => 'Lagerauflösung', 'url' => '/anfrage?service=aufloesung'],
