@@ -58,7 +58,7 @@
                         <div class="col-md-6 mt-25">
                             <div class="request__quote-item">
                                 <label for="nummer">Telefonnummer</label>
-                                <input id="nummer" type="tel" name="nummer" placeholder="+49 123456789" autocomplete="tel" required>
+                                <input id="nummer" type="tel" name="nummer" placeholder="+49 123456789" autocomplete="tel" inputmode="tel" required>
                             </div>
                         </div>
                     </div>
@@ -89,14 +89,14 @@
                             <div class="col-md-6 mt-25">
                                 <div class="request__quote-item">
                                     <label for="plz">Postleitzahl und Ortschaft</label>
-                                    <input id="plz" type="text" name="plz" placeholder="z.B.: 10115 Berlin">
+                                    <input id="plz" type="text" name="plz" placeholder="z.B.: 10115 Berlin" autocomplete="postal-code" inputmode="numeric">
                                 </div>
                             </div>
 
                             <div class="col-md-6 mt-25">
                                 <div class="request__quote-item">
                                     <label for="strasse">Straße und Hausnummer</label>
-                                    <input id="strasse" type="text" name="strasse" placeholder="Musterstraße 1/20">
+                                    <input id="strasse" type="text" name="strasse" placeholder="Musterstraße 1/20" autocomplete="address-line1">
                                 </div>
                             </div>
 
@@ -165,14 +165,14 @@
                             <div class="col-md-6 mt-25">
                                 <div class="request__quote-item">
                                     <label for="abhol_plz">Abholungsadresse: PLZ und Ortschaft</label>
-                                    <input id="abhol_plz" type="text" name="abhol_plz" placeholder="z.B.: 10115 Berlin">
+                                    <input id="abhol_plz" type="text" name="abhol_plz" placeholder="z.B.: 10115 Berlin" autocomplete="postal-code" inputmode="numeric">
                                 </div>
                             </div>
 
                             <div class="col-md-6 mt-25">
                                 <div class="request__quote-item">
                                     <label for="abhol_adresse">Abholungsadresse: Straße und Hausnummer</label>
-                                    <input id="abhol_adresse" type="text" name="abhol_adresse" placeholder="Musterstraße 1/20">
+                                    <input id="abhol_adresse" type="text" name="abhol_adresse" placeholder="Musterstraße 1/20" autocomplete="address-line1">
                                 </div>
                             </div>
                         </div>
@@ -181,14 +181,14 @@
                             <div class="col-md-6 mt-25">
                                 <div class="request__quote-item">
                                     <label for="zustell_plz">Zustelladresse: PLZ und Ortschaft</label>
-                                    <input id="zustell_plz" type="text" name="zustell_plz" placeholder="z.B.: 10115 Berlin">
+                                    <input id="zustell_plz" type="text" name="zustell_plz" placeholder="z.B.: 10115 Berlin" autocomplete="postal-code" inputmode="numeric">
                                 </div>
                             </div>
 
                             <div class="col-md-6 mt-25">
                                 <div class="request__quote-item">
                                     <label for="zustell_adresse">Zustelladresse: Straße und Hausnummer</label>
-                                    <input id="zustell_adresse" type="text" name="zustell_adresse" placeholder="Musterstraße 1/20">
+                                    <input id="zustell_adresse" type="text" name="zustell_adresse" placeholder="Musterstraße 1/20" autocomplete="address-line1">
                                 </div>
                             </div>
                         </div>
@@ -242,9 +242,16 @@
                     </div>
                 </div>
 
+                <div class="row mt-25">
+                    <div class="col-lg-12">
+                        <div id="form-status" class="alert alert-info" style="display: none;" role="status" aria-live="polite"></div>
+                        <div id="form-error" class="alert alert-danger" style="display: none;" role="alert" aria-live="assertive"></div>
+                    </div>
+                </div>
+
                 <div class="row">
                     <div class="col-lg-12">
-                        <button class="default_button mt-25" type="submit">
+                        <button id="form-submit-button" class="default_button mt-25" type="submit">
                             Anfrage Senden
                             <i class="flaticon-right-up"></i>
                         </button>

@@ -207,6 +207,34 @@
         event.preventDefault();
 
         const myForm = event.target;
+        const submitButton = document.getElementById('form-submit-button');
+        const formError = document.getElementById('form-error');
+        const formStatus = document.getElementById('form-status');
+        const formSuccess = document.getElementById('form-success');
+
+        if (formError) {
+            formError.style.display = 'none';
+            formError.textContent = '';
+        }
+
+        if (formSuccess) {
+            formSuccess.style.display = 'none';
+        }
+
+        if (formStatus) {
+            formStatus.style.display = 'block';
+            formStatus.textContent = 'Ihre Anfrage wird gesendet...';
+        }
+
+        let submitButtonHtml = '';
+        if (submitButton) {
+            submitButtonHtml = submitButton.innerHTML;
+            submitButton.disabled = true;
+            submitButton.setAttribute('aria-disabled', 'true');
+            submitButton.setAttribute('aria-busy', 'true');
+            submitButton.textContent = 'Wird gesendet...';
+        }
+
         const formData = new FormData(myForm);
         if (!formData.get('form-name')) {
             formData.set('form-name', myForm.getAttribute('name') || 'contact');
@@ -232,11 +260,36 @@
           headers: { "Content-Type": "application/x-www-form-urlencoded" },
           body: cleanedFormData
         })
-          .then(() => {
-            myForm.style.display = 'none';           // Hide the form
-            document.getElementById('form-success').style.display = 'block'; // Show success message
+          .then((response) => {
+            if (!response.ok) {
+                throw new Error('Request failed');
+            }
+
+            myForm.style.display = 'none';
+            if (formStatus) {
+                formStatus.style.display = 'none';
+                formStatus.textContent = '';
+            }
+            if (formSuccess) {
+                formSuccess.style.display = 'block';
+            }
           })
-          .catch(() => alert('Beim Senden Ihrer Anfrage ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.'));
+          .catch(() => {
+            if (formStatus) {
+                formStatus.style.display = 'none';
+                formStatus.textContent = '';
+            }
+            if (formError) {
+                formError.style.display = 'block';
+                formError.textContent = 'Beim Senden Ihrer Anfrage ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.';
+            }
+            if (submitButton) {
+                submitButton.disabled = false;
+                submitButton.removeAttribute('aria-disabled');
+                submitButton.removeAttribute('aria-busy');
+                submitButton.innerHTML = submitButtonHtml;
+            }
+          });
     }
 
     $(document).ready(function () {
