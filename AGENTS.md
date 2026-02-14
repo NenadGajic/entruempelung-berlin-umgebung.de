@@ -10,7 +10,7 @@ This is the canonical working guide for agents in this repository. `CLAUDE.md` m
 ## Tech Stack
 - PHP/Composer: `tightenco/jigsaw`, `samdark/sitemap`
 - Node: Laravel Mix + `laravel-mix-jigsaw`
-- Frontend: Bootstrap 5, jQuery, Swiper, Magnific Popup, Isotope
+- Frontend: Bootstrap 5, jQuery, Swiper
 
 ## Repository Structure
 - `source/`: canonical site source
@@ -36,6 +36,7 @@ This is the canonical working guide for agents in this repository. `CLAUDE.md` m
 - Watch mode: `npm run watch`
 - Production build: `npm run prod` (outputs to `build_production/`)
 - Validation checks: `npm run check` (runs build + structural checks)
+- Semantic validation only: `npm run validate:semantics`
 - Netlify build: `npm run prod`, publish directory: `build_production`
 
 ## Editing Rules
@@ -79,8 +80,13 @@ This is the canonical working guide for agents in this repository. `CLAUDE.md` m
 - Sass/JS consolidation into a single build pipeline is intentionally deferred.
 - Keep current Jigsaw + static-asset serving model unless explicitly scheduled for migration.
 
+## Deferred Compliance Scope
+- Legal pages (`/impressum`, `/datenschutz`) are intentionally deferred to a dedicated sprint.
+- `npm run check` currently excludes legal-page validation rules.
+
 ## Validation Checklist
 - Run `npm run check` before commit (mandatory).
+- Ensure `npm run validate:semantics` passes when editing templates/forms/navigation.
 - Run `npm run dev` after changes when iterating locally.
 - Verify output pages in `build_local/` exist and render with valid asset links.
 - Spot-check:

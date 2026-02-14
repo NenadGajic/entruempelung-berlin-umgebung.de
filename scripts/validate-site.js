@@ -26,18 +26,6 @@ function read(filePath) {
   return fs.readFileSync(path.join(root, filePath), 'utf8');
 }
 
-function listFilesFromGlob(globPattern) {
-  const dir = path.dirname(globPattern);
-  const basePattern = path.basename(globPattern).replace('*', '');
-  const absDir = path.join(root, dir);
-
-  return fs
-    .readdirSync(absDir)
-    .filter((name) => name.endsWith(basePattern) || globPattern.endsWith('*'))
-    .map((name) => path.join(dir, name))
-    .filter((file) => fs.statSync(path.join(root, file)).isFile());
-}
-
 function getTemplateFiles() {
   return activeTemplateGlobs.flatMap((globPattern) => {
     const dir = path.dirname(globPattern);
@@ -154,10 +142,67 @@ function checkAssets() {
   }
 }
 
+function checkSemantics() {
+  let hasFailure = false;
+  const files = getTemplateFiles();
+  const emptyHrefPattern = /href\s*=\s*["']\s*["']/gi;
+  const javascriptHrefPattern = /href\s*=\s*["']\s*javascript:/gi;
+
+  for (const file of files) {
+    const content = stripBladeComments(read(file));
+
+    if (emptyHrefPattern.test(content)) {
+      fail(`Empty href attribute found in ${file}`);
+      hasFailure = true;
+    }
+    emptyHrefPattern.lastIndex = 0;
+
+    if (javascriptHrefPattern.test(content)) {
+      fail(`javascript: href found in ${file}`);
+      hasFailure = true;
+    }
+    javascriptHrefPattern.lastIndex = 0;
+  }
+
+  const contactFormFile = 'source/anfrage.blade.php';
+  const contactFormContent = stripBladeComments(read(contactFormFile));
+
+  const controlIds = new Set();
+  const controlPattern = /<(input|select|textarea)\b[^>]*\bid\s*=\s*["']([^"']+)["'][^>]*>/gi;
+  let controlMatch;
+  while ((controlMatch = controlPattern.exec(contactFormContent)) !== null) {
+    controlIds.add(controlMatch[2]);
+  }
+
+  const labelPattern = /<label\b([^>]*)>/gi;
+  let labelMatch;
+  while ((labelMatch = labelPattern.exec(contactFormContent)) !== null) {
+    const attributes = labelMatch[1];
+    const forMatch = attributes.match(/\bfor\s*=\s*["']([^"']+)["']/i);
+
+    if (!forMatch) {
+      fail(`Label without "for" attribute found in ${contactFormFile}`);
+      hasFailure = true;
+      continue;
+    }
+
+    const targetId = forMatch[1];
+    if (!controlIds.has(targetId)) {
+      fail(`Label "for=${targetId}" has no matching control id in ${contactFormFile}`);
+      hasFailure = true;
+    }
+  }
+
+  if (!hasFailure) {
+    pass('Semantic checks passed (href rules and label bindings)');
+  }
+}
+
 function runAll() {
   checkH1();
   checkLinks();
   checkAssets();
+  checkSemantics();
 }
 
 if (!mode || mode === 'all') {
@@ -168,8 +213,10 @@ if (!mode || mode === 'all') {
   checkLinks();
 } else if (mode === 'assets') {
   checkAssets();
+} else if (mode === 'semantics') {
+  checkSemantics();
 } else {
-  fail(`Unknown mode: ${mode}. Use one of: all, h1, links, assets`);
+  fail(`Unknown mode: ${mode}. Use one of: all, h1, links, assets, semantics`);
 }
 
 if (process.exitCode) {
