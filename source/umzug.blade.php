@@ -1,6 +1,10 @@
 @php
     $title = "Professioneller Umzug in Berlin und Umgebung | " . $page->title;
-    $description = "Sobald Sie Ihre neue Wohnung gefunden haben und einen Umzugsservice benötigen, zögern Sie nicht und kontaktieren Sie uns noch heute. Unser Unternehmen passt sich optimal Ihren Anforderungen an."
+    $description = "Sobald Sie Ihre neue Wohnung gefunden haben und einen Umzugsservice benötigen, zögern Sie nicht und kontaktieren Sie uns noch heute. Unser Unternehmen passt sich optimal Ihren Anforderungen an.";
+    $breadcrumbs = [
+        ['name' => 'Home', 'url' => '/'],
+        ['name' => 'Umzug', 'url' => '/umzug'],
+    ];
 @endphp
 
 @extends('_layouts.main')

@@ -1,6 +1,10 @@
 @php
     $title = "Professionelle Entsorgung | " . $page->title;
-    $description = "Wenn Sie in Berlin und Umgebung nach einer professionellen Entsorgung von Bauschutt, Möbeln, Sperrmüll und mehr suchen, stehen wir Ihnen bei jedem Schritt zur Seite."
+    $description = "Wenn Sie in Berlin und Umgebung nach einer professionellen Entsorgung von Bauschutt, Möbeln, Sperrmüll und mehr suchen, stehen wir Ihnen bei jedem Schritt zur Seite.";
+    $breadcrumbs = [
+        ['name' => 'Home', 'url' => '/'],
+        ['name' => 'Entsorgung', 'url' => '/entsorgung'],
+    ];
 @endphp
 
 @extends('_layouts.main')

@@ -1,6 +1,10 @@
 @php
     $title = "Professionelle Entrümpelung | " . $page->title;
-    $description = "Unsere Dienstleistungen erstrecken sich auf Entrümpelungen verschiedenster Art und Größe, darunter Wohnungen, (Hoch-)Häuser, Wohngemeinschaften und auch sogenannte Messi-Wohnungen."
+    $description = "Unsere Dienstleistungen erstrecken sich auf Entrümpelungen verschiedenster Art und Größe, darunter Wohnungen, (Hoch-)Häuser, Wohngemeinschaften und auch sogenannte Messi-Wohnungen.";
+    $breadcrumbs = [
+        ['name' => 'Home', 'url' => '/'],
+        ['name' => 'Entrümpelung', 'url' => '/entruempelung'],
+    ];
 @endphp
 
 @extends('_layouts.main')

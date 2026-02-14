@@ -1,6 +1,10 @@
 @php
     $title = "Kleintransporte bis 3,5t in Berlin und Umgebung | " . $page->title;
-    $description = "Mit unserem eigenen Fuhrpark sind wir Ihr zuverlässiger Partner für Kleintransporte und Lieferungen in Berlin und deutschlandweit."
+    $description = "Mit unserem eigenen Fuhrpark sind wir Ihr zuverlässiger Partner für Kleintransporte und Lieferungen in Berlin und deutschlandweit.";
+    $breadcrumbs = [
+        ['name' => 'Home', 'url' => '/'],
+        ['name' => 'Transport', 'url' => '/transport'],
+    ];
 @endphp
 
 @extends('_layouts.main')
