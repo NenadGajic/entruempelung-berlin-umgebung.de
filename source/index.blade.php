@@ -209,7 +209,7 @@
                             <span>01</span>
                             <div class="process__area-item-area">
                                 <i>
-                                    <img src="/assets/img/icon/beratung.png" alt="">
+                                    <img src="/assets/img/icon/beratung.png" alt="" aria-hidden="true">
                                 </i>
                                 <h5>Beratung, Terminabsprache und Besichtigung</h5>
                                 <p>Wir beraten Sie gerne vorab telefonisch und vereinbaren einen Termin. Im Anschluss besichtigen wir Ihr Objekt direkt vor Ort. Die Anfahrt und die Besichtigung sind kostenlos.</p>
@@ -219,7 +219,7 @@
                             <span>02</span>
                             <div class="process__area-item-area">
                                 <i>
-                                    <img src="/assets/img/icon/auftrag.png" alt="">
+                                    <img src="/assets/img/icon/auftrag.png" alt="" aria-hidden="true">
                                 </i>
                                 <h5>Angebot, Auftragserteilung und Räumungstermin</h5>
                                 <p>Nach Besichtigung des Objekts erstellen wir ein Angebot mit Festpreisgarantie inklusive Wertanrechnung. Nach Ihrer Auftragserteilung vereinbaren wir einen fixen Termin zur Räumung Ihres Objekts.</p>
@@ -229,7 +229,7 @@
                             <span>03</span>
                             <div class="process__area-item-area">
                                 <i>
-                                    <img src="/assets/img/icon/erledigung.png" alt="">
+                                    <img src="/assets/img/icon/erledigung.png" alt="" aria-hidden="true">
                                 </i>
                                 <h5>Räumung, Entsorgung, Übergabe</h5>
                                 <p>Wir räumen Ihr Objekt zum vereinbarten Termin, mit anschließender fachgerechter Entsorgung. Auf Wunsch erfolgen Zusatzarbeiten. Zum Abschluss erfolgt die besenreine Übergabe.</p>

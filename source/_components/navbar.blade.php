@@ -39,8 +39,17 @@
 {{--                                        <li><a href="#">Gewerbeauflösung</a></li>--}}
 {{--                                    </ul>--}}
 {{--                                </li>--}}
-                                <li class="menu-item-has-children"><a href="">Sonstiges</a>
-                                    <ul class="sub-menu">
+                                <li class="menu-item-has-children">
+                                    <button
+                                        type="button"
+                                        class="submenu-toggle"
+                                        aria-expanded="false"
+                                        aria-haspopup="true"
+                                        aria-controls="submenu-sonstiges"
+                                    >
+                                        Sonstiges
+                                    </button>
+                                    <ul class="sub-menu" id="submenu-sonstiges">
                                         <li><a href="/umzug" class="{{ $page->active('umzug') }}">Umzug</a></li>
                                         <li><a href="/transport" class="{{ $page->active('transport') }}">Transport</a></li>
                                     </ul>
@@ -61,7 +70,15 @@
                             </div>
                         </div>
                         <div class="header__area-menubar-right-responsive-menu menu__bar">
-                            <i class="flaticon-menu-3"></i>
+                            <button
+                                type="button"
+                                class="menu__bar-trigger"
+                                aria-label="Menü öffnen"
+                                aria-expanded="false"
+                                aria-controls="mobile-menu-popup"
+                            >
+                                <i class="flaticon-menu-3" aria-hidden="true"></i>
+                            </button>
                         </div>
                     </div>
                 </div>

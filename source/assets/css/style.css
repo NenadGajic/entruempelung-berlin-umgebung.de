@@ -786,11 +786,14 @@ h6 {
     margin: 0 25px;
 }
 
-.header__area-menubar-center-menu ul li:hover > a {
+.header__area-menubar-center-menu ul li:hover > a,
+.header__area-menubar-center-menu ul li:hover > .submenu-toggle {
     color: var(--primary-color-1);
 }
 
-.header__area-menubar-center-menu ul li:hover > .sub-menu {
+.header__area-menubar-center-menu ul li:hover > .sub-menu,
+.header__area-menubar-center-menu ul li:focus-within > .sub-menu,
+.header__area-menubar-center-menu ul li.is-open > .sub-menu {
     transform: translateY(0);
     opacity: 1;
     visibility: visible;
@@ -872,7 +875,8 @@ h6 {
     color: var(--text-heading-color);
 }
 
-.header__area-menubar-center-menu ul li a {
+.header__area-menubar-center-menu ul li a,
+.header__area-menubar-center-menu ul li .submenu-toggle {
     color: var(--text-heading-color);
     display: block;
     font-size: 16px;
@@ -881,15 +885,31 @@ h6 {
     font-weight: 500;
 }
 
+.header__area-menubar-center-menu ul li .submenu-toggle {
+    border: none;
+    background: transparent;
+    font-family: inherit;
+    text-align: left;
+    padding: 0;
+    cursor: pointer;
+}
+
+.header__area-menubar-center-menu ul li .submenu-toggle:focus-visible {
+    outline: 2px solid var(--primary-color-1);
+    outline-offset: 4px;
+}
+
 .header__area-menubar-center-menu ul li a.active {
     color: var(--primary-color-1);
 }
 
-.header__area-menubar-center-menu ul li.menu-item-has-children > a {
+.header__area-menubar-center-menu ul li.menu-item-has-children > a,
+.header__area-menubar-center-menu ul li.menu-item-has-children > .submenu-toggle {
     position: relative;
 }
 
-.header__area-menubar-center-menu ul li.menu-item-has-children > a::before {
+.header__area-menubar-center-menu ul li.menu-item-has-children > a::before,
+.header__area-menubar-center-menu ul li.menu-item-has-children > .submenu-toggle::before {
     content: "\f107";
     position: absolute;
     top: 50%;
@@ -906,7 +926,10 @@ h6 {
     padding-right: 15px;
 }
 
-.header__area-menubar-center-menu ul li.menu-item-has-children:hover > a::before {
+.header__area-menubar-center-menu ul li.menu-item-has-children:hover > a::before,
+.header__area-menubar-center-menu ul li.menu-item-has-children:hover > .submenu-toggle::before,
+.header__area-menubar-center-menu ul li.menu-item-has-children:focus-within > .submenu-toggle::before,
+.header__area-menubar-center-menu ul li.menu-item-has-children.is-open > .submenu-toggle::before {
     color: var(--primary-color-1);
 }
 
@@ -1188,7 +1211,8 @@ h6 {
     position: relative;
 }
 
-.vertical-menu ul li a {
+.vertical-menu ul li a,
+.vertical-menu ul li .submenu-toggle {
     padding: 14px 0;
     display: block;
     font-size: 18px;
@@ -1197,6 +1221,15 @@ h6 {
     transition: all 0.4s ease;
     border-bottom: 1px solid rgba(var(--border-color-2), 0.1);
     color: var(--text-white);
+}
+
+.vertical-menu ul li .submenu-toggle {
+    border: none;
+    width: 100%;
+    background: transparent;
+    font-family: inherit;
+    text-align: left;
+    cursor: pointer;
 }
 
 .vertical-menu ul li.menu-item-has-children > span {
@@ -1222,7 +1255,8 @@ h6 {
     display: none;
 }
 
-.vertical-menu ul li:hover > a {
+.vertical-menu ul li:hover > a,
+.vertical-menu ul li:hover > .submenu-toggle {
     color: var(--secondary-color);
 }
 
@@ -1239,10 +1273,22 @@ h6 {
     display: none;
 }
 
-.menu__bar i {
+.menu__bar .menu__bar-trigger {
+    border: none;
+    background: transparent;
+    padding: 0;
+    line-height: 1;
+}
+
+.menu__bar .menu__bar-trigger i {
     font-size: 35px;
     cursor: pointer;
     color: var(--text-heading-color);
+}
+
+.menu__bar .menu__bar-trigger:focus-visible {
+    outline: 2px solid var(--primary-color-1);
+    outline-offset: 4px;
 }
 
 .menu__bar-popup {
@@ -1287,6 +1333,12 @@ h6 {
 
 .menu__bar-popup-top .logo img {
     max-width: 155px;
+}
+
+.menu__bar-popup-top .close {
+    border: none;
+    background: transparent;
+    padding: 0;
 }
 
 .menu__bar-popup-top .close i {

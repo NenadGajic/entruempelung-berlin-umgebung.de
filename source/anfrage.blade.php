@@ -27,7 +27,8 @@
             <form name="contact" id="contact-form" method="POST" data-netlify-recaptcha="true" data-netlify="true" data-netlify-honeypot="bot-field">
                 <input type="hidden" name="form-name" value="contact">
                 <p class="display-none">
-                    <label>Bitte dieses Feld leer lassen: <input name="bot-field"></label>
+                    <label for="bot-field">Bitte dieses Feld leer lassen:</label>
+                    <input id="bot-field" name="bot-field">
                 </p>
                 <section class="contact-group">
                     <h5>Ihre Kontaktdaten</h5>
@@ -35,8 +36,8 @@
                     <div class="row">
                         <div class="col-md-6 mt-25">
                             <div class="request__quote-item">
-                                <label>Vollständiger Name</label>
-                                <input type="text" name="name" placeholder="Max Mustermann" required>
+                                <label for="name">Vollständiger Name</label>
+                                <input id="name" type="text" name="name" placeholder="Max Mustermann" autocomplete="name" required>
                             </div>
                         </div>
                     </div>
@@ -44,15 +45,15 @@
                     <div class="row">
                         <div class="col-md-6 mt-25">
                             <div class="request__quote-item">
-                                <label>E-Mail Adresse</label>
-                                <input type="email" name="email" placeholder="beispiel@email.com" required>
+                                <label for="email">E-Mail Adresse</label>
+                                <input id="email" type="email" name="email" placeholder="beispiel@email.com" autocomplete="email" required>
                             </div>
                         </div>
 
                         <div class="col-md-6 mt-25">
                             <div class="request__quote-item">
-                                <label>Telefonnummer</label>
-                                <input type="text" name="nummer" placeholder="+49 123456789" required>
+                                <label for="nummer">Telefonnummer</label>
+                                <input id="nummer" type="tel" name="nummer" placeholder="+49 123456789" autocomplete="tel" required>
                             </div>
                         </div>
                     </div>
@@ -82,30 +83,30 @@
                         <div class="row">
                             <div class="col-md-6 mt-25">
                                 <div class="request__quote-item">
-                                    <label>Postleitzahl und Ortschaft</label>
-                                    <input type="text" name="plz" placeholder="z.B.: 10115 Berlin">
+                                    <label for="plz">Postleitzahl und Ortschaft</label>
+                                    <input id="plz" type="text" name="plz" placeholder="z.B.: 10115 Berlin">
                                 </div>
                             </div>
 
                             <div class="col-md-6 mt-25">
                                 <div class="request__quote-item">
-                                    <label>Straße und Hausnummer</label>
-                                    <input type="text" name="strasse" placeholder="Musterstraße 1/20">
+                                    <label for="strasse">Straße und Hausnummer</label>
+                                    <input id="strasse" type="text" name="strasse" placeholder="Musterstraße 1/20">
                                 </div>
                             </div>
 
                             <div class="col-md-6 mt-25">
                                 <div class="request__quote-item">
-                                    <label>Etage</label>
-                                    <input type="text" name="etage"
+                                    <label for="etage">Etage</label>
+                                    <input id="etage" type="text" name="etage"
                                            placeholder="z.B.: Keller, Erdgeschoss, 3. Etage usw.">
                                 </div>
                             </div>
 
                             <div class="col-md-6 mt-25">
                                 <div class="request__quote-item">
-                                    <label>Aufzug vorhanden?</label>
-                                    <select name="aufzug">
+                                    <label for="aufzug">Aufzug vorhanden?</label>
+                                    <select id="aufzug" name="aufzug">
                                         <option selected>-- bitte auswählen --</option>
                                         <option value="nein">nein</option>
                                         <option value="ja-klein">ja, klein</option>
@@ -120,8 +121,8 @@
                         <div class="row">
                             <div class="col-md-6 mt-25">
                                 <div class="request__quote-item">
-                                    <label>Welche Objektart soll entrümpelt / aufgelöst werden?</label>
-                                    <select name="objekt">
+                                    <label for="objekt">Welche Objektart soll entrümpelt / aufgelöst werden?</label>
+                                    <select id="objekt" name="objekt">
                                         <option selected>-- bitte auswählen --</option>
                                         <option value="wohnung">Wohnung</option>
                                         <option value="haus">Haus</option>
@@ -135,8 +136,8 @@
 
                             <div class="col-md-6 mt-25">
                                 <div class="request__quote-item">
-                                    <label>Wie groß ist ungefähr die zu räumende Fläche?</label>
-                                    <input type="text" name="flaeche" placeholder="z.B.: 50 m2">
+                                    <label for="flaeche">Wie groß ist ungefähr die zu räumende Fläche?</label>
+                                    <input id="flaeche" type="text" name="flaeche" placeholder="z.B.: 50 m2">
                                 </div>
                             </div>
                         </div>
@@ -146,8 +147,8 @@
                         <div class="row">
                             <div class="col-md-12 mt-25">
                                 <div class="request__quote-item">
-                                    <label>Was möchten Sie entsorgen?</label>
-                                    <textarea name="entsorgungs_beschreibung"
+                                    <label for="entsorgungs_beschreibung">Was möchten Sie entsorgen?</label>
+                                    <textarea id="entsorgungs_beschreibung" name="entsorgungs_beschreibung"
                                               placeholder="Beschreiben Sie was genau entsorgt werden muss. Je mehr Infos, desto besser."></textarea>
                                 </div>
                             </div>
@@ -158,31 +159,15 @@
                         <div class="row">
                             <div class="col-md-6 mt-25">
                                 <div class="request__quote-item">
-                                    <label>Abholungsadresse: PLZ und Ortschaft</label>
-                                    <input type="text" name="abhol_plz" placeholder="z.B.: 10115 Berlin">
+                                    <label for="abhol_plz">Abholungsadresse: PLZ und Ortschaft</label>
+                                    <input id="abhol_plz" type="text" name="abhol_plz" placeholder="z.B.: 10115 Berlin">
                                 </div>
                             </div>
 
                             <div class="col-md-6 mt-25">
                                 <div class="request__quote-item">
-                                    <label>Abholungsadresse: Straße und Hausnummer</label>
-                                    <input type="text" name="abhol_adresse" placeholder="Musterstraße 1/20">
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-md-6 mt-25">
-                                <div class="request__quote-item">
-                                    <label>Zustelladresse: PLZ und Ortschaft</label>
-                                    <input type="text" name="zustell_plz" placeholder="z.B.: 10115 Berlin">
-                                </div>
-                            </div>
-
-                            <div class="col-md-6 mt-25">
-                                <div class="request__quote-item">
-                                    <label>Zustelladresse: Straße und Hausnummer</label>
-                                    <input type="text" name="zustell_adresse" placeholder="Musterstraße 1/20">
+                                    <label for="abhol_adresse">Abholungsadresse: Straße und Hausnummer</label>
+                                    <input id="abhol_adresse" type="text" name="abhol_adresse" placeholder="Musterstraße 1/20">
                                 </div>
                             </div>
                         </div>
@@ -190,8 +175,24 @@
                         <div class="row">
                             <div class="col-md-6 mt-25">
                                 <div class="request__quote-item">
-                                    <label>Gewicht</label>
-                                    <input type="text" name="gewicht"
+                                    <label for="zustell_plz">Zustelladresse: PLZ und Ortschaft</label>
+                                    <input id="zustell_plz" type="text" name="zustell_plz" placeholder="z.B.: 10115 Berlin">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 mt-25">
+                                <div class="request__quote-item">
+                                    <label for="zustell_adresse">Zustelladresse: Straße und Hausnummer</label>
+                                    <input id="zustell_adresse" type="text" name="zustell_adresse" placeholder="Musterstraße 1/20">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 mt-25">
+                                <div class="request__quote-item">
+                                    <label for="gewicht">Gewicht</label>
+                                    <input id="gewicht" type="text" name="gewicht"
                                            placeholder="Das Gesamtgewicht der zu transportierenden Ware (z.B. 800kg)">
                                 </div>
                             </div>
@@ -199,8 +200,8 @@
                             <div class="row">
                                 <div class="col-md-12 mt-25">
                                     <div class="request__quote-item">
-                                        <label>Zu transportierende Ware</label>
-                                        <textarea name="ware"
+                                        <label for="ware">Zu transportierende Ware</label>
+                                        <textarea id="ware" name="ware"
                                                   placeholder="Beschreiben Sie was genau transportiert werden muss, ob und wie es verpackt ist, damit wir einfacher ein Fahrzeug einteilen können."></textarea>
                                     </div>
                                 </div>
@@ -215,15 +216,15 @@
                     <div class="row">
                         <div class="col-md-12 mt-25">
                             <div class="request__quote-item">
-                                <label>Wunschdatum</label>
-                                <input type="date" name="wunschdatum">
+                                <label for="wunschdatum">Wunschdatum</label>
+                                <input id="wunschdatum" type="date" name="wunschdatum">
                             </div>
                         </div>
 
                         <div class="col-md-12 mt-25">
                             <div class="request__quote-item">
-                                <label>Anmerkungen / Details</label>
-                                <textarea name="details"
+                                <label for="details">Anmerkungen / Details</label>
+                                <textarea id="details" name="details"
                                           placeholder="Zusätzliche Infos an uns, die uns helfen können, einen Überblick zu bekommen und den ersten Schritt zu beschleunigen."></textarea>
                             </div>
                         </div>

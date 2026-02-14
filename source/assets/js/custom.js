@@ -13,25 +13,100 @@
         mainMenu.appendChild(clonedMenu);
     });
     jQuery(document).ready(function($) {
-        $('.vertical_menu ul li.menu-item-has-children').append('<span class="mobile-arrows far fa-plus"></span>');
+        $('.vertical_menu ul li.menu-item-has-children').each(function() {
+            if (!$(this).children('.mobile-arrows').length) {
+                $(this).append('<span class="mobile-arrows far fa-plus" aria-hidden="true"></span>');
+            }
+        });
+
         $(".vertical_menu .mobile-arrows").on("click",function() {
-            $(this).parent().find('ul:first').slideToggle(300);
+            const parent = $(this).parent();
+            const submenu = parent.find('ul:first');
+            submenu.slideToggle(300);
             $(this).toggleClass('is-open');
+
+            const isExpanded = $(this).hasClass('is-open');
+            parent.toggleClass('is-open', isExpanded);
+            parent.children('.submenu-toggle').attr('aria-expanded', String(isExpanded));
         });
     });
 
+    function submenuToggle() {
+        const submenuItems = $('.menu-item-has-children > .submenu-toggle');
+
+        if (!submenuItems.length) {
+            return;
+        }
+
+        submenuItems.on('click', function(event) {
+            event.preventDefault();
+            const item = $(this).parent();
+            const isOpen = item.hasClass('is-open');
+
+            item.siblings('.menu-item-has-children').removeClass('is-open')
+                .children('.submenu-toggle')
+                .attr('aria-expanded', 'false');
+
+            item.toggleClass('is-open', !isOpen);
+            $(this).attr('aria-expanded', String(!isOpen));
+        });
+
+        $(document).on('click', function(event) {
+            if (!$(event.target).closest('.menu-item-has-children').length) {
+                $('.menu-item-has-children.is-open')
+                    .removeClass('is-open')
+                    .children('.submenu-toggle')
+                    .attr('aria-expanded', 'false');
+            }
+        });
+
+        $(document).on('keydown', function(event) {
+            if (event.key === 'Escape') {
+                $('.menu-item-has-children.is-open')
+                    .removeClass('is-open')
+                    .children('.submenu-toggle')
+                    .attr('aria-expanded', 'false');
+            }
+        });
+    }
+
     ///=============  * Menu Bar Popup Icon  =============\\\
     function menuBarPopup() {
-        $('.menu__bar i').on("click", function() {
-            $(this).toggleClass('clicked');
-            $('.menu__bar-popup').toggleClass('show');
-            $('.menu__bar-popup-overlay').addClass('show');
+        const menuTrigger = $('.menu__bar-trigger');
+        const menuPopup = $('.menu__bar-popup');
+        const menuOverlay = $('.menu__bar-popup-overlay');
+
+        function closeMenu() {
+            menuTrigger.removeClass('clicked').attr('aria-expanded', 'false');
+            menuPopup.removeClass('show');
+            menuOverlay.removeClass('show');
+        }
+
+        menuTrigger.on("click", function() {
+            const isOpen = menuPopup.hasClass('show');
+
+            if (isOpen) {
+                closeMenu();
+                return;
+            }
+
+            menuTrigger.addClass('clicked').attr('aria-expanded', 'true');
+            menuPopup.addClass('show');
+            menuOverlay.addClass('show');
         });
 
         $('.menu__bar-popup .close').on("click", function() {
-            $('.menu__bar i').removeClass('clicked');
-            $('.menu__bar-popup').removeClass('show');
-            $('.menu__bar-popup-overlay').removeClass('show');
+            closeMenu();
+        });
+
+        menuOverlay.on('click', function() {
+            closeMenu();
+        });
+
+        $(document).on('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeMenu();
+            }
         });
     }
 
@@ -171,6 +246,7 @@
 
         $('#contact-form').on('submit', handleContactFormSubmit);
 
+        submenuToggle();
         menuBarPopup();
         bannerSlider();
     });
