@@ -1,9 +1,9 @@
-(function ($) {
-    "use strict";
+(function () {
+    'use strict';
 
     const SELECTORS = {
         mobileMenu: '#mobilemenu',
-        verticalMenu: '.vertical_menu',
+        mobileMenuTarget: '.vertical_menu',
         menuItemWithChildren: '.menu-item-has-children',
         submenuToggle: '.menu-item-has-children > .submenu-toggle',
         menuTrigger: '.menu__bar-trigger',
@@ -15,86 +15,215 @@
         contactForm: '#contact-form',
     };
 
+    const SLIDE_DURATION_MS = 300;
     const ALLOWED_SERVICES = ['entruempelung', 'entsorgung', 'aufloesung', 'umzug', 'transport'];
+    const slideTimers = new WeakMap();
+
+    function clearSlideState(element) {
+        const timerId = slideTimers.get(element);
+        if (timerId) {
+            window.clearTimeout(timerId);
+            slideTimers.delete(element);
+        }
+
+        element.style.removeProperty('transition-property');
+        element.style.removeProperty('transition-duration');
+        element.style.removeProperty('overflow');
+        element.style.removeProperty('height');
+        delete element.dataset.sliding;
+    }
+
+    function slideDown(element, duration) {
+        if (!element) {
+            return;
+        }
+
+        clearSlideState(element);
+
+        element.dataset.sliding = 'true';
+        element.style.removeProperty('display');
+
+        let display = window.getComputedStyle(element).display;
+        if (display === 'none') {
+            display = 'block';
+        }
+        element.style.display = display;
+
+        const targetHeight = element.scrollHeight;
+        element.style.overflow = 'hidden';
+        element.style.height = '0px';
+        element.style.transitionProperty = 'height';
+        element.style.transitionDuration = duration + 'ms';
+
+        window.requestAnimationFrame(function () {
+            element.style.height = targetHeight + 'px';
+        });
+
+        const timerId = window.setTimeout(function () {
+            element.style.removeProperty('height');
+            element.style.removeProperty('overflow');
+            element.style.removeProperty('transition-property');
+            element.style.removeProperty('transition-duration');
+            delete element.dataset.sliding;
+            slideTimers.delete(element);
+        }, duration);
+
+        slideTimers.set(element, timerId);
+    }
+
+    function slideUp(element, duration) {
+        if (!element) {
+            return;
+        }
+
+        clearSlideState(element);
+
+        element.dataset.sliding = 'true';
+        const startHeight = element.scrollHeight;
+
+        element.style.overflow = 'hidden';
+        element.style.height = startHeight + 'px';
+        element.style.transitionProperty = 'height';
+        element.style.transitionDuration = duration + 'ms';
+
+        window.requestAnimationFrame(function () {
+            element.style.height = '0px';
+        });
+
+        const timerId = window.setTimeout(function () {
+            element.style.display = 'none';
+            element.style.removeProperty('height');
+            element.style.removeProperty('overflow');
+            element.style.removeProperty('transition-property');
+            element.style.removeProperty('transition-duration');
+            delete element.dataset.sliding;
+            slideTimers.delete(element);
+        }, duration);
+
+        slideTimers.set(element, timerId);
+    }
+
+    function slideToggle(element, duration) {
+        if (!element) {
+            return;
+        }
+
+        const isHidden = window.getComputedStyle(element).display === 'none';
+        if (isHidden) {
+            slideDown(element, duration);
+            return;
+        }
+
+        slideUp(element, duration);
+    }
 
     function initializeMobileMenuClone() {
         const mobileMenu = document.querySelector(SELECTORS.mobileMenu);
-        const mainMenu = document.querySelector(SELECTORS.verticalMenu);
+        const target = document.querySelector(SELECTORS.mobileMenuTarget);
 
-        if (!mobileMenu || !mainMenu || mainMenu.children.length) {
+        if (!mobileMenu || !target || target.children.length) {
             return;
         }
 
         const clonedMenu = mobileMenu.cloneNode(true);
         clonedMenu.removeAttribute('id');
-        mainMenu.appendChild(clonedMenu);
+        target.appendChild(clonedMenu);
     }
 
     function initializeMobileMenuArrows() {
-        const $verticalMenu = $(SELECTORS.verticalMenu);
-
-        if (!$verticalMenu.length) {
+        const menuRoot = document.querySelector(SELECTORS.mobileMenuTarget);
+        if (!menuRoot) {
             return;
         }
 
-        $verticalMenu.find('ul li.menu-item-has-children').each(function () {
-            const $item = $(this);
-            if (!$item.children('.mobile-arrows').length) {
-                $item.append('<span class="mobile-arrows far fa-plus" aria-hidden="true"></span>');
+        const menuItems = menuRoot.querySelectorAll('ul li.menu-item-has-children');
+        menuItems.forEach(function (item) {
+            if (!item.querySelector(':scope > .mobile-arrows')) {
+                const arrow = document.createElement('span');
+                arrow.className = 'mobile-arrows far fa-plus';
+                arrow.setAttribute('aria-hidden', 'true');
+                item.appendChild(arrow);
             }
         });
 
-        $verticalMenu.on('click', '.mobile-arrows', function () {
-            const $arrow = $(this);
-            const $parent = $arrow.parent();
-            const $submenu = $parent.find('ul:first');
+        menuRoot.addEventListener('click', function (event) {
+            const arrow = event.target.closest('.mobile-arrows');
+            if (!arrow || !menuRoot.contains(arrow)) {
+                return;
+            }
 
-            $submenu.slideToggle(300);
-            $arrow.toggleClass('is-open');
+            const parent = arrow.parentElement;
+            if (!parent) {
+                return;
+            }
 
-            const isExpanded = $arrow.hasClass('is-open');
-            $parent.toggleClass('is-open', isExpanded);
-            $parent.children('.submenu-toggle').attr('aria-expanded', String(isExpanded));
+            const submenu = parent.querySelector(':scope > ul');
+            slideToggle(submenu, SLIDE_DURATION_MS);
+            arrow.classList.toggle('is-open');
+
+            const isExpanded = arrow.classList.contains('is-open');
+            parent.classList.toggle('is-open', isExpanded);
+
+            const submenuToggle = parent.querySelector(':scope > .submenu-toggle');
+            if (submenuToggle) {
+                submenuToggle.setAttribute('aria-expanded', String(isExpanded));
+            }
         });
     }
 
     function closeDesktopSubmenus() {
-        $(SELECTORS.menuItemWithChildren + '.is-open')
-            .removeClass('is-open')
-            .children('.submenu-toggle')
-            .attr('aria-expanded', 'false');
+        const openItems = document.querySelectorAll(SELECTORS.menuItemWithChildren + '.is-open');
+        openItems.forEach(function (item) {
+            item.classList.remove('is-open');
+            const toggle = item.querySelector(':scope > .submenu-toggle');
+            if (toggle) {
+                toggle.setAttribute('aria-expanded', 'false');
+            }
+        });
     }
 
     function initializeDesktopSubmenuToggle() {
-        const $submenuItems = $(SELECTORS.submenuToggle);
-
-        if (!$submenuItems.length) {
+        const submenuToggles = document.querySelectorAll(SELECTORS.submenuToggle);
+        if (!submenuToggles.length) {
             return;
         }
 
-        $submenuItems.on('click', function (event) {
-            event.preventDefault();
+        submenuToggles.forEach(function (toggle) {
+            toggle.addEventListener('click', function (event) {
+                event.preventDefault();
 
-            const $toggle = $(this);
-            const $item = $toggle.parent();
-            const isOpen = $item.hasClass('is-open');
+                const item = toggle.parentElement;
+                if (!item) {
+                    return;
+                }
 
-            $item.siblings(SELECTORS.menuItemWithChildren)
-                .removeClass('is-open')
-                .children('.submenu-toggle')
-                .attr('aria-expanded', 'false');
+                const isOpen = item.classList.contains('is-open');
+                const siblingItems = item.parentElement ? item.parentElement.querySelectorAll(':scope > ' + SELECTORS.menuItemWithChildren) : [];
 
-            $item.toggleClass('is-open', !isOpen);
-            $toggle.attr('aria-expanded', String(!isOpen));
+                siblingItems.forEach(function (sibling) {
+                    if (sibling === item) {
+                        return;
+                    }
+
+                    sibling.classList.remove('is-open');
+                    const siblingToggle = sibling.querySelector(':scope > .submenu-toggle');
+                    if (siblingToggle) {
+                        siblingToggle.setAttribute('aria-expanded', 'false');
+                    }
+                });
+
+                item.classList.toggle('is-open', !isOpen);
+                toggle.setAttribute('aria-expanded', String(!isOpen));
+            });
         });
 
-        $(document).on('click', function (event) {
-            if (!$(event.target).closest(SELECTORS.menuItemWithChildren).length) {
+        document.addEventListener('click', function (event) {
+            if (!event.target.closest(SELECTORS.menuItemWithChildren)) {
                 closeDesktopSubmenus();
             }
         });
 
-        $(document).on('keydown', function (event) {
+        document.addEventListener('keydown', function (event) {
             if (event.key === 'Escape') {
                 closeDesktopSubmenus();
             }
@@ -102,35 +231,41 @@
     }
 
     function initializeMenuBarPopup() {
-        const $menuTrigger = $(SELECTORS.menuTrigger);
-        const $menuPopup = $(SELECTORS.menuPopup);
-        const $menuOverlay = $(SELECTORS.menuOverlay);
+        const menuTrigger = document.querySelector(SELECTORS.menuTrigger);
+        const menuPopup = document.querySelector(SELECTORS.menuPopup);
+        const menuOverlay = document.querySelector(SELECTORS.menuOverlay);
 
-        if (!$menuTrigger.length || !$menuPopup.length || !$menuOverlay.length) {
+        if (!menuTrigger || !menuPopup || !menuOverlay) {
             return;
         }
 
         function closeMenu() {
-            $menuTrigger.removeClass('clicked').attr('aria-expanded', 'false');
-            $menuPopup.removeClass('show');
-            $menuOverlay.removeClass('show');
+            menuTrigger.classList.remove('clicked');
+            menuTrigger.setAttribute('aria-expanded', 'false');
+            menuPopup.classList.remove('show');
+            menuOverlay.classList.remove('show');
         }
 
-        $menuTrigger.on('click', function () {
-            if ($menuPopup.hasClass('show')) {
+        menuTrigger.addEventListener('click', function () {
+            if (menuPopup.classList.contains('show')) {
                 closeMenu();
                 return;
             }
 
-            $menuTrigger.addClass('clicked').attr('aria-expanded', 'true');
-            $menuPopup.addClass('show');
-            $menuOverlay.addClass('show');
+            menuTrigger.classList.add('clicked');
+            menuTrigger.setAttribute('aria-expanded', 'true');
+            menuPopup.classList.add('show');
+            menuOverlay.classList.add('show');
         });
 
-        $('.menu__bar-popup .close').on('click', closeMenu);
-        $menuOverlay.on('click', closeMenu);
+        const closeButton = document.querySelector('.menu__bar-popup .close');
+        if (closeButton) {
+            closeButton.addEventListener('click', closeMenu);
+        }
 
-        $(document).on('keydown', function (event) {
+        menuOverlay.addEventListener('click', closeMenu);
+
+        document.addEventListener('keydown', function (event) {
             if (event.key === 'Escape') {
                 closeMenu();
             }
@@ -138,13 +273,16 @@
     }
 
     function initializeBannerSlider() {
-        const sliderSelector = SELECTORS.slider;
-
-        if (!document.querySelector(sliderSelector)) {
+        if (typeof window.Swiper === 'undefined') {
             return;
         }
 
-        const slider = new Swiper(sliderSelector, {
+        const sliderElement = document.querySelector(SELECTORS.slider);
+        if (!sliderElement) {
+            return;
+        }
+
+        const slider = new window.Swiper(SELECTORS.slider, {
             loop: true,
             slidesPerView: 1,
             speed: 1000,
@@ -165,70 +303,73 @@
         });
 
         function runSlideAnimations() {
-            $(sliderSelector + ' [data-animation]').each(function () {
-                const $element = $(this);
-                const animation = $element.data('animation');
-                const delay = $element.data('delay');
-                const duration = $element.data('duration');
+            const animatedElements = document.querySelectorAll(SELECTORS.slider + ' [data-animation]');
+            animatedElements.forEach(function (element) {
+                const animation = element.dataset.animation;
+                if (!animation) {
+                    return;
+                }
 
-                $element
-                    .removeClass('anim' + animation)
-                    .addClass(animation + ' animated')
-                    .css({
-                        webkitAnimationDelay: delay,
-                        animationDelay: delay,
-                        webkitAnimationDuration: duration,
-                        animationDuration: duration,
-                    })
-                    .one('animationend', function () {
-                        $(this).removeClass(animation + ' animated');
-                    });
+                const delay = element.dataset.delay || '';
+                const duration = element.dataset.duration || '';
+
+                element.classList.remove('anim' + animation);
+                element.classList.add(animation, 'animated');
+                element.style.webkitAnimationDelay = delay;
+                element.style.animationDelay = delay;
+                element.style.webkitAnimationDuration = duration;
+                element.style.animationDuration = duration;
+
+                element.addEventListener('animationend', function handleAnimationEnd() {
+                    element.classList.remove(animation, 'animated');
+                }, { once: true });
             });
         }
 
         runSlideAnimations();
 
         slider.on('slideChange', function () {
-            $(sliderSelector + ' [data-animation]').removeClass('animated');
+            const animatedElements = document.querySelectorAll(SELECTORS.slider + ' [data-animation]');
+            animatedElements.forEach(function (element) {
+                element.classList.remove('animated');
+            });
             runSlideAnimations();
         });
     }
 
     function updateServiceDependentFields() {
-        const $serviceField = $(SELECTORS.serviceField);
-
-        if (!$serviceField.length) {
+        const serviceField = document.querySelector(SELECTORS.serviceField);
+        if (!serviceField) {
             return;
         }
 
-        const selectedService = $serviceField.val();
+        const selectedService = serviceField.value;
 
-        $(SELECTORS.conditionalGroup).each(function () {
-            const $group = $(this);
-            const servicesRaw = $group.data('service');
-
+        const groups = document.querySelectorAll(SELECTORS.conditionalGroup);
+        groups.forEach(function (group) {
+            const servicesRaw = group.dataset.service;
             if (!servicesRaw) {
-                $group.hide();
+                group.style.display = 'none';
                 return;
             }
 
             const services = String(servicesRaw)
                 .split(',')
-                .map((service) => service.trim());
+                .map(function (service) {
+                    return service.trim();
+                });
 
-            $group.toggle(services.includes(selectedService));
+            group.style.display = services.includes(selectedService) ? '' : 'none';
         });
     }
 
     function preselectServiceFromQuery() {
         const serviceField = document.querySelector(SELECTORS.serviceField);
-
         if (!serviceField) {
             return;
         }
 
         const selectedService = new URLSearchParams(window.location.search).get('service');
-
         if (selectedService && ALLOWED_SERVICES.includes(selectedService)) {
             serviceField.value = selectedService;
         }
@@ -275,7 +416,10 @@
             formData.set('form-name', form.getAttribute('name') || 'contact');
         }
 
-        const filteredEntries = Array.from(formData.entries()).filter(([key, value]) => {
+        const filteredEntries = Array.from(formData.entries()).filter(function (entry) {
+            const key = entry[0];
+            const value = entry[1];
+
             if (key === 'form-name') {
                 return true;
             }
@@ -305,7 +449,6 @@
         const submitButtonHtml = submitButton ? submitButton.innerHTML : '';
 
         setMessage(formError, '');
-
         if (formSuccess) {
             formSuccess.style.display = 'none';
         }
@@ -315,12 +458,12 @@
 
         const payload = buildEncodedFormPayload(form);
 
-        fetch('/', {
+        window.fetch('/', {
             method: 'POST',
             headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
             body: payload,
         })
-            .then((response) => {
+            .then(function (response) {
                 if (!response.ok) {
                     throw new Error('Request failed');
                 }
@@ -332,25 +475,33 @@
                     formSuccess.style.display = 'block';
                 }
             })
-            .catch(() => {
+            .catch(function () {
                 setMessage(formStatus, '');
                 setMessage(formError, 'Beim Senden Ihrer Anfrage ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.');
                 setSubmitButtonLoadingState(submitButton, false, submitButtonHtml);
             });
     }
 
-    document.addEventListener('DOMContentLoaded', initializeMobileMenuClone);
+    function initializeContactForm() {
+        const serviceField = document.querySelector(SELECTORS.serviceField);
+        if (serviceField) {
+            serviceField.addEventListener('change', updateServiceDependentFields);
+            preselectServiceFromQuery();
+            updateServiceDependentFields();
+        }
 
-    $(function () {
+        const contactForm = document.querySelector(SELECTORS.contactForm);
+        if (contactForm) {
+            contactForm.addEventListener('submit', handleContactFormSubmit);
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+        initializeMobileMenuClone();
         initializeMobileMenuArrows();
         initializeDesktopSubmenuToggle();
         initializeMenuBarPopup();
         initializeBannerSlider();
-
-        preselectServiceFromQuery();
-        $(SELECTORS.serviceField).on('change', updateServiceDependentFields);
-        updateServiceDependentFields();
-
-        $(SELECTORS.contactForm).on('submit', handleContactFormSubmit);
+        initializeContactForm();
     });
-})(jQuery);
+})();
