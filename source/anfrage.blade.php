@@ -201,14 +201,14 @@
                                            placeholder="Das Gesamtgewicht der zu transportierenden Ware (z.B. 800kg)">
                                 </div>
                             </div>
+                        </div>
 
-                            <div class="row">
-                                <div class="col-md-12 mt-25">
-                                    <div class="request__quote-item">
-                                        <label for="ware">Zu transportierende Ware</label>
-                                        <textarea id="ware" name="ware"
-                                                  placeholder="Beschreiben Sie was genau transportiert werden muss, ob und wie es verpackt ist, damit wir einfacher ein Fahrzeug einteilen können."></textarea>
-                                    </div>
+                        <div class="row">
+                            <div class="col-md-12 mt-25">
+                                <div class="request__quote-item">
+                                    <label for="ware">Zu transportierende Ware</label>
+                                    <textarea id="ware" name="ware"
+                                              placeholder="Beschreiben Sie was genau transportiert werden muss, ob und wie es verpackt ist, damit wir einfacher ein Fahrzeug einteilen können."></textarea>
                                 </div>
                             </div>
                         </div>

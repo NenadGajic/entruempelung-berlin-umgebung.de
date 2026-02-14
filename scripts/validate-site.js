@@ -406,6 +406,7 @@ function checkContent() {
   const contactFormFile = 'source/anfrage.blade.php';
   const contactFormContent = stripBladeComments(read(contactFormFile));
   const formControlPattern = /<(input|select|textarea)\b[^>]*\bname\s*=\s*["']([^"']+)["'][^>]*>/gi;
+  const nestedRowPattern = /<div\b[^>]*class=["'][^"']*\brow\b[^"']*["'][^>]*>\s*<div\b[^>]*class=["'][^"']*\brow\b[^"']*["'][^>]*>/gi;
   const requiredContactFieldNames = ['form-name', 'name', 'email', 'nummer', 'service'];
   const presentFieldNames = new Set();
   let formControlMatch;
@@ -420,6 +421,12 @@ function checkContent() {
       hasFailure = true;
     }
   }
+
+  if (nestedRowPattern.test(contactFormContent)) {
+    fail(`Invalid bootstrap grid nesting found in ${contactFormFile} (.row directly inside .row).`);
+    hasFailure = true;
+  }
+  nestedRowPattern.lastIndex = 0;
 
   const titleUsage = new Map();
   const descriptionUsage = new Map();
