@@ -8,13 +8,15 @@
         "check": "npm run prod"
     },
     "devDependencies": {
+        "clean-css": "^5.3.3",
         "laravel-mix": "^6.0.39",
         "laravel-mix-jigsaw": "^2.0.0",
         "postcss": "^8.4.14",
         "postcss-import": "^14.0.0",
         "sass": "^1.86.0",
         "sass-loader": "^12.6.0",
-        "tailwindcss": "^3.1.6"
+        "tailwindcss": "^3.1.6",
+        "terser": "^5.46.0"
     },
     "dependencies": {
         "bootstrap": "^5.3.4"
