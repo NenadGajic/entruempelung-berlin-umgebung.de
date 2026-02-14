@@ -112,7 +112,7 @@
                                 <div class="request__quote-item">
                                     <label for="aufzug">Aufzug vorhanden?</label>
                                     <select id="aufzug" name="aufzug">
-                                        <option selected>-- bitte auswählen --</option>
+                                        <option value="" selected disabled>-- bitte auswählen --</option>
                                         <option value="nein">nein</option>
                                         <option value="ja-klein">ja, klein</option>
                                         <option value="ja-gross">ja, groß</option>
@@ -128,7 +128,7 @@
                                 <div class="request__quote-item">
                                     <label for="objekt">Welche Objektart soll entrümpelt / aufgelöst werden?</label>
                                     <select id="objekt" name="objekt">
-                                        <option selected>-- bitte auswählen --</option>
+                                        <option value="" selected disabled>-- bitte auswählen --</option>
                                         <option value="wohnung">Wohnung</option>
                                         <option value="haus">Haus</option>
                                         <option value="keller">Keller/Garage</option>

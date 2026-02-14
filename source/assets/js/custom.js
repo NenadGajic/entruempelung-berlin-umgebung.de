@@ -360,7 +360,13 @@
                     return service.trim();
                 });
 
-            group.style.display = services.includes(selectedService) ? '' : 'none';
+            const isVisible = services.includes(selectedService);
+            group.style.display = isVisible ? '' : 'none';
+
+            const controls = group.querySelectorAll('input, select, textarea');
+            controls.forEach(function (control) {
+                control.disabled = !isVisible;
+            });
         });
     }
 
