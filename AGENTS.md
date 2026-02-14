@@ -35,6 +35,7 @@ This is the canonical working guide for agents in this repository. `CLAUDE.md` m
 - Local build: `npm run dev` (outputs to `build_local/`)
 - Watch mode: `npm run watch`
 - Production build: `npm run prod` (outputs to `build_production/`)
+- Validation checks: `npm run check` (runs build + structural checks)
 - Netlify build: `npm run prod`, publish directory: `build_production`
 
 ## Editing Rules
@@ -68,12 +69,19 @@ This is the canonical working guide for agents in this repository. `CLAUDE.md` m
 - Current `webpack.mix.js` has CSS/JS compilation steps commented out; Mix primarily triggers Jigsaw builds
 - If Sass is changed, ensure `source/assets/css/style.css` is intentionally updated by your workflow
 
-## Known Pitfall
-- `source/_layouts/main.blade.php` includes `/assets/js/jquery.counterup.min.js`, but this file is not present in `source/assets/js/`.
-- Keep layout script includes and actual asset inventory aligned when editing templates/assets.
+## Image Optimization Policy
+- Optimize JPEG/JPG files in place at quality target `80`.
+- Keep existing filenames and paths stable.
+- Do not introduce WebP/picture migrations in the current phase.
+- PNG optimization is deferred until a dedicated optimizer workflow is introduced.
+
+## Future Pipeline Modernization
+- Sass/JS consolidation into a single build pipeline is intentionally deferred.
+- Keep current Jigsaw + static-asset serving model unless explicitly scheduled for migration.
 
 ## Validation Checklist
-- Run `npm run dev` after changes.
+- Run `npm run check` before commit (mandatory).
+- Run `npm run dev` after changes when iterating locally.
 - Verify output pages in `build_local/` exist and render with valid asset links.
 - Spot-check:
   - nav active states
