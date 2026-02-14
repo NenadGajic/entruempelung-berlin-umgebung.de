@@ -336,6 +336,8 @@ function checkContent() {
   const files = getTemplateFiles();
   const genericLogoAltPattern = /\balt\s*=\s*["']\s*logo\s*["']/gi;
   const hrefPattern = /href\s*=\s*["']([^"']+)["']/gi;
+  const jqueryScriptPattern = /jquery(?:-\d+(?:\.\d+)*)?\.min\.js/i;
+  const jqueryGlobalPattern = /window\.(?:jQuery|\$)\b/gi;
 
   for (const file of files) {
     const content = stripBladeComments(read(file));
@@ -345,6 +347,18 @@ function checkContent() {
       hasFailure = true;
     }
     genericLogoAltPattern.lastIndex = 0;
+
+    if (jqueryScriptPattern.test(content)) {
+      fail(`jQuery script reference found in ${file}. jQuery is not allowed in this project.`);
+      hasFailure = true;
+    }
+    jqueryScriptPattern.lastIndex = 0;
+
+    if (jqueryGlobalPattern.test(content)) {
+      fail(`window.jQuery/window.$ usage found in ${file}. jQuery globals are not allowed.`);
+      hasFailure = true;
+    }
+    jqueryGlobalPattern.lastIndex = 0;
 
     let hrefMatch;
     while ((hrefMatch = hrefPattern.exec(content)) !== null) {
@@ -370,6 +384,23 @@ function checkContent() {
       }
     }
     hrefPattern.lastIndex = 0;
+  }
+
+  const customJsFile = 'source/assets/js/custom.js';
+  const customJsContent = read(customJsFile);
+  const customJsPatterns = [
+    { regex: /\bjQuery\s*\(/gi, label: 'jQuery(...) call' },
+    { regex: /(^|[^.\w$])\$\s*\(/gi, label: '$(...) call' },
+    { regex: /\bwindow\.(?:jQuery|\$)\b/gi, label: 'jQuery global reference' },
+    { regex: /\)\.on\s*\(/gi, label: 'jQuery chained .on(...) pattern' },
+  ];
+
+  for (const rule of customJsPatterns) {
+    if (rule.regex.test(customJsContent)) {
+      fail(`${rule.label} found in ${customJsFile}. custom.js must remain vanilla JS.`);
+      hasFailure = true;
+    }
+    rule.regex.lastIndex = 0;
   }
 
   const titleUsage = new Map();

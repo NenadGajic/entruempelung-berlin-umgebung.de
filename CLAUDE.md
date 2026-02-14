@@ -10,7 +10,7 @@ This file mirrors `AGENTS.md` so agent guidance stays consistent across tools.
 ## Tech Stack
 - PHP/Composer: `tightenco/jigsaw`, `samdark/sitemap`
 - Node: Laravel Mix + `laravel-mix-jigsaw`
-- Frontend: Bootstrap 5, jQuery, Swiper, Flaticon, Font Awesome subset
+- Frontend: Bootstrap 5, vanilla JS, Swiper, Flaticon, Font Awesome subset
 
 ## Repository Structure
 - `source/`: canonical site source
@@ -63,6 +63,7 @@ This file mirrors `AGENTS.md` so agent guidance stays consistent across tools.
   - conditional contact fields (`#service`, `.conditional-group`)
   - form submit flow to `/` using URL-encoded payload
   - inline submit state (`Wird gesendet...`) and inline error/success feedback
+  - implementation must remain vanilla JS (no jQuery globals or jQuery selector/chaining patterns)
 
 ## Removed Legacy JS Behaviors
 - The current templates do not render sidebar-popup, portfolio-two slider, gallery filter, or scroll-up UI blocks.
@@ -98,7 +99,7 @@ This file mirrors `AGENTS.md` so agent guidance stays consistent across tools.
 - Run `npm run check` before commit (mandatory).
 - Ensure `npm run validate:semantics` passes when editing templates/forms/navigation.
 - Ensure `npm run validate:seo` passes when editing metadata/schema/layout.
-- Ensure `npm run validate:content` passes when editing copy, alt text, service query links, or metadata uniqueness.
+- Ensure `npm run validate:content` passes when editing copy, alt text, service query links, metadata uniqueness, or JS/template script references.
 - Run `npm run dev` after changes when iterating locally.
 - Verify output pages in `build_local/` exist and render with valid asset links.
 - Spot-check:
