@@ -4,7 +4,12 @@
         "dev": "mix",
         "watch": "mix watch",
         "staging": "NODE_ENV=staging mix",
-        "prod": "mix --production"
+        "prod": "mix --production",
+        "validate:site": "npm run prod",
+        "validate:h1": "node scripts/validate-site.js h1",
+        "validate:links": "node scripts/validate-site.js links",
+        "validate:assets": "node scripts/validate-site.js assets",
+        "check": "npm run validate:site && npm run validate:h1 && npm run validate:links && npm run validate:assets"
     },
     "devDependencies": {
         "laravel-mix": "^6.0.39",
