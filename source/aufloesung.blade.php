@@ -1,6 +1,7 @@
 @php
     $title = "Haushalts- und Gewerbeauflösung | " . $page->title;
     $description = "Wir kümmern uns um die professionelle und effiziente Auflösung von Haushalten, unabhängig davon, ob es sich um einen Privathaushalt oder einen Gewerbebetrieb handelt.";
+    $ogImage = "/assets/img/bueroaufloesung.jpeg";
     $breadcrumbs = [
         ['name' => 'Home', 'url' => '/'],
         ['name' => 'Haushalts- und Gewerbeauflösung', 'url' => '/aufloesung'],
@@ -55,6 +56,14 @@
                         <h4>Professionelle Haushaltsauflösung in Berlin und Umgebung</h4>
                         <p class="mt-15">Wenn Sie vor der Aufgabe stehen, eine Wohnung oder sogar ein Haus aufzugeben, taucht die Frage auf: wohin mit all den Sachen? Sie stehen vor einer regelrechten Herausforderung, da sich ein Berg an Möbeln und persönlichen Hinterlassenschaften vor Ihnen auftürmt. Und das alles muss bis zu einem bestimmten Termin erledigt werden?</p>
                         <p class="mt-15">Hier kommen wir ins Spiel: Unser erfahrenes Team übernimmt die gesamte Haushaltsauflösung für Sie. Sie müssen sich um nichts kümmern. Vom Räumen bis zur gründlichen Übergabe in besenreinem Zustand bieten wir Ihnen einen umfassenden Entrümpelungsservice.</p>
+
+                        <div class="about__one-right-list mt-25">
+                            <h4>Weitere Leistungen</h4>
+                            <ul>
+                                <li><i class="fas fa-chevron-circle-right"></i><a href="/entruempelung">Entrümpelung in Berlin und Umgebung</a></li>
+                                <li><i class="fas fa-chevron-circle-right"></i><a href="/entsorgung">Entsorgung in Berlin und Umgebung</a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>

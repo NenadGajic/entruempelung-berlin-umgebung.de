@@ -1,6 +1,7 @@
 @php
     $title = "Professionelle Entsorgung | " . $page->title;
     $description = "Wenn Sie in Berlin und Umgebung nach einer professionellen Entsorgung von Bauschutt, Möbeln, Sperrmüll und mehr suchen, stehen wir Ihnen bei jedem Schritt zur Seite.";
+    $ogImage = "/assets/img/entsorgung.jpg";
     $breadcrumbs = [
         ['name' => 'Home', 'url' => '/'],
         ['name' => 'Entsorgung', 'url' => '/entsorgung'],
@@ -59,6 +60,14 @@
                                 <li><i class="fas fa-chevron-circle-right"></i>Bauschuttentsorgung</li>
                                 <li><i class="fas fa-chevron-circle-right"></i>Küchenentsorgung</li>
                                 <li><i class="fas fa-chevron-circle-right"></i>Elektroschrott Entsorgung</li>
+                            </ul>
+                        </div>
+
+                        <div class="about__one-right-list mt-25">
+                            <h4>Weitere Leistungen</h4>
+                            <ul>
+                                <li><i class="fas fa-chevron-circle-right"></i><a href="/aufloesung">Haushalts- und Gewerbeauflösung</a></li>
+                                <li><i class="fas fa-chevron-circle-right"></i><a href="/transport">Kleintransporte in Berlin und Umgebung</a></li>
                             </ul>
                         </div>
 {{--                        <p class="mt-15">Nachdem wir eine kostenlose Erstbesichtigung durchgeführt haben, erstellen wir Ihnen ein verbindliches Angebot mit einem festen Preis für die Entrümpelung.</p>--}}

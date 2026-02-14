@@ -1,6 +1,7 @@
 @php
     $title = "Professioneller Umzug in Berlin und Umgebung | " . $page->title;
     $description = "Sobald Sie Ihre neue Wohnung gefunden haben und einen Umzugsservice benötigen, zögern Sie nicht und kontaktieren Sie uns noch heute. Unser Unternehmen passt sich optimal Ihren Anforderungen an.";
+    $ogImage = "/assets/img/umzug.jpg";
     $breadcrumbs = [
         ['name' => 'Home', 'url' => '/'],
         ['name' => 'Umzug', 'url' => '/umzug'],
@@ -39,6 +40,14 @@
                         <p class="mb-20">Sobald Sie Ihre neue Wohnung gefunden haben und einen Umzugsservice benötigen, zögern Sie nicht und kontaktieren Sie uns noch heute. Unser Unternehmen passt sich optimal Ihren Anforderungen an.</p>
                         <p class="mb-20">Gerne vereinbaren wir auch einen kostenlosen Besichtigungstermin, um alle Einzelheiten zu besprechen. Unsere Fachberater organisieren den Umzug gemeinsam mit Ihnen.</p>
                         <p class="mb-20">Wenn Sie mit uns umziehen, können Sie sich beruhigt zurücklehnen, denn wir kümmern uns um alles.</p>
+
+                        <div class="about__one-right-list mt-25">
+                            <h4>Weitere Leistungen</h4>
+                            <ul>
+                                <li><i class="fas fa-chevron-circle-right"></i><a href="/transport">Kleintransporte in Berlin und Umgebung</a></li>
+                                <li><i class="fas fa-chevron-circle-right"></i><a href="/entruempelung">Entrümpelung in Berlin und Umgebung</a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -1,6 +1,7 @@
 @php
     $title = "Kleintransporte bis 3,5t in Berlin und Umgebung | " . $page->title;
     $description = "Mit unserem eigenen Fuhrpark sind wir Ihr zuverlässiger Partner für Kleintransporte und Lieferungen in Berlin und deutschlandweit.";
+    $ogImage = "/assets/img/transport.jpg";
     $breadcrumbs = [
         ['name' => 'Home', 'url' => '/'],
         ['name' => 'Transport', 'url' => '/transport'],
@@ -40,6 +41,14 @@
                         <p class="mb-20">Egal, um welche Art von Lieferung es sich handelt, wir erledigen die Aufgabe schnell, zuverlässig und zu äußerst günstigen Konditionen.</p>
                         <p class="mb-20">Haben Sie Möbel von einem Geschäft oder anderswo gekauft, aber Ihr eigenes Fahrzeug ist nicht für den Transport geeignet? Dann sind wir die beste und kostengünstigste Lösung für Sie.</p>
                         <p class="mb-20">Unsere Fahrzeuge und wir stehen jederzeit zur Verfügung. Kontaktieren Sie uns einfach, und wir werden uns um alles Weitere kümmern. Ihre Zufriedenheit liegt uns stets am Herzen.</p>
+
+                        <div class="about__one-right-list mt-25">
+                            <h4>Weitere Leistungen</h4>
+                            <ul>
+                                <li><i class="fas fa-chevron-circle-right"></i><a href="/umzug">Umzug in Berlin und Umgebung</a></li>
+                                <li><i class="fas fa-chevron-circle-right"></i><a href="/entsorgung">Entsorgung in Berlin und Umgebung</a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>

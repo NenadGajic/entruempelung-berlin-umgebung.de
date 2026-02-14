@@ -1,6 +1,7 @@
 @php
     $title = "Kostenlose Anfrage senden | " . $page->title;
     $description = "Senden Sie uns eine Anfrage für eine kostenlose Besichtigung und starten Sie den Prozess für eine unkomplizierte Entrümpelung oder Entsorgung im Großraum Berlin.";
+    $ogImage = "/assets/img/berlin-brandenburg.jpg";
     $breadcrumbs = [
         ['name' => 'Home', 'url' => '/'],
         ['name' => 'Online-Anfrage', 'url' => '/anfrage'],

@@ -1,6 +1,7 @@
 @php
     $title = "Professionelle Entrümpelung | " . $page->title;
     $description = "Unsere Dienstleistungen erstrecken sich auf Entrümpelungen verschiedenster Art und Größe, darunter Wohnungen, (Hoch-)Häuser, Wohngemeinschaften und auch sogenannte Messi-Wohnungen.";
+    $ogImage = "/assets/img/entruempelung.jpg";
     $breadcrumbs = [
         ['name' => 'Home', 'url' => '/'],
         ['name' => 'Entrümpelung', 'url' => '/entruempelung'],
@@ -54,6 +55,14 @@
                     <p class="mt-15">Nachdem wir eine kostenlose Erstbesichtigung durchgeführt haben, erstellen wir Ihnen ein verbindliches Angebot mit einem festen Preis für die Entrümpelung.</p>
                     <p class="mt-15">Es empfiehlt sich, während der regulären Bürozeiten mit uns in Kontakt zu treten. Allerdings sind wir auch außerhalb dieser Zeiten über Anruf, E-Mail oder das Kontaktformular erreichbar.</p>
                     <p class="mt-15">Gemeinsam besprechen wir die Details des Auftrags. Normalerweise kommen wir persönlich bei Ihnen vorbei, um uns vor Ort ein genaues Bild zu machen. Da jeder Entrümpelungsauftrag individuell ist, können wir Ihnen erst nach Klärung der zu entrümpelnden Gegenstände einen Preis nennen. Während dieses Treffens vereinbaren wir auch einen passenden Termin für die Durchführung des Auftrags.</p>
+
+                    <div class="about__one-right-list mt-25">
+                        <h4>Weitere Leistungen</h4>
+                        <ul>
+                            <li><i class="fas fa-chevron-circle-right"></i><a href="/entsorgung">Entsorgung in Berlin und Umgebung</a></li>
+                            <li><i class="fas fa-chevron-circle-right"></i><a href="/aufloesung">Haushalts- und Gewerbeauflösung</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
