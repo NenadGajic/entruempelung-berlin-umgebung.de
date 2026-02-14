@@ -1,81 +1,20 @@
 @php
-    $title = "Professionelle Entsorgung | " . $page->title;
-    $description = "Wenn Sie in Berlin und Umgebung nach einer professionellen Entsorgung von Bauschutt, Möbeln, Sperrmüll und mehr suchen, stehen wir Ihnen bei jedem Schritt zur Seite.";
-    $ogImage = "/assets/img/entsorgung.jpg";
-    $breadcrumbs = [
-        ['name' => 'Home', 'url' => '/'],
-        ['name' => 'Entsorgung', 'url' => '/entsorgung'],
-    ];
+    $service = $page->services['entsorgung'];
+    $title = $service['meta_title'] . ' | ' . $page->title;
+    $description = $service['meta_description'];
+    $ogImage = $service['og_image'];
+
+    $breadcrumbs = [];
+    foreach ($service['breadcrumbs'] as $crumb) {
+        $breadcrumbs[] = [
+            'name' => $crumb['name'],
+            'url' => $crumb['url'],
+        ];
+    }
 @endphp
 
 @extends('_layouts.main')
 
 @section('body')
-    <div class="breadcrumb__area">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-12">
-                    <div class="breadcrumb__area-content">
-                        <h1>Entsorgung</h1>
-                        <ul>
-                            <li><a href="{{ $page->baseUrl }}">Home</a><i>/</i></li>
-                            <li>Entsorgung</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="services__details section-padding">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 columns_sticky">
-                    <div class="all__sidebar">
-                        <div class="all__sidebar-item">
-                            <h5>Entsorgung in Berlin und Umgebung</h5>
-                            <div class="all__sidebar-item-category">
-                                <ul>
-                                    <li><a href="/anfrage?service=entsorgung">Bauschuttentsorgung<i class="flaticon-right-up"></i></a></li>
-                                    <li><a href="/anfrage?service=entsorgung">Möbelentsorgung<i class="flaticon-right-up"></i></a></li>
-                                    <li><a href="/anfrage?service=entsorgung">Sperrmüllentsorgung<i class="flaticon-right-up"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <x-sidebar-contact />
-                    </div>
-                </div>
-                <div class="col-lg-8">
-                    <div class="services__details-area">
-                        <img src="/assets/img/entsorgung.jpg" alt="Sperrmüllentsorgung in Berlin und Umgebung">
-                        <h3 class="mt-25 mb-20">Professionelle Entsorgung in Berlin</h3>
-                        <p class="mb-20">Wenn Sie in Berlin und Umgebung nach einer professionellen Entsorgung suchen, stehen wir bereit, um Sie bei jedem Schritt zu unterstützen. Egal ob Sie alte Möbel loswerden, Bauschutt abtransportieren oder Elektroschrott fachgerecht entsorgen möchten: Wir bieten Ihnen eine schnelle, saubere und unkomplizierte Lösung. Kurz gesagt: Wir sind Ihr zuverlässiger Partner, wenn es darum geht, Platz zu schaffen und Ordnung in Ihrem Zuhause, Büro oder auf Ihrer Baustelle wiederherzustellen.</p>
-                        <p class="mb-20">Wir wissen aus langjähriger Erfahrung in der Entsorgung, dass ein zuverlässiger Ansprechpartner Gold wert ist. Genau darum kümmern wir uns mit Herzblut um jedes Detail, von A wie Abholung bis Z wie Zwischenlagerung (falls es bei Spezialmüll oder größeren Aufträgen erforderlich ist). In Berlin sind wir an Ihrer Seite, um Ihnen Zeit, Nerven und oft auch einiges an Kosten zu ersparen. Keine Sorge, wir gehen das locker an, aber immer mit Professionalität und Blick fürs Wesentliche.</p>
-
-                        <h4>Diese Entsorgungen bieten wir in Berlin an</h4>
-                        <div class="about__one-right-list mt-15 mb-25">
-                            <ul>
-                                <li><i class="fas fa-chevron-circle-right"></i>Sperrmüllentsorgung</li>
-                                <li><i class="fas fa-chevron-circle-right"></i>Möbelentsorgung</li>
-                                <li><i class="fas fa-chevron-circle-right"></i>Bauschuttentsorgung</li>
-                                <li><i class="fas fa-chevron-circle-right"></i>Küchenentsorgung</li>
-                                <li><i class="fas fa-chevron-circle-right"></i>Elektroschrott Entsorgung</li>
-                            </ul>
-                        </div>
-
-                        <div class="about__one-right-list mt-25">
-                            <h4>Weitere Leistungen</h4>
-                            <ul>
-                                <li><i class="fas fa-chevron-circle-right"></i><a href="/aufloesung">Haushalts- und Gewerbeauflösung</a></li>
-                                <li><i class="fas fa-chevron-circle-right"></i><a href="/transport">Kleintransporte in Berlin und Umgebung</a></li>
-                            </ul>
-                        </div>
-{{--                        <p class="mt-15">Nachdem wir eine kostenlose Erstbesichtigung durchgeführt haben, erstellen wir Ihnen ein verbindliches Angebot mit einem festen Preis für die Entrümpelung.</p>--}}
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <x-footer-cta />
+    @include('_components.service-page', ['service' => $service])
 @endsection

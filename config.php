@@ -14,6 +14,7 @@ return [
     'businessEmail' => 'office@entruempelung-berlin-umgebung.de',
     'businessServiceArea' => 'Berlin und Brandenburg',
     'businessImage' => '/assets/img/entruempelung.jpg',
+    'services' => require __DIR__ . '/source/_data/services.php',
     'active' => function ($page, $section) {
         return Str::contains($page->getPath(), $section) ? 'active' : '';
      },
