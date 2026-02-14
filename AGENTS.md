@@ -53,9 +53,14 @@ This is the canonical working guide for agents in this repository. `CLAUDE.md` m
   - `id="contact-form"` and `id="form-success"` (used by JS)
 - `source/assets/js/custom.js` currently handles:
   - mobile menu cloning
-  - sliders/filter/scroll behavior
+  - header menu popup behavior
+  - homepage banner slider behavior
   - conditional contact fields (`#service`, `.conditional-group`)
   - form submit flow to `/` using URL-encoded payload
+
+## Removed Legacy JS Behaviors
+- The current templates do not render sidebar-popup, portfolio-two slider, gallery filter, or scroll-up UI blocks.
+- Corresponding legacy initializers were removed from `source/assets/js/custom.js` to keep runtime behavior aligned with active markup.
 
 ## CSS/Sass Workflow Notes
 - Active stylesheet loaded by layout: `source/assets/css/style.css`
