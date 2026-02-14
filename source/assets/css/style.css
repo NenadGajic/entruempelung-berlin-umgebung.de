@@ -1433,7 +1433,8 @@ h6 {
     background: var(--text-white);
 }
 
-.banner__one-content h1 {
+.banner__one-content h1,
+.banner__one-content h2 {
     font-size: 80px;
     line-height: 92px;
     max-width: 580px;
@@ -1441,7 +1442,8 @@ h6 {
     color: var(--text-white);
 }
 
-.banner__one-content h1 span {
+.banner__one-content h1 span,
+.banner__one-content h2 span {
     color: var(--secondary-color);
 }
 
@@ -1504,21 +1506,24 @@ h6 {
 }
 
 @media (max-width: 620px) {
-    .banner__one-content h1 {
+    .banner__one-content h1,
+    .banner__one-content h2 {
         font-size: 60px;
         line-height: 70px;
     }
 }
 
 @media (max-width: 480px) {
-    .banner__one-content h1 {
+    .banner__one-content h1,
+    .banner__one-content h2 {
         font-size: 45px;
         line-height: 55px;
     }
 }
 
 @media (max-width: 359px) {
-    .banner__one-content h1 {
+    .banner__one-content h1,
+    .banner__one-content h2 {
         font-size: 42px;
         line-height: 52px;
     }
@@ -2741,6 +2746,7 @@ h6 {
     text-align: center;
 }
 
+.breadcrumb__area-content h1,
 .breadcrumb__area-content h2 {
     color: var(--text-white);
     margin-bottom: 15px;

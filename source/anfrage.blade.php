@@ -1,6 +1,6 @@
 @php
-    $title = "Kostenlose Anfrage Senden | " . $page->title;
-    $description = "Senden Sie uns eine Anfrage zur kostenloser Besichtigung und starten Sie den Prozess von unkomplizierten Entrümpelung oder Entsorgung im Großraum Berlin."
+    $title = "Kostenlose Anfrage senden | " . $page->title;
+    $description = "Senden Sie uns eine Anfrage für eine kostenlose Besichtigung und starten Sie den Prozess für eine unkomplizierte Entrümpelung oder Entsorgung im Großraum Berlin."
 @endphp
 
 @extends('_layouts.main')
@@ -11,7 +11,7 @@
             <div class="row">
                 <div class="col-xl-12">
                     <div class="breadcrumb__area-content">
-                        <h2>Online Anfrage</h2>
+                        <h1>Online-Anfrage</h1>
                         <ul>
                             <li><a href="{{ $page->baseUrl }}">Home</a><i>/</i></li>
                             <li>Online Anfrage</li>
@@ -64,9 +64,9 @@
                     <div class="row">
                         <div class="col-md-12 mt-25">
                             <div class="request__quote-item">
-                                <label>Welche Dienstleisung benötigen Sie? </label>
-                                <select id="service" name="service">
-                                    <option selected>-- bitte auswählen --</option>
+                                <label for="service">Welche Dienstleistung benötigen Sie?</label>
+                                <select id="service" name="service" required>
+                                    <option value="" selected disabled>-- bitte auswählen --</option>
                                     <option value="entruempelung">Entrümpelung</option>
                                     <option value="entsorgung">Entsorgung</option>
                                     <option value="aufloesung">Auflösung</option>
@@ -129,7 +129,7 @@
                                         <option value="buero">Büro</option>
                                         <option value="sonstiges">Sonstiges *</option>
                                     </select>
-                                    <small>Sonstiges bitte in bei Zusatzinfos ergänzen!</small>
+                                    <small>Sonstiges bitte bei den Zusatzinfos ergänzen.</small>
                                 </div>
                             </div>
 
@@ -224,7 +224,7 @@
                             <div class="request__quote-item">
                                 <label>Anmerkungen / Details</label>
                                 <textarea name="details"
-                                          placeholder="Zusätzliche Infos an uns, die uns helfen können einen Überblick zu bekommen und den ersten Schritt zu beschleundigen."></textarea>
+                                          placeholder="Zusätzliche Infos an uns, die uns helfen können, einen Überblick zu bekommen und den ersten Schritt zu beschleunigen."></textarea>
                             </div>
                         </div>
                     </div>
@@ -246,7 +246,7 @@
                 </div>
             </form>
 
-            <div id="form-success" style="display: none;">
+            <div id="form-success" style="display: none;" role="status" aria-live="polite">
                 <h2>Vielen Dank!</h2>
                 <p>Ihre Anfrage wurde erfolgreich gesendet. Wir melden uns so schnell wie möglich bei Ihnen.</p>
               </div>

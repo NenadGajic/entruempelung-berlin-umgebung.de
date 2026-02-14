@@ -12,7 +12,7 @@
                                 <div class="banner__one-content">
                                     <span class="subtitle" data-delay=".3s">Entrümpelung</span>
                                     <h1 data-animation="fadeInUp" data-delay=".6s">Unkomplizierte <span>Entrümpelung</span> in Berlin und Umgebung</h1>
-                                    <p data-animation="fadeInUp" data-delay=".9s">Wir bieten Entrümpelungen von Wohnungen, Keller und  Häusern.</p>
+                                    <p data-animation="fadeInUp" data-delay=".9s">Wir bieten Entrümpelungen von Wohnungen, Kellern und Häusern.</p>
                                     <div class="banner__one-content-button" data-animation="fadeInUp" data-delay="1.4s">
                                         <a class="default_button" href="{{ $page->baseUrl }}/anfrage">Kostenlose Besichtigung vereinbaren <i class="flaticon-right-up"></i></a>
                                     </div>
@@ -28,7 +28,7 @@
                             <div class="col-xl-12">
                                 <div class="banner__one-content">
                                     <span class="subtitle" data-delay=".3s">Entsorgung</span>
-                                    <h1 data-animation="fadeInUp" data-delay=".6s">Unkomplizierte <span>Entsorgung</span> in Berlin und Umgebung</h1>
+                                    <h2 data-animation="fadeInUp" data-delay=".6s">Unkomplizierte <span>Entsorgung</span> in Berlin und Umgebung</h2>
                                     <p data-animation="fadeInUp" data-delay=".9s">Wir entsorgen Bauschutt, Möbel, Sperrmüll und viel mehr!</p>
                                     <div class="banner__one-content-button" data-animation="fadeInUp" data-delay="1.4s">
                                         <a class="default_button" href="/anfrage">Kostenlose Besichtigung vereinbaren <i class="flaticon-right-up"></i></a>
@@ -45,7 +45,7 @@
                             <div class="col-xl-12">
                                 <div class="banner__one-content">
                                     <span class="subtitle" data-delay=".3s">Auflösung</span>
-                                    <h1 data-animation="fadeInUp" data-delay=".6s">Unkomplizierte <span>Auflösung</span> in Berlin und Umgebung</h1>
+                                    <h2 data-animation="fadeInUp" data-delay=".6s">Unkomplizierte <span>Auflösung</span> in Berlin und Umgebung</h2>
                                     <p data-animation="fadeInUp" data-delay=".9s">Privat und Gewerbekunden! Haushaltsauflösung, Wohnungsauflösung, Kellerauflösung, Lagerauflösung, Gewerbeauflösung, Werkstattauflösung, Büroauflösung</p>
                                     <div class="banner__one-content-button" data-animation="fadeInUp" data-delay="1.4s">
                                         <a class="default_button" href="{{ $page->baseUrl }}/anfrage">Kostenlose Besichtigung vereinbaren <i class="flaticon-right-up"></i></a>
@@ -72,7 +72,7 @@
             <div class="row mb-30">
                 <div class="col-lg-12">
                     <div class="services__one-title t-center">
-                        <span class="subtitle">User Angebot</span>
+                        <span class="subtitle">Unser Angebot</span>
                         <h2>Unsere Leistungen im Überblick</h2>
                     </div>
                 </div>
@@ -145,9 +145,9 @@
             <div class="row al-center">
                 <div class="col-lg-6 lg-mb-25">
                     <div class="about__one-left mr-30 lg-mr-0 lg-pr-25">
-                        <img src="/assets/img/entruempelung-1.jpg" alt="image">
+                        <img src="/assets/img/entruempelung-1.jpg" alt="Entrümpelung in Berlin">
                         <div class="two">
-                            <img class="bounce_y" src="/assets/img/berlin-brandenburg.jpg" alt="image">
+                            <img class="bounce_y" src="/assets/img/berlin-brandenburg.jpg" alt="Berlin und Brandenburg">
                         </div>
                     </div>
                 </div>
@@ -209,9 +209,9 @@
                             <span>01</span>
                             <div class="process__area-item-area">
                                 <i>
-                                    <img src="/assets/img/icon/beratung.png">
+                                    <img src="/assets/img/icon/beratung.png" alt="">
                                 </i>
-                                <h5>Beratung, Terminabspache und Besichtigung</h5>
+                                <h5>Beratung, Terminabsprache und Besichtigung</h5>
                                 <p>Wir beraten Sie gerne vorab telefonisch und vereinbaren einen Termin. Im Anschluss besichtigen wir Ihr Objekt direkt vor Ort. Die Anfahrt und die Besichtigung sind kostenlos.</p>
                             </div>
                         </div>
@@ -219,7 +219,7 @@
                             <span>02</span>
                             <div class="process__area-item-area">
                                 <i>
-                                    <img src="/assets/img/icon/auftrag.png">
+                                    <img src="/assets/img/icon/auftrag.png" alt="">
                                 </i>
                                 <h5>Angebot, Auftragserteilung und Räumungstermin</h5>
                                 <p>Nach Besichtigung des Objekts erstellen wir ein Angebot mit Festpreisgarantie inklusive Wertanrechnung. Nach Ihrer Auftragserteilung vereinbaren wir einen fixen Termin zur Räumung Ihres Objekts.</p>
@@ -229,7 +229,7 @@
                             <span>03</span>
                             <div class="process__area-item-area">
                                 <i>
-                                    <img src="/assets/img/icon/erledigung.png">
+                                    <img src="/assets/img/icon/erledigung.png" alt="">
                                 </i>
                                 <h5>Räumung, Entsorgung, Übergabe</h5>
                                 <p>Wir räumen Ihr Objekt zum vereinbarten Termin, mit anschließender fachgerechter Entsorgung. Auf Wunsch erfolgen Zusatzarbeiten. Zum Abschluss erfolgt die besenreine Übergabe.</p>

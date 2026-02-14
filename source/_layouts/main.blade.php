@@ -2,9 +2,17 @@
 <html lang="{{ $page->language ?? 'de' }}">
     <head>
         <meta charset="utf-8">
+        @php
+            $metaTitle = isset($title) ? $title : $page->title;
+            $metaDescription = isset($description) ? $description : $page->description;
+            $metaImagePath = isset($ogImage) ? $ogImage : ($page->ogImage ?? '/assets/img/entruempelung.jpg');
+            $metaImage = \Illuminate\Support\Str::startsWith($metaImagePath, ['http://', 'https://'])
+                ? $metaImagePath
+                : rtrim($page->baseUrl, '/') . $metaImagePath;
+        @endphp
 
-        <title>{{ isset($title) ? $title : $page->title }}</title>
-        <meta name="description" content="{{ isset($description) ? $description : $page->description }}">
+        <title>{{ $metaTitle }}</title>
+        <meta name="description" content="{{ $metaDescription }}">
         <meta name="keywords" content="Entrümpelung, Entsorgung, Sperrmüllentsorgung, Büroauflösung, Wohnungsauflösung, Berlin, Umgebung, Kleintransporte, Umzug"/>
 
         <link rel="icon" type="image/png" href="/assets/img/favicon.png">
@@ -14,6 +22,17 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
         <link rel="canonical" href="{{ $page->getUrl() }}">
+        <meta property="og:type" content="website">
+        <meta property="og:locale" content="{{ $page->locale ?? 'de_DE' }}">
+        <meta property="og:site_name" content="{{ $page->title }}">
+        <meta property="og:title" content="{{ $metaTitle }}">
+        <meta property="og:description" content="{{ $metaDescription }}">
+        <meta property="og:url" content="{{ $page->getUrl() }}">
+        <meta property="og:image" content="{{ $metaImage }}">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="{{ $metaTitle }}">
+        <meta name="twitter:description" content="{{ $metaDescription }}">
+        <meta name="twitter:image" content="{{ $metaImage }}">
 
         <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
         <link rel="stylesheet" href="/assets/css/fontawesome.css">

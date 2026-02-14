@@ -11,7 +11,7 @@
             <div class="row">
                 <div class="col-xl-12">
                     <div class="breadcrumb__area-content">
-                        <h2>Haushalts- und Gewerbeauflösung</h2>
+                        <h1>Haushalts- und Gewerbeauflösung</h1>
                         <ul>
                             <li><a href="{{ $page->baseUrl }}">Home</a><i>/</i></li>
                             <li>Haushalts- und Gewerbeauflösung</li>

@@ -46,7 +46,8 @@
                 background: var(--text-white);
             }
         }
-        h1 {
+        h1,
+        h2 {
             font-size: 80px;
             line-height: 92px;
             max-width: 580px;
@@ -279,7 +280,8 @@
     }
 }
 @media (max-width: 620px) {
-    .banner__one-content h1 {
+    .banner__one-content h1,
+    .banner__one-content h2 {
         font-size: 60px;
         line-height: 70px;
     }
@@ -293,7 +295,8 @@
     }
 }
 @media (max-width: 480px) {
-    .banner__one-content h1 {
+    .banner__one-content h1,
+    .banner__one-content h2 {
         font-size: 45px;
         line-height: 55px;
     }
@@ -310,7 +313,8 @@
     }
 }
 @media (max-width: 359px) {
-    .banner__one-content h1 {
+    .banner__one-content h1,
+    .banner__one-content h2 {
         font-size: 42px;
         line-height: 52px;
     }

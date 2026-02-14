@@ -6,8 +6,8 @@
                     <div class="header__area-menubar-left one">
                         <div class="header__area-menubar-left-logo">
                             <a href="/">
-                                <img class="dark-n" src="/assets/img/logo.png" alt="logo">
-                                <img class="light-n" src="/assets/img/logo.png" alt="logo">
+                                <img class="dark-n" src="/assets/img/logo.png" alt="Entrümpelung Berlin Logo">
+                                <img class="light-n" src="/assets/img/logo.png" alt="Entrümpelung Berlin Logo">
                             </a>
                         </div>
                     </div>

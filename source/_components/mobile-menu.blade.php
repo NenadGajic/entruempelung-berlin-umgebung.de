@@ -2,7 +2,7 @@
     <div class="menu__bar-popup-top">
         <div class="logo">
             <a href="/">
-                <img src="/assets/img/logo.png" alt="logo-image">
+                <img src="/assets/img/logo.png" alt="Entrümpelung Berlin Logo">
             </a>
         </div>
         <div class="close"><i class="fal fa-times"></i></div>

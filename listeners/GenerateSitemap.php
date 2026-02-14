@@ -14,7 +14,7 @@ class GenerateSitemap
         $sitemap = new Sitemap($jigsaw->getDestinationPath().'/sitemap.xml');
 
         collect($jigsaw->getOutputPaths())->each(function ($path) use ($baseUrl, $sitemap) {
-            if (!$this->isAsset($path)) {
+            if (!$this->isExcludedPath($path)) {
                 $sitemap->addItem($baseUrl.$path, time(), Sitemap::DAILY);
             }
         });
@@ -22,8 +22,12 @@ class GenerateSitemap
         $sitemap->write();
     }
 
-    public function isAsset($path)
+    public function isExcludedPath($path)
     {
-        return Str::startsWith($path, '/assets');
+        if (Str::startsWith($path, '/assets')) {
+            return true;
+        }
+
+        return pathinfo($path, PATHINFO_EXTENSION) !== '';
     }
 }

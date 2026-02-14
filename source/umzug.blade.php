@@ -1,5 +1,5 @@
 @php
-    $title = "Professioneller Umzug in Berlin und Umgebung";
+    $title = "Professioneller Umzug in Berlin und Umgebung | " . $page->title;
     $description = "Sobald Sie Ihre neue Wohnung gefunden haben und einen Umzugsservice benötigen, zögern Sie nicht und kontaktieren Sie uns noch heute. Unser Unternehmen passt sich optimal Ihren Anforderungen an."
 @endphp
 
@@ -11,7 +11,7 @@
             <div class="row">
                 <div class="col-xl-12">
                     <div class="breadcrumb__area-content">
-                        <h2>Umzug</h2>
+                        <h1>Umzug</h1>
                         <ul>
                             <li><a href="{{ $page->baseUrl }}">Home</a><i>/</i></li>
                             <li>Umzug</li>

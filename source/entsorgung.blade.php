@@ -1,6 +1,6 @@
 @php
     $title = "Professionelle Entsorgung | " . $page->title;
-    $description = "Wenn Sie in Berlin und Umgebung nach einer professionellen Entsorgung von Bauschutt, Möbel, Sperrmüll usw. suchen, stehen wir von Max Entsorgung bereit, um Sie bei jedem Schritt zu unterstützen."
+    $description = "Wenn Sie in Berlin und Umgebung nach einer professionellen Entsorgung von Bauschutt, Möbeln, Sperrmüll und mehr suchen, stehen wir Ihnen bei jedem Schritt zur Seite."
 @endphp
 
 @extends('_layouts.main')
@@ -11,7 +11,7 @@
             <div class="row">
                 <div class="col-xl-12">
                     <div class="breadcrumb__area-content">
-                        <h2>Entsorgung</h2>
+                        <h1>Entsorgung</h1>
                         <ul>
                             <li><a href="{{ $page->baseUrl }}">Home</a><i>/</i></li>
                             <li>Entsorgung</li>
