@@ -2,7 +2,7 @@
 
 return [
     'entruempelung' => [
-        'meta_title' => 'Entrümpelung in Berlin und Umgebung',
+        'meta_title' => 'Professionelle Entrümpelung für Wohnung, Haus und Keller',
         'meta_description' => 'Professionelle Entrümpelung für Wohnungen, Häuser, Keller und Gewerbeflächen in Berlin und Umgebung mit kostenloser Besichtigung und transparenter Preisgestaltung.',
         'og_image' => '/assets/img/entruempelung.jpg',
         'breadcrumbs' => [
