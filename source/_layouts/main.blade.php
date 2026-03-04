@@ -13,8 +13,6 @@
 
         <title>{{ $metaTitle }}</title>
         <meta name="description" content="{{ $metaDescription }}">
-        <meta name="keywords" content="Entrümpelung, Entsorgung, Sperrmüllentsorgung, Büroauflösung, Wohnungsauflösung, Berlin, Umgebung, Kleintransporte, Umzug"/>
-
         <link rel="icon" type="image/png" href="/assets/img/favicon.png">
 
         <meta name="viewport" content="width=device-width, initial-scale=1">
