@@ -7,6 +7,7 @@ return [
     'baseUrl' => 'https://entruempelung-berlin-umgebung.de',
     'locale' => 'de_DE',
     'title' => 'Entrümpelung in Berlin und Umgebung',
+    'titleSuffixInner' => 'Entrümpelung Berlin & Umgebung',
     'description' => 'Wir sind Ihre Experten für schnelle und zuverlässige Entrümpelung in Berlin. Ob Möbel, Elektrogeräte oder großer Sperrmüll – wir entsorgen alles fachgerecht und umweltbewusst.',
     'ogImage' => '/assets/img/entruempelung.jpg',
     'businessName' => 'Entrümpelung Berlin und Umgebung',

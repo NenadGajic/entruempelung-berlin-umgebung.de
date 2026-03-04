@@ -66,10 +66,41 @@
             ];
         }
     }
+
+    $serviceSchemaInput = isset($serviceSchema) && is_array($serviceSchema) ? $serviceSchema : null;
+    $serviceSchema = null;
+    if ($serviceSchemaInput) {
+        $serviceName = $serviceSchemaInput['name'] ?? null;
+        $serviceDescription = $serviceSchemaInput['description'] ?? $metaDescriptionValue;
+        $serviceImage = $serviceSchemaInput['image'] ?? null;
+
+        if ($serviceName && $serviceDescription) {
+            $serviceSchema = [
+                '@context' => 'https://schema.org',
+                '@type' => 'Service',
+                'name' => $serviceName,
+                'serviceType' => $serviceName,
+                'description' => $serviceDescription,
+                'url' => $currentPageUrl,
+                'image' => $toAbsoluteUrl($serviceImage),
+                'areaServed' => $page->businessServiceArea ?? 'Berlin und Brandenburg',
+                'provider' => [
+                    '@type' => 'LocalBusiness',
+                    'name' => $page->businessName ?? $page->title,
+                    'url' => $siteUrl,
+                    'telephone' => $page->businessPhone ?? '',
+                    'email' => $page->businessEmail ?? '',
+                ],
+            ];
+        }
+    }
 @endphp
 
 <script type="application/ld+json">{!! json_encode($websiteSchema, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) !!}</script>
 <script type="application/ld+json">{!! json_encode($localBusinessSchema, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) !!}</script>
 @if($breadcrumbSchema)
     <script type="application/ld+json">{!! json_encode($breadcrumbSchema, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) !!}</script>
+@endif
+@if($serviceSchema)
+    <script type="application/ld+json">{!! json_encode($serviceSchema, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) !!}</script>
 @endif

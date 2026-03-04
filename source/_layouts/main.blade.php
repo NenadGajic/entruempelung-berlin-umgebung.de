@@ -9,12 +9,12 @@
             $metaImage = \Illuminate\Support\Str::startsWith($metaImagePath, ['http://', 'https://'])
                 ? $metaImagePath
                 : rtrim($page->baseUrl, '/') . $metaImagePath;
+            $currentPath = trim((string) parse_url($page->getUrl(), PHP_URL_PATH), '/');
+            $isHomePage = $currentPath === '';
         @endphp
 
         <title>{{ $metaTitle }}</title>
         <meta name="description" content="{{ $metaDescription }}">
-        <meta name="keywords" content="Entrümpelung, Entsorgung, Sperrmüllentsorgung, Büroauflösung, Wohnungsauflösung, Berlin, Umgebung, Kleintransporte, Umzug"/>
-
         <link rel="icon" type="image/png" href="/assets/img/favicon.png">
 
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -34,6 +34,11 @@
         <meta name="twitter:description" content="{{ $metaDescription }}">
         <meta name="twitter:image" content="{{ $metaImage }}">
         @include('_components.structured-data')
+
+        <link rel="preload" href="/assets/font/flaticon_flexitype.woff2" as="font" type="font/woff2" crossorigin>
+        @if($isHomePage)
+            <link rel="preload" href="/assets/img/entruempelung.jpg" as="image">
+        @endif
 
         <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
         <link rel="stylesheet" href="/assets/css/fontawesome-subset.css">
