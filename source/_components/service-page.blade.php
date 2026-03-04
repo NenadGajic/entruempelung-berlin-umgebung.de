@@ -48,14 +48,14 @@
             <div class="{{ $mainColClass }}">
                 <div class="services__details-area">
                     <img src="{{ $service['hero']['src'] }}" alt="{{ $service['hero']['alt'] }}">
-                    <h3 class="mt-25 mb-20">{{ $service['heading'] }}</h3>
+                    <h2 class="mt-25 mb-20">{{ $service['heading'] }}</h2>
 
                     @foreach($service['intro_paragraphs'] as $paragraph)
                         <p class="mb-20">{{ $paragraph }}</p>
                     @endforeach
 
                     @if(!empty($service['detail_heading']))
-                        <h4>{{ $service['detail_heading'] }}</h4>
+                        <h3>{{ $service['detail_heading'] }}</h3>
                     @endif
 
                     @if(!empty($service['detail_paragraphs']))
@@ -65,7 +65,7 @@
                     @endif
 
                     @if(!empty($service['list_items']))
-                        <h4>{{ $service['list_heading'] }}</h4>
+                        <h3>{{ $service['list_heading'] }}</h3>
                         <div class="about__one-right-list mt-15 mb-25">
                             <ul>
                                 @foreach($service['list_items'] as $item)
@@ -77,7 +77,7 @@
 
                     @if(!empty($service['related_services']))
                         <div class="about__one-right-list mt-25">
-                            <h4>Weitere Leistungen</h4>
+                            <h3>Weitere Leistungen</h3>
                             <ul>
                                 @foreach($service['related_services'] as $relatedService)
                                     <li>
