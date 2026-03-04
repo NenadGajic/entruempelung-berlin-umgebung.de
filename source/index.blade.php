@@ -21,7 +21,7 @@
                                     <h1 data-animation="fadeInUp" data-delay=".6s">Unkomplizierte <span>Entrümpelung</span> in Berlin und Umgebung</h1>
                                     <p data-animation="fadeInUp" data-delay=".9s">Wir entrümpeln Wohnungen, Häuser, Keller und Gewerbeflächen in Berlin und Umgebung.</p>
                                     <div class="banner__one-content-button" data-animation="fadeInUp" data-delay="1.4s">
-                                        <a class="default_button" href="{{ $page->baseUrl }}/anfrage">Kostenlose Besichtigung anfragen <i class="flaticon-right-up"></i></a>
+                                        <a class="default_button" href="/anfrage">Kostenlose Besichtigung anfragen <i class="flaticon-right-up"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -55,7 +55,7 @@
                                     <h2 data-animation="fadeInUp" data-delay=".6s">Unkomplizierte <span>Auflösung</span> in Berlin und Umgebung</h2>
                                     <p data-animation="fadeInUp" data-delay=".9s">Privat und Gewerbekunden! Haushaltsauflösung, Wohnungsauflösung, Kellerauflösung, Lagerauflösung, Gewerbeauflösung, Werkstattauflösung, Büroauflösung</p>
                                     <div class="banner__one-content-button" data-animation="fadeInUp" data-delay="1.4s">
-                                        <a class="default_button" href="{{ $page->baseUrl }}/anfrage">Kostenlose Besichtigung anfragen <i class="flaticon-right-up"></i></a>
+                                        <a class="default_button" href="/anfrage">Kostenlose Besichtigung anfragen <i class="flaticon-right-up"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -186,7 +186,7 @@
                             </div>
                         </div>
                         <div class="item_bounce mt-45">
-                            <a class="default_button" href="{{ $page->baseUrl }}/anfrage">Kostenlose Besichtigung anfragen<i class="flaticon-right-up"></i></a>
+                            <a class="default_button" href="/anfrage">Kostenlose Besichtigung anfragen<i class="flaticon-right-up"></i></a>
                         </div>
                     </div>
                 </div>
