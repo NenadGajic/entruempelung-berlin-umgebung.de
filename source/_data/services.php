@@ -9,7 +9,7 @@ return [
             ['name' => 'Home', 'url' => '/'],
             ['name' => 'Entrümpelung', 'url' => '/entruempelung'],
         ],
-        'h1' => 'Entrümpelung',
+        'h1' => 'Entrümpelung in Berlin und Umgebung',
         'sidebar' => [
             'title' => 'Entrümpelung in Berlin und Umgebung',
             'items' => [
@@ -45,7 +45,7 @@ return [
             ['name' => 'Home', 'url' => '/'],
             ['name' => 'Entsorgung', 'url' => '/entsorgung'],
         ],
-        'h1' => 'Entsorgung',
+        'h1' => 'Entsorgung in Berlin und Umgebung',
         'sidebar' => [
             'title' => 'Entsorgung in Berlin und Umgebung',
             'items' => [
@@ -84,7 +84,7 @@ return [
             ['name' => 'Home', 'url' => '/'],
             ['name' => 'Haushalts- und Gewerbeauflösung', 'url' => '/aufloesung'],
         ],
-        'h1' => 'Haushalts- und Gewerbeauflösung',
+        'h1' => 'Haushalts- und Gewerbeauflösung in Berlin und Umgebung',
         'sidebar' => [
             'title' => 'Haushalts- und Gewerbeauflösung in Berlin und Umgebung',
             'items' => [
@@ -121,7 +121,7 @@ return [
             ['name' => 'Home', 'url' => '/'],
             ['name' => 'Umzug', 'url' => '/umzug'],
         ],
-        'h1' => 'Umzug',
+        'h1' => 'Umzug in Berlin und Umgebung',
         'hero' => [
             'src' => '/assets/img/umzug.jpg',
             'alt' => 'Professioneller Umzug Berlin und Umgebung',
@@ -147,7 +147,7 @@ return [
             ['name' => 'Home', 'url' => '/'],
             ['name' => 'Transport', 'url' => '/transport'],
         ],
-        'h1' => 'Transport',
+        'h1' => 'Kleintransporte in Berlin und Umgebung',
         'hero' => [
             'src' => '/assets/img/transport.jpg',
             'alt' => 'Kleintransporte und Kurierdienste in Berlin und Umgebung',
