@@ -1,6 +1,6 @@
 @php
     $service = $page->services['entruempelung'];
-    $title = $service['meta_title'] . ' | ' . $page->title;
+    $title = $service['meta_title'] . ' | ' . ($page->titleSuffixInner ?? $page->title);
     $description = $service['meta_description'];
     $ogImage = $service['og_image'];
 
