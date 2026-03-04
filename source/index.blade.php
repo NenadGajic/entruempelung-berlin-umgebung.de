@@ -1,5 +1,5 @@
 @php
-    $title = "Entrümpelung und Entsorgung in Berlin | " . $page->title;
+    $title = "Entrümpelung & Entsorgung Berlin | Schnell und zuverlässig";
     $description = "Entrümpelung, Entsorgung, Auflösung, Umzug und Transport in Berlin und Umgebung mit kostenloser Besichtigung, transparenter Planung und schneller Umsetzung.";
     $ogImage = "/assets/img/entruempelung.jpg";
     $needsSwiper = true;
