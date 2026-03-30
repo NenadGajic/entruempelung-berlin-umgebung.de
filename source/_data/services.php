@@ -61,7 +61,7 @@ return [
         'heading' => 'Professionelle Entsorgung in Berlin',
         'intro_paragraphs' => [
             'Wenn Sie in Berlin und Umgebung nach einer professionellen Entsorgung suchen, stehen wir bereit, um Sie bei jedem Schritt zu unterstützen. Egal ob Sie alte Möbel loswerden, Bauschutt abtransportieren oder Elektroschrott fachgerecht entsorgen möchten: Wir bieten Ihnen eine schnelle, saubere und unkomplizierte Lösung. Kurz gesagt: Wir sind Ihr zuverlässiger Partner, wenn es darum geht, Platz zu schaffen und Ordnung in Ihrem Zuhause, Büro oder auf Ihrer Baustelle wiederherzustellen.',
-            'Wir wissen aus langjähriger Erfahrung in der Entsorgung, dass ein zuverlässiger Ansprechpartner Gold wert ist. Genau darum kümmern wir uns mit Herzblut um jedes Detail, von A wie Abholung bis Z wie Zwischenlagerung (falls es bei Spezialmüll oder größeren Aufträgen erforderlich ist). In Berlin sind wir an Ihrer Seite, um Ihnen Zeit, Nerven und oft auch einiges an Kosten zu ersparen. Keine Sorge, wir gehen das locker an, aber immer mit Professionalität und Blick fürs Wesentliche.',
+            'Wir wissen aus langjähriger Erfahrung in der Entsorgung, dass ein zuverlässiger Ansprechpartner Gold wert ist. Genau darum kümmern wir uns mit Herzblut um jedes Detail, von A wie Abholung bis Z wie Zwischenlagerung (falls es bei Spezialmüll oder größeren Aufträgen erforderlich ist). In Berlin sind wir an Ihrer Seite, um Ihnen Zeit, Nerven und oft auch einiges an Kosten zu ersparen. Keine Sorge, wir kümmern uns um alles, immer mit Professionalität und Blick fürs Wesentliche.',
         ],
         'list_heading' => 'Diese Entsorgungen bieten wir in Berlin an',
         'list_items' => [

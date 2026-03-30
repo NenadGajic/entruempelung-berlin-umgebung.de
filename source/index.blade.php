@@ -35,7 +35,7 @@
                             <div class="col-xl-12">
                                 <div class="banner__one-content">
                                     <span class="subtitle" data-delay=".3s">Entsorgung</span>
-                                    <h2 data-animation="fadeInUp" data-delay=".6s">Unkomplizierte <span>Entsorgung</span> in Berlin und Umgebung</h2>
+                                    <h2 data-animation="fadeInUp" data-delay=".6s">Fachgerechte <span>Entsorgung</span> in Berlin und Umgebung</h2>
                                     <p data-animation="fadeInUp" data-delay=".9s">Wir entsorgen Bauschutt, Möbel, Sperrmüll und weitere Materialien fachgerecht.</p>
                                     <div class="banner__one-content-button" data-animation="fadeInUp" data-delay="1.4s">
                                         <a class="default_button" href="/anfrage">Kostenlose Besichtigung anfragen <i class="flaticon-right-up"></i></a>
@@ -52,7 +52,7 @@
                             <div class="col-xl-12">
                                 <div class="banner__one-content">
                                     <span class="subtitle" data-delay=".3s">Auflösung</span>
-                                    <h2 data-animation="fadeInUp" data-delay=".6s">Unkomplizierte <span>Auflösung</span> in Berlin und Umgebung</h2>
+                                    <h2 data-animation="fadeInUp" data-delay=".6s">Zuverlässige <span>Auflösung</span> in Berlin und Umgebung</h2>
                                     <p data-animation="fadeInUp" data-delay=".9s">Privat und Gewerbekunden! Haushaltsauflösung, Wohnungsauflösung, Kellerauflösung, Lagerauflösung, Gewerbeauflösung, Werkstattauflösung, Büroauflösung</p>
                                     <div class="banner__one-content-button" data-animation="fadeInUp" data-delay="1.4s">
                                         <a class="default_button" href="/anfrage">Kostenlose Besichtigung anfragen <i class="flaticon-right-up"></i></a>
