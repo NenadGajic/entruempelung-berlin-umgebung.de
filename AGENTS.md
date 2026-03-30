@@ -8,7 +8,7 @@ This is the canonical working guide for agents in this repository. `CLAUDE.md` m
 - Built with Jigsaw (Blade templates), deployed via Netlify.
 
 ## Tech Stack
-- PHP/Composer: `tightenco/jigsaw`, `samdark/sitemap`
+- PHP/Composer: `tightenco/jigsaw`, `samdark/sitemap` (platform constrained to PHP 8.3 for Netlify compatibility)
 - Node: Laravel Mix + `laravel-mix-jigsaw`
 - Frontend: Bootstrap 5, vanilla JS, Swiper, Flaticon, Font Awesome subset
 
@@ -36,7 +36,7 @@ This is the canonical working guide for agents in this repository. `CLAUDE.md` m
 - Watch mode: `npm run watch`
 - Production build: `npm run prod` (outputs to `build_production/`)
 - Validation checks: `npm run check` (alias for production build)
-- Netlify build: `npm run prod`, publish directory: `build_production`
+- Netlify build: `composer install --no-dev --no-interaction && npm run prod`, publish directory: `build_production`
 
 ## Editing Rules
 - Keep user-facing copy in German unless explicitly requested otherwise.
