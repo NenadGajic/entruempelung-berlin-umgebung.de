@@ -9,16 +9,16 @@
     },
     "devDependencies": {
         "clean-css": "^5.3.3",
-        "laravel-mix": "^6.0.39",
-        "laravel-mix-jigsaw": "^2.0.0",
-        "postcss": "^8.4.14",
-        "postcss-import": "^14.0.0",
-        "sass": "^1.86.0",
+        "laravel-mix": "^6.0.49",
+        "laravel-mix-jigsaw": "^2.1.0",
+        "postcss": "^8.5.8",
+        "postcss-import": "^14.1.0",
+        "sass": "^1.98.0",
         "sass-loader": "^12.6.0",
-        "tailwindcss": "^3.1.6",
-        "terser": "^5.46.0"
+        "tailwindcss": "^3.4.17",
+        "terser": "^5.46.1"
     },
     "dependencies": {
-        "bootstrap": "^5.3.4"
+        "bootstrap": "^5.3.8"
     }
 }
