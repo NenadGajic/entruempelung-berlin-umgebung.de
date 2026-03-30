@@ -210,10 +210,8 @@
             setMessage(formStatus, '');
             setMessage(formError, message);
 
-            const firstInvalid = form.querySelector(':invalid');
-            if (firstInvalid && typeof firstInvalid.focus === 'function') {
-                firstInvalid.focus();
-            }
+            const firstInvalid = requiredFields[0]?.validity?.valid === false ? requiredFields[0] : form.querySelector(':invalid');
+            firstInvalid?.focus();
 
             form.reportValidity();
             return;
