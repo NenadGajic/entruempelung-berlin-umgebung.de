@@ -15,30 +15,8 @@
                         <div class="header__area-menubar-center-menu">
                             <ul id="mobilemenu">
                                 <li><a href="/entruempelung" class="{{ $page->active('entruempelung') }}">Entrümpelung</a></li>
-{{--                                <li class="menu-item-has-children"><a href="#">Entrümpelung</a>--}}
-{{--                                    <ul class="sub-menu">--}}
-{{--                                        <li><a href="#">Entrümpelungen in Berlin</a></li>--}}
-{{--                                        <li><a href="#">Wohnungsentrümpelung</a></li>--}}
-{{--                                        <li><a href="#">Hausentrümpelung</a></li>--}}
-{{--                                        <li><a href="#">Kellerentrümpelung</a></li>--}}
-{{--                                    </ul>--}}
-{{--                                </li>--}}
                                 <li><a href="/entsorgung" class="{{ $page->active('entsorgung') }}">Entsorgung</a></li>
-{{--                                <li class="menu-item-has-children"><a href="#">Entsorgung</a>--}}
-{{--                                    <ul class="sub-menu">--}}
-{{--                                        <li><a href="#">Entsorgung in Berlin</a></li>--}}
-{{--                                        <li><a href="#">Bauschutt-Entsorgung</a></li>--}}
-{{--                                        <li><a href="#">Möbelentsorgung</a></li>--}}
-{{--                                        <li><a href="#">Sperrmüllentsorgung</a></li>--}}
-{{--                                    </ul>--}}
-{{--                                </li>--}}
                                 <li><a href="/aufloesung" class="{{ $page->active('aufloesung') }}">Auflösungen</a></li>
-{{--                                <li class="menu-item-has-children"><a href="#">Auflösungen</a>--}}
-{{--                                    <ul class="sub-menu">--}}
-{{--                                        <li><a href="#">Haushalt- und Wohnungsauflösung</a></li>--}}
-{{--                                        <li><a href="#">Gewerbeauflösung</a></li>--}}
-{{--                                    </ul>--}}
-{{--                                </li>--}}
                                 <li class="menu-item-has-children">
                                     <button
                                         type="button"

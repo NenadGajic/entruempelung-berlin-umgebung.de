@@ -195,8 +195,6 @@
     </div>
     {{-- END ABOUT AREA --}}
 
-{{--    <x-portfolio-area />--}}
-
     {{-- PROCESS AREA --}}
     <div class="process__area overflow-hidden section-padding">
         <div class="bg_shape" style="background-image: url('/assets/img/shape/bg.png');"></div>
