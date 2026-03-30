@@ -51,7 +51,7 @@
     </head>
     <body>
         <x-mobile-menu />
-        <div class="menu__bar-popup-overlay"></div>
+        <div class="menu__bar-popup-overlay" aria-hidden="true"></div>
         @include('_components.navbar')
 
         @yield('body')

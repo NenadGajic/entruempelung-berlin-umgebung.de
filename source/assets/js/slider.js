@@ -13,12 +13,14 @@
             return;
         }
 
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
         const slider = new window.Swiper(SELECTOR, {
             loop: true,
             slidesPerView: 1,
-            speed: 1000,
+            speed: prefersReducedMotion ? 0 : 1000,
             effect: 'fade',
-            autoplay: {
+            autoplay: prefersReducedMotion ? false : {
                 delay: 5500,
                 reverseDirection: false,
                 disableOnInteraction: false,

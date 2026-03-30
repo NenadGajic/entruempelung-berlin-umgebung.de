@@ -191,6 +191,15 @@
             formSuccess.style.display = 'none';
         }
 
+        const requiredFields = form.querySelectorAll('[required][name]');
+        requiredFields.forEach((field) => {
+            if (field.validity?.valid) {
+                field.removeAttribute('aria-invalid');
+            } else {
+                field.setAttribute('aria-invalid', 'true');
+            }
+        });
+
         if (!form.checkValidity()) {
             const missingRequiredFields = getMissingRequiredFieldLabels(form);
             const messageBase = 'Bitte füllen Sie alle Pflichtfelder aus.';
