@@ -2,5 +2,8 @@
 command = "composer install --no-dev --no-interaction && npm run prod"
 publish = "build_production"
 
+[build.environment]
+PHP_VERSION = "8.4"
+
 [build.processing.html]
   pretty_urls = true
