@@ -6,9 +6,23 @@ updates:
     schedule:
       interval: weekly
     open-pull-requests-limit: 5
+    groups:
+      frontend-safe:
+        patterns:
+          - "*"
+        update-types:
+          - minor
+          - patch
   - package-ecosystem: composer
     directory: /
     target-branch: master
     schedule:
       interval: weekly
     open-pull-requests-limit: 5
+    groups:
+      php-safe:
+        patterns:
+          - "*"
+        update-types:
+          - minor
+          - patch
