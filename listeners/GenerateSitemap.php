@@ -15,7 +15,7 @@ class GenerateSitemap
 
         collect($jigsaw->getOutputPaths())->each(function ($path) use ($baseUrl, $sitemap) {
             if (!$this->isExcludedPath($path)) {
-                $sitemap->addItem($baseUrl.$path, time(), Sitemap::WEEKLY);
+                $sitemap->addItem($baseUrl.($path ?: '/'), time(), Sitemap::WEEKLY);
             }
         });
 
